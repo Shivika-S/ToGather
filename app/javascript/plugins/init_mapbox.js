@@ -39,3 +39,20 @@ style="width: 500px; height: 315px; border-radius: 5px;"
 data-markers="<%= @markers.to_json %>"
 data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div> */
+
+/*
+@markers = [{
+    lat: @portal.latitude,
+    lng: @portal.longitude,
+}]
+*/
+
+/* 
+@portals = Portal.all
+@markers = @portals.geocoded.map do |portal|
+    {
+        lat: portal.latitude,
+        lng: portal.longitude
+    }
+end 
+*/
