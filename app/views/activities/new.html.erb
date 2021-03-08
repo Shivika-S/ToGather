@@ -1,2 +1,9 @@
-<h1>Activities#new</h1>
-<p>Find me in app/views/activities/new.html.erb</p>
+<h1>Choose your preferences</h1>
+
+<%= simple_form_for [ @category, @activity ] do |f| %>
+  <%= f.input :start_time %>
+  <%= f.input :address %>
+  <%= f.submit "Confirm Booking", class: "btn btn-success" %>
+<% end %>
+
+

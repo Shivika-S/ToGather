@@ -7,6 +7,7 @@ class ActivitiesController < ApplicationController
 
   def new
     @activity = Activity.new
+    @category = Category.find(params[:category_id])
   end
 
   def create
