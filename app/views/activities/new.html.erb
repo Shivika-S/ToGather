@@ -1,9 +1,9 @@
-<h1>Choose your preferences</h1>
+<div class="container">
+  <h1>Choose your preferences</h1>
 
-<%= simple_form_for [ @category, @activity ] do |f| %>
-  <%= f.input :start_time %>
-  <%= f.input :address %>
-  <%= f.submit "Confirm Booking", class: "btn btn-success" %>
-<% end %>
-
-
+  <%= simple_form_for [ @category, @activity ] do |f| %>
+    <%= f.input :start_time %>
+    <%= f.input :address %>
+    <%= f.submit "Confirm Booking", class: "btn btn-success" %>
+  <% end %>
+</div>
