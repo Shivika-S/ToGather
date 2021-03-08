@@ -15,8 +15,8 @@ class ActivitiesController < ApplicationController
     @category = Category.find(params[:category_id])
     @activity.category = @category
 
-    if @activity.address.present? && @activity.date.present?
-      redirect_to controller: 'activities', action: 'index', id: params[:category_id], address: @activity.address, date: @activity.date
+    if @activity.address.present? && @activity.start_time.present?
+      redirect_to controller: 'activities', action: 'index', id: params[:category_id], address: @activity.address, start_time: @activity.start_time
     else
       render :new
     end
@@ -25,6 +25,6 @@ class ActivitiesController < ApplicationController
   private
 
   def activity_params
-    params.require(:activity).permit(:date, :address)
+    params.require(:activity).permit(:start_time, :address)
   end
 end
