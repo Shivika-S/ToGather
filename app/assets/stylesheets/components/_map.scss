@@ -11,9 +11,11 @@
   position: relative;
   .map-info {
     position: absolute;
-    top: 0;
-    left: 0;
-    background-color: white;
+    bottom: 21px;
+    left: 117px;
+    background-color: rgba($color: white, $alpha: 0.5);
+    padding: 0px 10px;
+    border-radius: 5px;
   }
 }
 

@@ -17,7 +17,7 @@ const initMapbox = () => {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: "map",
-      style: "mapbox://styles/filimonel/ckluqifmv0dvv17o022e90p9k",
+      style: "mapbox://styles/filimonel/ckm22z9z50lv017s19i2l05i6",
     });
 
     // creates the marker.
