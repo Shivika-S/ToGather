@@ -1,15 +1,15 @@
 .navbar {
   height: 55px;
   font-size: 12px;
+  display: flex;
   justify-content: space-between;
-  position: absolute;
 }
 
 .navbar-logo .navbar-brand img {
   width: 90px;
 }
 
-#navbarSupportedContent .collapse.navbar-collapse {
+#navbarSupportedContent {
   display: flex;
   justify-content: flex-end;
 }

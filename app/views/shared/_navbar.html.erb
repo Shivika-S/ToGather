@@ -1,15 +1,12 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-logo">
-  <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag('3.png')  %>
+<div class="d-flex justify-content-center navbar navbar-expand-sm navbar-light navbar-logo">
+  <div>
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag('3.png') %>
     <% end %>
+  </div>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+  <div class="d-flex justify-content collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav">
       <% if user_signed_in? %>
         <li class="nav-item active mr-3">
           <%= link_to "Bookmarks", "#", class: "nav-link" %>
