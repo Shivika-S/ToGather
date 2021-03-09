@@ -32,6 +32,8 @@ const initMapbox = () => {
 
 export { initMapbox };
 
+
+
 // Map code for view
 
 /* <div id="map"
@@ -42,8 +44,8 @@ data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 
 /*
 @markers = [{
-    lat: @portal.latitude,
-    lng: @portal.longitude,
+    lat: @activity.latitude,
+    lng: @activity.longitude,
 }]
 */
 
