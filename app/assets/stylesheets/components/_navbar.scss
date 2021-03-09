@@ -2,12 +2,14 @@
   height: 55px;
   font-size: 12px;
   justify-content: space-between;
-  position: absolute;}
+  position: absolute;
+}
 
 .navbar-logo .navbar-brand img {
   width: 90px;
 }
 
-.collapse .navbar-collapse {
-  align-items: right;
+#navbarSupportedContent .collapse.navbar-collapse {
+  display: flex;
+  justify-content: flex-end;
 }
