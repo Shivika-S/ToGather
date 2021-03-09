@@ -1,16 +1,13 @@
 .navbar {
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1), 0 15px 40px rgba(166,173,201,.2);
-}
-
-.navbar-lewagon {
+  height: 55px;
+  font-size: 12px;
   justify-content: space-between;
-  background: white;
+  position: absolute;}
+
+.navbar-logo .navbar-brand img {
+  width: 90px;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.collapse .navbar-collapse {
+  align-items: right;
 }
