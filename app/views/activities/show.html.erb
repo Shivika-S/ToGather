@@ -1,4 +1,8 @@
 <div class="container">
   <h1>Activities#show</h1>
-  <p>Find me in app/views/activities/show.html.erb</p>
+    <div id="map"
+    style="width: 500px; height: 315px; border-radius: 5px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
 </div>

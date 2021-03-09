@@ -1,9 +1,16 @@
 class ActivitiesController < ApplicationController
   def index
     @activities = Activity.where(category_id: params[:category_id])
+    @category = Category.find(params[:category_id])
   end
 
   def show
+    @activity = Activity.find(params[:id])
+    @markers = [{
+      lat: @activity.latitude,
+      lng: @activity.longitude,
+      infoWindow: render_to_string(partial: "info_window", locals: { activity: @activity })
+    }]
   end
 
   def new
