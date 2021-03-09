@@ -17,11 +17,11 @@ ActiveRecord::Schema.define(version: 2021_03_08_055214) do
 
   create_table "activities", force: :cascade do |t|
     t.string "name"
-    t.string "start_time"
+    t.datetime "start_time"
     t.string "description"
     t.string "url"
-    t.float "lat"
-    t.float "lng"
+    t.float "latitude"
+    t.float "longitude"
     t.bigint "category_id"
     t.string "address"
     t.string "status"
