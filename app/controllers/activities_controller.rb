@@ -1,5 +1,6 @@
 class ActivitiesController < ApplicationController
   def index
+    @activities = Activity.where(category_id: params[:category_id])
   end
 
   def show
