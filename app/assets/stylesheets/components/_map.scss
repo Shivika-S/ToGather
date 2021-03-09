@@ -6,3 +6,14 @@
   text-align: center;
   font-family: 'Open Sans', sans-serif;
 }
+
+.map-container {
+  position: relative;
+  .map-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+  }
+}
+
