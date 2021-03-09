@@ -1,2 +1,6 @@
-<h1>Activities#index</h1>
-<p>Find me in app/views/activities/index.html.erb</p>
+<div class="container">
+  <% @activities.each do |activity| %>
+    <h2><strong><%= activity.name %></strong></h2>
+    <p><%= activity.description %></p>
+  <% end %>
+</div>
