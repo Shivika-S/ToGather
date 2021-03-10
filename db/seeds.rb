@@ -38,7 +38,7 @@ Category.find_by(name: "Outdoorsy").activities.create(name: "Walking at the Dand
 Category.find_by(name: "Outdoorsy").activities.create(name: "Tour d'Altona", address: "2 Clarendon St, Melbourne", description: "An evening ride on bike paths to Williamstown and Altona. Some cycling on the road on the return.")
 Category.find_by(name: "Outdoorsy").activities.create(name: "Try Dragon Boat Racing!", address: "912 Collins Street, Docklands VIC", description: "Looking for a new sport? Are you ready to be fun, fit and active? Want to see if you've got what it takes to work hard in a team? This might just be your thing.")
 Category.find_by(name: "Outdoorsy").activities.create(name: "Naked skydiving", address: "1421 Barwon Heads Rd, Connewarre VIC 3227", description: "Skydiving with clothes on is so mainstream.")
-Category.find_by(name: "Outdoorsy").activities.create(name: "Beach Party!! - MC Shiv", address: "1421 Barwon Heads Rd, Connewarre VIC 3227", description: "St Kilda beach")
+Category.find_by(name: "Outdoorsy").activities.create(name: "Beach Party!! - MC Shiv", address: "St Kilda", description: "St Kilda beach")
 Category.find_by(name: "Outdoorsy").activities.create(name: "Amazing Race!", address: "Federation Square", description: "Expirience what it's like to be in the amazing race. Race around Melbourne solving clues and beating challenges.")
 
 
