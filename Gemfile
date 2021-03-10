@@ -63,7 +63,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
 
-# Add map feature 
+# Add map feature
 gem 'geocoder'
 
 gem 'httparty'
+
+gem 'social-share-button'
