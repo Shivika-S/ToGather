@@ -26,8 +26,7 @@ class ActivitiesController < ApplicationController
     @activity.category = @category
 
     if @activity.address.present? && @activity.start_time.present?
-      redirect_to activities_path
-      # redirect_to controller: 'activities', action: 'index', id: params[:category_id], address: @activity.address, start_time: @activity.start_time
+      redirect_to controller: 'activities', action: 'index', id: params[:category_id], address: @activity.address, start_time: @activity.start_time
     else
       render :new
     end
