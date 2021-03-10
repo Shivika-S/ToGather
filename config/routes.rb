@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-
+  resources :activities, only: [:index]
   resources :categories, only: [:index] do
-    resources :activities, only: [:index, :show, :new, :create]
+    resources :activities, only: [:show, :new, :create]
   end
 
   resource :dashboard, only: [:show]
