@@ -1,6 +1,7 @@
 class ActivitiesController < ApplicationController
   def index
-    @activities = Activity.where(category_id: params[:category_id])
+    # @activities = Activity.where(category_id: params[:category_id])
+    @activities = Activity.all
     @category = Category.find_by(params[:category_id])
   end
 

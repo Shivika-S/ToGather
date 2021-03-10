@@ -16,6 +16,9 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
+    <% if params[:action] == "show" && params[:controller] == "activities" %>
+      <%= render 'pages/activities_show' %>
+    <% end %>
     <%= yield %>
     <div class="footer-basic">
         <footer>
