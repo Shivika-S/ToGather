@@ -5,20 +5,27 @@
   </div>
 </div>
 
-<!--
-<div class="home-carousel">
-  <h5> Search by mood: </h5>
-  <div class="gallery js-flickity">
-    <div class="gallery-cell"></div>
-    <div class="gallery-cell"></div>
-    <div class="gallery-cell"></div>
-    <div class="gallery-cell"></div>
-    <div class="gallery-cell"></div>
-  </div>
+<!-- <div>
+  <h2> Pick a mood</h2>
+<% @categories.each do |category| %>
+<%= link_to category.name, new_category_activity_path(category), class: "btn btn-primary" %>
+<% end %>
+</div> -->
+
+<div class="container">
+  <h1>Choose your preferences</h1>
+
+<%= simple_form_for @activity, method: :get do |f| %>
+    <%= f.association :category, label_method: :name %>
+    <%= f.input :start_time %>
+    <%= f.input :address %>
+      <%= f.submit "Search", class: "btn btn-primary" %>
+  <% end %>
+
+
 </div>
 
-<script src="/path/to/flickity.pkgd.min.js"></script>
 
- -->
+
 
 
