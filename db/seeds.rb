@@ -41,6 +41,54 @@ Category.find_by(name: "Outdoorsy").activities.create(name: "Naked skydiving", a
 Category.find_by(name: "Outdoorsy").activities.create(name: "Beach Party!! - MC Shiv", address: "St Kilda", description: "St Kilda beach")
 Category.find_by(name: "Outdoorsy").activities.create(name: "Amazing Race!", address: "Federation Square", description: "Expirience what it's like to be in the amazing race. Race around Melbourne solving clues and beating challenges.")
 
+  # Scraping data tha relates to active related activities.
+  response = HTTParty.get('https://api.meetup.com/outdoors-adventure/events?page=20')
+  filepath = File.join(__dir__, 'activities.csv')
+  
+  CSV.open(filepath, "wb") do |csv|
+      csv << %w[name start_time description url latitude longitude status ]
+      response.each do |activity|
+        csv << [activity["name"], activity["local_time"], activity["description"], activity["link"], activity["venue"]["lat"], activity["venue"]["lon"], activity["status"]]
+      end
+    end
+  
+    csv_options = { headers: :first_row, header_converters: :symbol }
+    CSV.foreach(filepath, csv_options) do |row|
+      Category.find_by(name: "Outdoorsy").activities.create!(
+          # category: Category.first,
+          name: row[:name],
+          start_time: row[:start_time],
+          description: row[:description],
+          url: row[:url],
+          latitude: row[:latitude].to_f,
+          longitude: row[:longitude].to_f,
+          status: row[:status]
+      )
+    end
+  # Scraping data tha relates to romance related activities.
+  response = HTTParty.get('https://api.meetup.com/outdoors-adventure/events?page=20')
+  filepath = File.join(__dir__, 'activities.csv')
+  
+  CSV.open(filepath, "wb") do |csv|
+      csv << %w[name start_time description url latitude longitude status ]
+      response.each do |activity|
+        csv << [activity["name"], activity["local_time"], activity["description"], activity["link"], activity["venue"]["lat"], activity["venue"]["lon"], activity["status"]]
+      end
+    end
+  
+    csv_options = { headers: :first_row, header_converters: :symbol }
+    CSV.foreach(filepath, csv_options) do |row|
+      Category.find_by(name: "Outdoorsy").activities.create!(
+          # category: Category.first,
+          name: row[:name],
+          start_time: row[:start_time],
+          description: row[:description],
+          url: row[:url],
+          latitude: row[:latitude].to_f,
+          longitude: row[:longitude].to_f,
+          status: row[:status]
+      )
+    end
 
 # Scraping data tha relates to outdoor related activities.
 response = HTTParty.get('https://api.meetup.com/outdoors-adventure/events?page=20')
@@ -66,3 +114,4 @@ CSV.open(filepath, "wb") do |csv|
         status: row[:status]
     )
   end
+
