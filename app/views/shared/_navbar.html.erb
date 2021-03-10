@@ -9,14 +9,10 @@
     <ul class="navbar-nav">
       <% if user_signed_in? %>
         <li class="nav-item active mr-3">
-          <%= link_to "Bookmarks", "#", class: "nav-link" %>
+          <%= link_to "Dashboard", dashboard_path, class: "nav-link" %>
         </li>
-        <li class="nav-item dropdown">
-          <%= image_tag "https://i.ebayimg.com/images/g/CVkAAOSwl2ddl3ea/s-l640.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "About us", "#", class: "dropdown-item" %>
+        <li class="nav-item">
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
         </li>
       <% else %>
         <li class="nav-item">
