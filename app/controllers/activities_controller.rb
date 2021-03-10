@@ -7,6 +7,7 @@ class ActivitiesController < ApplicationController
 
   def show
     @activity = Activity.find(params[:id])
+    @random_event = Activity.all.sample
     @markers = [{
       lat: @activity.latitude,
       lng: @activity.longitude,
