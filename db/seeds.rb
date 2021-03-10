@@ -14,7 +14,7 @@ Category.create(name: "Active")
 Category.create(name: "Romance")
 Category.create(name: "Outdoorsy")
 # # Category.create(name: "Chill")
-# # Category.create(name: "Lit")
+Category.create(name: "Lit")
 
 # Active Category
 Category.first.activities.create(name: "Yoga at Inspire 9", address: "1/41-43 Stewart St, Richmond VIC 3121", description: "Do yoga with friends!")
@@ -65,6 +65,7 @@ Category.find_by(name: "Outdoorsy").activities.create(name: "Amazing Race!", add
           status: row[:status]
       )
     end
+
   # Scraping data tha relates to romance related activities.
   response = HTTParty.get('https://api.meetup.com/outdoors-adventure/events?page=20')
   filepath = File.join(__dir__, 'activities.csv')
