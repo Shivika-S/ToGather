@@ -13,15 +13,16 @@ User.create(email: "usertwo@user.com", password: "password")
 Category.create(name: "Active")
 Category.create(name: "Romance")
 Category.create(name: "Outdoorsy")
-# # Category.create(name: "Chill")
-Category.create(name: "Lit")
+Category.create(name: "Chill")
+# Category.create(name: "Turnt")
+
 
 # Active Category
 Category.first.activities.create(name: "Yoga at Inspire 9", address: "1/41-43 Stewart St, Richmond VIC 3121", description: "Do yoga with friends!")
 Category.first.activities.create(name: "Workout with The Rock", address: "367 Flinders St, Melbourne VIC 3000", description: "Work on your Gainz or just stare at The Rock all day and be aroused.")
 Category.first.activities.create(name: "Pole Dancing", address: "111 Cecil St, South Melbourne VIC 3205", description: "Twerk them calories away!")
 Category.first.activities.create(name: "Learn how to roundhouse kick", address: "191 Racecourse Rd, Kensington VIC 3031", description: "Come and learn how to roundhouse kick like the undefeated intergalactic champion, Chuck Norris!")
-Category.first.activities.create(name: "Salsa dancing", address: "1/281 Swan St, Richmond VIC 3121", description: "Learn how to move your body like an elegant, majestic Swan from the legendary, Damian Lonel.")
+Category.first.activities.create(name: "Salsa dancing", address: "1/281 Swan St, Richmond VIC 3121", description: "Learn how to move your body like an elegant, majestic swan from the legendary, Damian Lonel.")
 Category.first.activities.create(name: "Cocktails and Zumba", address: "130 Gladstone St, South Melbourne VIC 3205", description: "Cocktails and Zumba? Yes.")
 
 # Romance Category
@@ -41,8 +42,20 @@ Category.find_by(name: "Outdoorsy").activities.create(name: "Naked skydiving", a
 Category.find_by(name: "Outdoorsy").activities.create(name: "Beach Party!! - MC Shiv", address: "St Kilda", description: "St Kilda beach")
 Category.find_by(name: "Outdoorsy").activities.create(name: "Amazing Race!", address: "Federation Square", description: "Expirience what it's like to be in the amazing race. Race around Melbourne solving clues and beating challenges.")
 
-  # Scraping data tha relates to active related activities.
-  response = HTTParty.get('https://api.meetup.com/outdoors-adventure/events?page=20')
+# Chill Category
+Category.find_by(name: "Chill").activities.create(name: "Books & Wine", address: "111 Carlton St, Carlton", description: "Great wine and a great book is always a recipe for a perfect day")
+Category.find_by(name: "Chill").activities.create(name: "Stargazing", address: "Great Otway National Park", description: "Walking, talking and stargazing at Great Otway National Park.")
+Category.find_by(name: "Chill").activities.create(name: "Poetry night", address: "359 Little Bourke St, Melbourne", description: "Looking for a place to share and listen to poetry?")
+
+Category.find_by(name: "Chill").activities.create(name: "Naked skydiving", address: "1421 Barwon Heads Rd, Connewarre VIC 3227", description: "Skydiving with clothes on is so mainstream.")
+
+Category.find_by(name: "Chill").activities.create(name: "Beach Party!! - MC Shiv", address: "St Kilda", description: "St Kilda beach")
+
+Category.find_by(name: "Chill").activities.create(name: "Amazing Race!", address: "Federation Square", description: "Expirience what it's like to be in the amazing race. Race around Melbourne solving clues and beating challenges.")
+
+
+  # Scraping data tha relates to romance related activities.
+  response = HTTParty.get('https://api.predicthq.com/v1/events/?offset=10&within=100km%40-37.840935%2C144.946457')
   filepath = File.join(__dir__, 'activities.csv')
   
   CSV.open(filepath, "wb") do |csv|
@@ -54,8 +67,7 @@ Category.find_by(name: "Outdoorsy").activities.create(name: "Amazing Race!", add
   
     csv_options = { headers: :first_row, header_converters: :symbol }
     CSV.foreach(filepath, csv_options) do |row|
-      Category.find_by(name: "Outdoorsy").activities.create!(
-          # category: Category.first,
+      Category.find_by(name: "something_different").activities.create!(
           name: row[:name],
           start_time: row[:start_time],
           description: row[:description],
@@ -66,37 +78,14 @@ Category.find_by(name: "Outdoorsy").activities.create(name: "Amazing Race!", add
       )
     end
 
-  # Scraping data tha relates to romance related activities.
-  response = HTTParty.get('https://api.meetup.com/outdoors-adventure/events?page=20')
-  filepath = File.join(__dir__, 'activities.csv')
-  
-  CSV.open(filepath, "wb") do |csv|
-      csv << %w[name start_time description url latitude longitude status ]
-      response.each do |activity|
-        csv << [activity["name"], activity["local_time"], activity["description"], activity["link"], activity["venue"]["lat"], activity["venue"]["lon"], activity["status"]]
-      end
-    end
-  
-    csv_options = { headers: :first_row, header_converters: :symbol }
-    CSV.foreach(filepath, csv_options) do |row|
-      Category.find_by(name: "Outdoorsy").activities.create!(
-          # category: Category.first,
-          name: row[:name],
-          start_time: row[:start_time],
-          description: row[:description],
-          url: row[:url],
-          latitude: row[:latitude].to_f,
-          longitude: row[:longitude].to_f,
-          status: row[:status]
-      )
-    end
+
 
 # Scraping data tha relates to outdoor related activities.
 response = HTTParty.get('https://api.meetup.com/outdoors-adventure/events?page=20')
 filepath = File.join(__dir__, 'activities.csv')
 
 CSV.open(filepath, "wb") do |csv|
-    csv << %w[name start_time description url latitude longitude status ]
+    # csv << %w[name start_time description url latitude longitude status ]
     response.each do |activity|
       csv << [activity["name"], activity["local_time"], activity["description"], activity["link"], activity["venue"]["lat"], activity["venue"]["lon"], activity["status"]]
     end
@@ -105,7 +94,6 @@ CSV.open(filepath, "wb") do |csv|
   csv_options = { headers: :first_row, header_converters: :symbol }
   CSV.foreach(filepath, csv_options) do |row|
     Category.find_by(name: "Outdoorsy").activities.create!(
-        # category: Category.first,
         name: row[:name],
         start_time: row[:start_time],
         description: row[:description],
