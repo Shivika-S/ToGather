@@ -65,3 +65,5 @@ gem 'devise'
 
 # Add map feature 
 gem 'geocoder'
+
+gem 'httparty'
