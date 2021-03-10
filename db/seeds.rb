@@ -46,37 +46,9 @@ Category.find_by(name: "Outdoorsy").activities.create(name: "Amazing Race!", add
 Category.find_by(name: "Chill").activities.create(name: "Books & Wine", address: "111 Carlton St, Carlton", description: "Great wine and a great book is always a recipe for a perfect day")
 Category.find_by(name: "Chill").activities.create(name: "Stargazing", address: "Great Otway National Park", description: "Walking, talking and stargazing at Great Otway National Park.")
 Category.find_by(name: "Chill").activities.create(name: "Poetry night", address: "359 Little Bourke St, Melbourne", description: "Looking for a place to share and listen to poetry?")
-
-Category.find_by(name: "Chill").activities.create(name: "Naked skydiving", address: "1421 Barwon Heads Rd, Connewarre VIC 3227", description: "Skydiving with clothes on is so mainstream.")
-
-Category.find_by(name: "Chill").activities.create(name: "Beach Party!! - MC Shiv", address: "St Kilda", description: "St Kilda beach")
-
-Category.find_by(name: "Chill").activities.create(name: "Amazing Race!", address: "Federation Square", description: "Expirience what it's like to be in the amazing race. Race around Melbourne solving clues and beating challenges.")
-
-
-  # Scraping data tha relates to romance related activities.
-  response = HTTParty.get('https://api.predicthq.com/v1/events/?offset=10&within=100km%40-37.840935%2C144.946457')
-  filepath = File.join(__dir__, 'activities.csv')
-  
-  CSV.open(filepath, "wb") do |csv|
-      csv << %w[name start_time description url latitude longitude status ]
-      response.each do |activity|
-        csv << [activity["name"], activity["local_time"], activity["description"], activity["link"], activity["venue"]["lat"], activity["venue"]["lon"], activity["status"]]
-      end
-    end
-  
-    csv_options = { headers: :first_row, header_converters: :symbol }
-    CSV.foreach(filepath, csv_options) do |row|
-      Category.find_by(name: "something_different").activities.create!(
-          name: row[:name],
-          start_time: row[:start_time],
-          description: row[:description],
-          url: row[:url],
-          latitude: row[:latitude].to_f,
-          longitude: row[:longitude].to_f,
-          status: row[:status]
-      )
-    end
+Category.find_by(name: "Chill").activities.create(name: "Sunrise meditation", address: "Wilsons Promontory National Park", description: "Putting your mind at ease followed by a beautiful sunrise is a terrific way to begin your day.")
+Category.find_by(name: "Chill").activities.create(name: "Board games night", address: "4/16 Fuller Rd, Ravenhall VIC 3023", description: "Great people and awesome board games. Nostalgia level 99.")
+Category.find_by(name: "Chill").activities.create(name: "Hotbox Wednesdays", address: "1201 N La Brea Ave, West Hollywood, CA 90038, United States", description: "Hump days has been replaced with Hotbox Wednesday.")
 
 
 
@@ -85,7 +57,7 @@ response = HTTParty.get('https://api.meetup.com/outdoors-adventure/events?page=2
 filepath = File.join(__dir__, 'activities.csv')
 
 CSV.open(filepath, "wb") do |csv|
-    # csv << %w[name start_time description url latitude longitude status ]
+    csv << %w[name start_time description url latitude longitude status ]
     response.each do |activity|
       csv << [activity["name"], activity["local_time"], activity["description"], activity["link"], activity["venue"]["lat"], activity["venue"]["lon"], activity["status"]]
     end
@@ -103,4 +75,30 @@ CSV.open(filepath, "wb") do |csv|
         status: row[:status]
     )
   end
+
+
+
+  # Scraping data tha relates to romance related activities.
+  # response = HTTParty.get('https://api.predicthq.com/v1/events/?offset=10&within=100km%40-37.840935%2C144.946457')
+  # filepath = File.join(__dir__, 'activities.csv')
+  
+  # CSV.open(filepath, "wb") do |csv|
+  #     csv << %w[name start_time description url latitude longitude status ]
+  #     response.each do |activity|
+  #       csv << [activity["name"], activity["local_time"], activity["description"], activity["link"], activity["venue"]["lat"], activity["venue"]["lon"], activity["status"]]
+  #     end
+  #   end
+  
+  #   csv_options = { headers: :first_row, header_converters: :symbol }
+  #   CSV.foreach(filepath, csv_options) do |row|
+  #     Category.find_by(name: "something_different").activities.create!(
+  #         name: row[:name],
+  #         start_time: row[:start_time],
+  #         description: row[:description],
+  #         url: row[:url],
+  #         latitude: row[:latitude].to_f,
+  #         longitude: row[:longitude].to_f,
+  #         status: row[:status]
+  #     )
+  #   end
 
