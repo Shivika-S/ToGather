@@ -1,6 +1,6 @@
 <div class="container">
   <% @activities.each do |activity| %>
     <h2><strong><%= link_to activity.name, category_activity_path(@category, activity) %></strong></h2>
-    <p><%= activity.description %></p>
+    <%= activity.description %>
   <% end %>
 </div>
