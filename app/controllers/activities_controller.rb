@@ -4,7 +4,7 @@ class ActivitiesController < ApplicationController
       @start_time = format_datetime(params[:activity][:start_time])
       @category = Category.find(params[:activity][:category_id]) if params[:activity][:category_id].present?
       @activities = Activity.where(category: @category)
-      @activities = activities_on_day(@activities, @start_time)
+      @activities = @activities.where("start_time > ?", @start_time)
     else
       @activities = Activity.all
     end
