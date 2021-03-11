@@ -4,7 +4,7 @@ class ActivitiesController < ApplicationController
     @activities = Activity.where(category: activity.category)
     # @activities = Activity.where(category_id: params[:category_id])
     # @activities = Activity.all
-    # @category = Category.find_by(params[:category_id])
+    @category = activity.category
     @random_event = Activity.all.sample
   end
 
