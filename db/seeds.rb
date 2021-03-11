@@ -6,9 +6,9 @@ Category.delete_all
 Activity.delete_all
 User.delete_all
 
-User.create(email: "userone@user.com", password: "password")
-User.create(email: "visitor@user.com", password: "password")
-User.create(email: "usertwo@user.com", password: "password")
+User.create(email: "sam@user.com", nickname: 'Sammeehh', password: "password")
+User.create(email: "thembi@user.com", nickname: 'Thembeehh', password: "password")
+User.create(email: "shiv@user.com", nickname: "Shiveehh", password: "password")
 
 Category.create(name: "Active")
 Category.create(name: "Romance")

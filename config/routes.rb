@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :categories, only: [:index] do
     resources :activities, only: [:show, :new, :create]
   end
-
+  resources :chatrooms, only: :show
   resource :dashboard, only: [:show]
   get "dashboard", to: "dashboards#show"
 
