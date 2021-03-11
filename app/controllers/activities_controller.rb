@@ -1,8 +1,11 @@
 class ActivitiesController < ApplicationController
   def index
+    activity = Activity.new(activity_params)
+    @activities = Activity.where(category: activity.category)
     # @activities = Activity.where(category_id: params[:category_id])
-    @activities = Activity.all
-    @category = Category.find_by(params[:category_id])
+    # @activities = Activity.all
+    # @category = Category.find_by(params[:category_id])
+    @random_event = Activity.all.sample
   end
 
   def show
@@ -22,20 +25,11 @@ class ActivitiesController < ApplicationController
   end
 
   def create
-    @activity = Activity.new(activity_params)
-    @category = Category.find(params[:category_id])
-    @activity.category = @category
-
-    if @activity.address.present? && @activity.start_time.present?
-      redirect_to controller: 'activities', action: 'index', id: params[:category_id], address: @activity.address, start_time: @activity.start_time
-    else
-      render :new
-    end
   end
 
   private
 
   def activity_params
-    params.require(:activity).permit(:start_time, :address)
+    params.require(:activity).permit(:start_time, :address, :category_id)
   end
 end
