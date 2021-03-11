@@ -69,3 +69,5 @@ gem 'geocoder'
 gem 'httparty'
 
 gem 'social-share-button'
+
+gem 'dotenv-rails', groups: [:development, :test]
