@@ -2,7 +2,11 @@
   <% @activities.each do |activity| %>
     <h2><strong><%= link_to activity.name, category_activity_path(@category, activity) %></strong></h2>
     <%= activity.description %>
-  <% end %>
+    <div class="bookmark-buttons">
+      <%= link_to 'Save', bookmark_path(activity_id: activity.id), method: :post, class: "btn btn-info" %>
+
+    <% end %>
+    </div>
 </div>
 
 
