@@ -1,4 +1,7 @@
 <div class="container">
   <h1>Dashboards#show</h1>
   <p>Find me in app/views/dashboards/show.html.erb</p>
+    <% @bookmarks.each do |bookmark| %>
+    <%= bookmark.activity.name %>
+  <% end %>
 </div>

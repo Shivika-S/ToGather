@@ -8,7 +8,10 @@ Rails.application.routes.draw do
     resources :messages, only: :create
   end
   resource :dashboard, only: [:show]
+  resource :bookmark, only: [:create, :destroy]
+
   get "dashboard", to: "dashboards#show"
+  get "bookmark", to: "dashboards#show"
 
   root to: 'pages#home'
 
