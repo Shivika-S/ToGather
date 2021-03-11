@@ -8,6 +8,7 @@
 Category.delete_all
 Activity.delete_all
 User.delete_all
+Chatroom.delete_all
 
 # Create default users
 User.create(email: "sam@user.com", nickname: 'Sammeehh', password: "password")

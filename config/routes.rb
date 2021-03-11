@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :activities, only: [:index]
+  resources :activities, only: [:index, :new, :create]
   resources :categories, only: [:index] do
-    resources :activities, only: [:show, :new, :create]
+    resources :activities, only: [:show]
   end
   resources :chatrooms, only: :show do
     resources :messages, only: :create
