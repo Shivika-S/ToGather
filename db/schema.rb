@@ -30,6 +30,15 @@ ActiveRecord::Schema.define(version: 2021_03_11_031304) do
     t.index ["category_id"], name: "index_activities_on_category_id"
   end
 
+  create_table "bookmarks", force: :cascade do |t|
+    t.bigint "activity_id"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["activity_id"], name: "index_bookmarks_on_activity_id"
+    t.index ["user_id"], name: "index_bookmarks_on_user_id"
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -72,6 +81,8 @@ ActiveRecord::Schema.define(version: 2021_03_11_031304) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookmarks", "activities"
+  add_foreign_key "bookmarks", "users"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
 end
