@@ -2,14 +2,22 @@
 
 # # This file should contain all the record creation needed to seed the database with its default values.
 # # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+
+
+# Cleans and resets database.
 Category.delete_all
 Activity.delete_all
 User.delete_all
 
+# Create default users
 User.create(email: "sam@user.com", nickname: 'Sammeehh', password: "password")
 User.create(email: "thembi@user.com", nickname: 'Thembeehh', password: "password")
 User.create(email: "shiv@user.com", nickname: "Shiveehh", password: "password")
 
+# Create default chatrooms
+Chatroom.create(name: "general")
+
+# Create categories(moods)
 Category.create(name: "Active")
 Category.create(name: "Romance")
 Category.create(name: "Outdoorsy")
