@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   resources :categories, only: [:index] do
     resources :activities, only: [:show, :new, :create]
   end
-
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+  end
   resource :dashboard, only: [:show]
   resource :bookmark, only: [:create, :destroy]
 
