@@ -2,7 +2,9 @@
   <h1>Choose your preferences</h1>
 
 <%= simple_form_for [ @activity ] do |f| %>
-    <%= f.input :start_time %>
+    <%= f.input :category, as: :select, collection: Category.all, prompt: 'Select a category', label: false %>
+    <%# f.date_field :start_time %>
+    <%= f.input :start_time, as: :date %>
     <%= f.submit "Submit", class: "btn btn-primary" %>
   <% end %>
 </div>

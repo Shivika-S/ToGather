@@ -9,12 +9,10 @@ class ActivitiesController < ApplicationController
       @activities = Activity.all
     end
     @activity = Activity.new
-    @random_event = Activity.all.sample
   end
 
   def show
     @activity = Activity.find(params[:id])
-    @random_event = Activity.all.sample
     @markers = [{
       lat: @activity.latitude,
       lng: @activity.longitude,
