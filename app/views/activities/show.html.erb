@@ -25,21 +25,26 @@
   </div>
     <div class="container-cards">
       <div class="show-cards">
-        <div class="show-card" style="background-image: url(<%= cl_image_path(@activity.photos[0].key,
-        class: "card-images", height: 600, fit: :clip) %>)">
-        </div>
-
-        <div class="show-card" style="background-image: url(<%= cl_image_path(@activity.photos[1].key,
-        class: "card-images", height: 600, fit: :clip) %>)">
-        </div>
-
-        <div class="show-card" style="background-image: url(<%= cl_image_path(@activity.photos[2].key,
-        class: "card-images", height: 600, fit: :clip) %>)">
-        </div>
-
-        <div class="show-card" style="background-image: url(<%= cl_image_path(@activity.photos[3].key,
-        class: "card-images", height: 600, fit: :clip) %>)">
-        </div>
+        <% if @activity.photos[0] %>
+          <div class="show-card" style="background-image: url(<%= cl_image_path(@activity.photos[0].key,
+            class: "card-images", height: 600, fit: :clip) %>)">
+          </div>
+        <% end %>
+        <% if @activity.photos[1] %>
+          <div class="show-card" style="background-image: url(<%= cl_image_path(@activity.photos[1].key,
+            class: "card-images", height: 600, fit: :clip) %>)">
+          </div>
+        <% end %>
+        <% if @activity.photos[2] %>
+          <div class="show-card" style="background-image: url(<%= cl_image_path(@activity.photos[2].key,
+            class: "card-images", height: 600, fit: :clip) %>)">
+          </div>
+        <% end %>
+        <% if @activity.photos[3] %>
+          <div class="show-card" style="background-image: url(<%= cl_image_path(@activity.photos[3].key,
+            class: "card-images", height: 600, fit: :clip) %>)">
+          </div>
+        <% end %>
       </div>
     </div>
   <%= social_share_button_tag(@activity.name) %>
