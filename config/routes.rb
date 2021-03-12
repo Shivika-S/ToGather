@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :activities, only: [:show]
   end
   resources :chatrooms, only: :show do
-    resources :messages, only: [:create :destroy]
+    resources :messages, only: :create
   end
   resource :dashboard, only: [:show]
   resource :bookmark, only: [:create, :destroy]
