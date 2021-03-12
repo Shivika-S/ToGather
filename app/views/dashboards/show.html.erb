@@ -1,7 +1,7 @@
 <div class="container">
   <h1>My Dashboard</h1>
   <br>
-  <h3>Your saved Activities</h3>
+  <h3>Activities you saved</h3>
 
 <ul>
     <% @bookmarks.each do |bookmark| %>
@@ -11,6 +11,25 @@
         <h5><strong><%= bookmark.activity.name %></strong></h5>
         <div>
           <%= link_to 'Remove', bookmark_path(bookmark.id), method: :delete, data: { confirm: "Are you sure you want to remove your bookmark?"} %>
+
+        </div>
+      <% end %>
+    <% end %>
+  </ul>
+
+ <% if @activities.exists? %>
+  <br>
+    <h3>Activities you created</h3>
+    <% end %>
+
+<ul>
+    <% @activities.each do |activity| %>
+      <% if activity.user == current_user %>
+        <br>
+        <br>
+        <h5><strong><%= activity.name %></strong></h5>
+        <div>
+          <%= link_to 'Delete', activity_path(activity.id), method: :delete, data: { confirm: "Are you sure you want to delete your activity?"} %>
 
         </div>
       <% end %>

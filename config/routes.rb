@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :activities, only: [:index, :new, :create]
+  resources :activities, only: [:index, :new, :create, :destroy]
   resources :categories, only: [:index] do
     resources :activities, only: [:show]
   end
@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   get "dashboard", to: "dashboards#show"
   get "bookmark", to: "dashboards#show"
+
 
   root to: 'pages#home'
 

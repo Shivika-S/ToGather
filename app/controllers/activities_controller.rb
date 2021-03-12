@@ -34,11 +34,18 @@ class ActivitiesController < ApplicationController
   def create
     @activity = Activity.new(activity_params)
     @activity.category = Category.find(params[:activity][:category])
+    @activity.user = current_user
     if @activity.save
       redirect_to category_activity_path(@activity.category, @activity)
     else
       render :new
     end
+  end
+
+  def destroy
+    @activity = Activity.find(params[:id])
+    @activity.destroy
+    redirect_to dashboard_path, :notice => "Your Activity has been deleted"
   end
 
   private
