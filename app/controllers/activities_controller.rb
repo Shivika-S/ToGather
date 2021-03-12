@@ -5,6 +5,7 @@ class ActivitiesController < ApplicationController
       @category = Category.find(params[:activity][:category_id]) if params[:activity][:category_id].present?
       @activities = Activity.where(category: @category)
       @activities = @activities.where("start_time > ?", @start_time)
+      # @activities = Category.find_by(name: "Sweat").activities
     else
       @activities = Activity.all
     end
@@ -48,6 +49,6 @@ class ActivitiesController < ApplicationController
   end
 
   def activity_params
-    params.require(:activity).permit(:name, :start_time, :address, :category_id, :cover_photo, :photos)
+    params.require(:activity).permit(:name, :start_time, :address, :category_id, :cover_photo, photos: [])
   end
 end

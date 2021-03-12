@@ -1,4 +1,5 @@
 # require 'csv'
+require "open-uri"
 
 # # This file should contain all the record creation needed to seed the database with its default values.
 # # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
@@ -150,15 +151,37 @@ CSV.open(filepath, "wb") do |csv|
   #   end
 
 sweat_url = [
-
+  "https://images.pexels.com/photos/6089998/pexels-photo-6089998.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+  "https://images.pexels.com/photos/6089998/pexels-photo-6089998.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+  "https://images.pexels.com/photos/6089998/pexels-photo-6089998.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+  "https://images.pexels.com/photos/6089998/pexels-photo-6089998.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+  "https://images.pexels.com/photos/6089998/pexels-photo-6089998.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+  "https://images.pexels.com/photos/6089998/pexels-photo-6089998.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+  "https://images.pexels.com/photos/6089998/pexels-photo-6089998.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+  "https://images.pexels.com/photos/6089998/pexels-photo-6089998.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+  "https://images.pexels.com/photos/6089998/pexels-photo-6089998.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+  "https://images.pexels.com/photos/6089998/pexels-photo-6089998.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+  "https://images.pexels.com/photos/6089998/pexels-photo-6089998.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
 ]
 
-# i = 0
-# while i < url.length
-#   file = URI.open(url[i])
-#   Portal.find(i+1).cover_photo.attach(io: file, filename: "#{Portal.find(i+1).name.downcase.gsub(' ', '_')}.jpg", content_type: 'image/jpg')
-#   i += 1
-# end
+romance_url = [
+  "https://mir-s3-cdn-cf.behance.net/user/276/43d12a484375211.5e82cb9aa97e0.jpg",
+  "https://avatars0.githubusercontent.com/u/18610657",
+  "https://unsplash.com/photos/plYDwH5DVNg",
+  "https://c.files.bbci.co.uk/C05F/production/_91374294_kennytrottmedals.jpg",
+  "https://unsplash.com/photos/WUmb_eBrpjs",
+  "https://unsplash.com/photos/AWOl7qqsffM",
+  "https://tramrestaurant.com.au/wp-content/uploads/2016/05/TCR-HERO2-WEB.jpg",
+  "https://cdn.theculturetrip.com/wp-content/uploads/2016/01/TWOskyhighmtdandenong.jpg",
+  "https://unsplash.com/photos/6Woj_wozqmA",
+  "https://unsplash.com/photos/J39X2xX_8CQ",
+  "https://unsplash.com/photos/hzp_aT02R48",
+  "https://unsplash.com/photos/vGQ49l9I4EE",
+  "https://unsplash.com/photos/FQLlUw5-zBo",
+  "https://unsplash.com/photos/-sKTFTKTkKg",
+  "https://unsplash.com/photos/0SC8Ir7AzUg",
+  "https://unsplash.com/photos/Y0NJeNm0zIY"
+]
 
 i = 0
 Category.find_by(name: "Sweat").activities.each do |activity|
@@ -166,5 +189,13 @@ Category.find_by(name: "Sweat").activities.each do |activity|
   activity.cover_photo.attach(io: file, filename: "#{activity.name.downcase.gsub(' ', '_')}.jpg", content_type: 'image/jpg')
   i += 1
 end
+
+i = 0
+Category.find_by(name: "Romance").activities.each do |activity|
+  file = URI.open(romance_url[i])
+  activity.cover_photo.attach(io: file, filename: "#{activity.name.downcase.gsub(' ', '_')}.jpg", content_type: 'image/jpg')
+  i += 1
+end
+
 
 

@@ -36,6 +36,13 @@
   text-decoration: none;
   transition: transform 0.6s, box-shadow 0.6s;
   -webkit-backface-visibility: hidden;
+  position: relative;
+  .bookmark-buttons {
+    position: absolute;
+    top: 17px;
+    right: 13px;
+  }
+
 }
 
 .card:hover {
