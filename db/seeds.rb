@@ -149,3 +149,22 @@ CSV.open(filepath, "wb") do |csv|
   #     )
   #   end
 
+sweat_url = [
+
+]
+
+# i = 0
+# while i < url.length
+#   file = URI.open(url[i])
+#   Portal.find(i+1).cover_photo.attach(io: file, filename: "#{Portal.find(i+1).name.downcase.gsub(' ', '_')}.jpg", content_type: 'image/jpg')
+#   i += 1
+# end
+
+i = 0
+Category.find_by(name: "Sweat").activities.each do |activity|
+  file = URI.open(sweat_url[i])
+  activity.cover_photo.attach(io: file, filename: "#{activity.name.downcase.gsub(' ', '_')}.jpg", content_type: 'image/jpg')
+  i += 1
+end
+
+

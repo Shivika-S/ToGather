@@ -25,3 +25,70 @@
         text-shadow: 0 0 10px rgba(0,0,0,0.7);
     }
 }
+
+.card {
+  margin-top: 40px;
+  width: 100%;
+  margin-bottom: 30px;
+  border: none;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1), 0 15px 40px rgba(166,173,201,.2);
+  border-radius: 10px;
+  text-decoration: none;
+  transition: transform 0.6s, box-shadow 0.6s;
+  -webkit-backface-visibility: hidden;
+}
+
+.card:hover {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+  // -webkit-transform: translateY(-10px);
+  // transform: translateY(-10px);
+
+  -webkit-box-shadow: 0 10px 30px rgba(0,0,0,0.23), 0 15px 40px rgba(166,173,201,.2);
+  box-shadow: 0 10px 10px rgba(0,0,0,0.23), 0 15px 40px rgba(166,173,201,.2);
+}
+
+.card a:link {
+  text-decoration: none;
+}
+
+.card-columns {
+  column-gap: 3.5rem;
+  column-fill: balance;
+}
+
+.card-images {
+  height: 200px;
+  width: 100%;
+  border: none;
+  border-radius: 8px 8px 0 0;
+  object-fit: cover;
+}
+
+#card_details {
+  position: relative;
+  margin: auto;
+  padding: 12px;
+  color: black;
+  border-radius: 0 0 8px 8px;
+  background-color: #F4F4F4;
+  font-family: 'Noto Sans SC', sans-serif;
+  font-weight: 100;
+  p {
+    margin-bottom: 9px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+  }
+  button {
+    position: absolute;
+    bottom: 17px;
+    right: 13px;
+    border-radius: 4px;
+    padding: 1px 12px;
+    &:hover {
+      background-color: #F4F4F4;
+      color: #1EDD88;
+    }
+  }
+}

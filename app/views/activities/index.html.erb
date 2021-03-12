@@ -20,4 +20,24 @@
     </div>
 </div>
 
+  <div class="card-columns">
+    <% @activities.each do |activity| %>
+      <div class="card" >
+        <%= link_to category_activity_path(@category, activity) do %>
+            <% if activity.cover_photo.attached? %>
+              <%= cl_image_tag(activity.cover_photo.key,
+                class: "card-images", height: 300, fit: :clip) %>
+            <% end %>
+          <div id="card_details">
+            <h5><%= activity.name %></h5>
+            <p class="mb-3"><%= activity.description %></p>
+            <p><strong>$<%= activity.start_time %></strong></p>
+            <% if @start_time == activity.start_time %>
+              <button class="btn btn-outline-warning">Today</button>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 
