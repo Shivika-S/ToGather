@@ -23,7 +23,7 @@
           <div id="card_details">
             <h5><%= activity.name %></h5>
             <p class="mb-3"><%= activity.description %></p>
-            <p><strong>$<%= activity.start_time %></strong></p>
+            <!-- <p><strong><%= activity.start_time %></strong></p> -->
             <% if @start_time == activity.start_time %>
               <button class="btn btn-outline-warning">Today</button>
             <% end %>
