@@ -7,6 +7,7 @@ class ActivitiesController < ApplicationController
       @category = Category.find(params[:activity][:category_id]) if params[:activity][:category_id].present?
       @activities = Activity.where(category: @category)
       @activities = @activities.where("start_time > ?", @start_time)
+      # @activities = Category.find_by(name: "Sweat").activities
     else
       @activities = Activity.all
     end
@@ -21,6 +22,9 @@ class ActivitiesController < ApplicationController
       infoWindow: render_to_string(partial: "info_window", locals: { activity: @activity }),
       # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
     }]
+    @chatroom = Chatroom.find_by(name: @activity.name)
+    # ||= will only set to value if @chatroom is nil
+    @chatroom ||= Chatroom.create!(name: @activity.name)
   end
 
   def new
@@ -57,6 +61,6 @@ class ActivitiesController < ApplicationController
   end
 
   def activity_params
-    params.require(:activity).permit(:name, :start_time, :address, :category_id)
+    params.require(:activity).permit(:name, :start_time, :address, :category_id, :cover_photo, photos: [])
   end
 end
