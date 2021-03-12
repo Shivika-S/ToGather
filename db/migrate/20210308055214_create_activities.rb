@@ -8,6 +8,7 @@ class CreateActivities < ActiveRecord::Migration[6.0]
       t.float :latitude
       t.float :longitude
       t.references :category
+      t.references :user
       t.string :address
       t.string :status
 
