@@ -5,6 +5,7 @@
       <p><%= @activity.description %></p>
       <p><%= @activity.address %></p>
       <p><%= @activity.start_time %></p>
+      <%= link_to 'Event Chat', chatroom_path(@chatroom.id), class: "btn btn-info" %>
     </div>
 
     <div class="map-container">
