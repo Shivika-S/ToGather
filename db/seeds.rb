@@ -1,4 +1,5 @@
 # require 'csv'
+require "open-uri"
 
 # # This file should contain all the record creation needed to seed the database with its default values.
 # # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
@@ -125,3 +126,63 @@ CSV.open(filepath, "wb") do |csv|
     )
   end
 
+
+sweat_url = [
+  "https://images.pexels.com/photos/6089998/pexels-photo-6089998.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+  "https://images.pexels.com/photos/6089998/pexels-photo-6089998.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+  "https://images.pexels.com/photos/6089998/pexels-photo-6089998.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+  "https://images.pexels.com/photos/6089998/pexels-photo-6089998.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+  "https://images.pexels.com/photos/6089998/pexels-photo-6089998.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+  "https://images.pexels.com/photos/6089998/pexels-photo-6089998.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+  "https://images.pexels.com/photos/6089998/pexels-photo-6089998.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+  "https://images.pexels.com/photos/6089998/pexels-photo-6089998.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+  "https://images.pexels.com/photos/6089998/pexels-photo-6089998.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+  "https://images.pexels.com/photos/6089998/pexels-photo-6089998.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+  "https://images.pexels.com/photos/6089998/pexels-photo-6089998.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
+]
+
+romance_url = [
+  "https://mir-s3-cdn-cf.behance.net/user/276/43d12a484375211.5e82cb9aa97e0.jpg",
+  "https://avatars0.githubusercontent.com/u/18610657",
+  "https://unsplash.com/photos/plYDwH5DVNg",
+  "https://c.files.bbci.co.uk/C05F/production/_91374294_kennytrottmedals.jpg",
+  "https://unsplash.com/photos/WUmb_eBrpjs",
+  "https://unsplash.com/photos/AWOl7qqsffM",
+  "https://tramrestaurant.com.au/wp-content/uploads/2016/05/TCR-HERO2-WEB.jpg",
+  "https://cdn.theculturetrip.com/wp-content/uploads/2016/01/TWOskyhighmtdandenong.jpg",
+  "https://unsplash.com/photos/6Woj_wozqmA",
+  "https://unsplash.com/photos/J39X2xX_8CQ",
+  "https://unsplash.com/photos/hzp_aT02R48",
+  "https://unsplash.com/photos/vGQ49l9I4EE",
+  "https://unsplash.com/photos/FQLlUw5-zBo",
+  "https://unsplash.com/photos/-sKTFTKTkKg",
+  "https://unsplash.com/photos/0SC8Ir7AzUg",
+  "https://unsplash.com/photos/Y0NJeNm0zIY"
+]
+
+i = 0
+Category.find_by(name: "Sweat").activities.each do |activity|
+  file = URI.open(sweat_url[i])
+  activity.cover_photo.attach(io: file, filename: "#{activity.name.downcase.gsub(' ', '_')}.jpg", content_type: 'image/jpg')
+  i += 1
+end
+
+i = 0
+Category.find_by(name: "Romance").activities.each do |activity|
+  file = URI.open(romance_url[i])
+  activity.cover_photo.attach(io: file, filename: "#{activity.name.downcase.gsub(' ', '_')}.jpg", content_type: 'image/jpg')
+  i += 1
+end
+
+
+file = URI.open("https://images.unsplash.com/photo-1544622428-56b8d9eed7db?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1500&q=80")
+Category.find_by(name: "Romance").activities.find_by(name: "Cute dinner with Thembi").photos.attach(io: file, filename: "tajmahal1.jpg", content_type: 'image/jpg')
+
+file = URI.open("https://images.unsplash.com/photo-1575489181784-a99aa58e4bb5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2791&q=80")
+Category.find_by(name: "Romance").activities.find_by(name: "Cute dinner with Thembi").photos.attach(io: file, filename: "tajmahal2.jpg", content_type: 'image/jpg')
+
+file = URI.open("https://images.unsplash.com/photo-1524491887412-14c265900364?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1780&q=80")
+Category.find_by(name: "Romance").activities.find_by(name: "Cute dinner with Thembi").photos.attach(io: file, filename: "tajmahal3.jpg", content_type: 'image/jpg')
+
+file = URI.open("https://images.unsplash.com/photo-1598639753591-053c3e1477dd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1908&q=80")
+Category.find_by(name: "Romance").activities.find_by(name: "Cute dinner with Thembi").photos.attach(io: file, filename: "tajmahal4.jpg", content_type: 'image/jpg')
