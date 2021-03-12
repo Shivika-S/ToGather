@@ -12,7 +12,7 @@ class BookmarksController < ApplicationController
     end
   end
 
-   def destroy
+  def destroy
     @bookmark = Bookmark.find_by(params[:activity_id])
     @bookmark.destroy
     redirect_to dashboard_path, :notice => "You've removed this activity from your bookmarks"
