@@ -1,4 +1,6 @@
 class ActivitiesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show, :new, :create, :destroy]
+
   def index
     if params[:activity] && activity_params[:category_id] && activity_params[:start_time]
       @start_time = format_datetime(params[:activity][:start_time])
