@@ -9,11 +9,14 @@ Category.delete_all
 Activity.delete_all
 User.delete_all
 Chatroom.delete_all
+Message.delete_all
 
 # Create default users
-User.create(email: "sam@user.com", nickname: 'Sammeehh', password: "password")
-User.create(email: "thembi@user.com", nickname: 'Thembeehh', password: "password")
-User.create(email: "shiv@user.com", nickname: "Shiveehh", password: "password")
+User.create(email: "sam@user.com", nickname: 'SammyMacDaddy', password: "password")
+User.create(email: "thembi@user.com", nickname: 'Thembizzle', password: "password")
+User.create(email: "shiv@user.com", nickname: "BigShiv", password: "password")
+User.create(email: "fili@user.com", nickname: "FiliSexy", password: "password")
+User.create(email: "chuck-norris@user.com", nickname: "Sensei Chuck", password: "password")
 
 # Create default chatrooms
 Chatroom.create(name: "general")
