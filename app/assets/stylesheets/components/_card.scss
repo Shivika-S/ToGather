@@ -1,0 +1,27 @@
+.container-cards {
+    display: flex;
+    height: 100%;
+    margin: 0px 1rem;
+    margin-top: 2rem;
+    .show-cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1em;
+        flex-grow: 1;
+        margin-right: 1rem;
+    }
+    .show-card {
+        background-size: cover;
+        background-position: center;
+        height: 150px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        font-size: 22px;
+        color: white;
+        font-weight: bolder;
+        text-shadow: 0 0 10px rgba(0,0,0,0.7);
+    }
+}
