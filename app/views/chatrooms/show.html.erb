@@ -1,14 +1,27 @@
-<%= simple_form_for [ @chatroom, @message ] do |f| %>
-  <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
-<% end %>
-
-<h1>#<%= @chatroom.name %></h1>
-<div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-  <% @chatroom.messages.each do |message| %>
-    <%= render 'messages/message', message: message%>
-  <% end %>
+<div class="chat-wrapper">
+    <div class="events">
+        <div class="event-name">
+        chat #1
+        </div>
+        <div class="event-name">
+        chat #2
+        </div>
+        <div class="event-name">
+        chat #3
+        </div>
+        <div class="event-name">
+        chat #4
+        </div>
+    </div>
+    <div class="conversation-wrap">
+        <h1>#<%= @chatroom.name %></h1>
+        <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+        <% @chatroom.messages.each do |message| %>
+            <%= render 'messages/message', message: message%>
+        <% end %>
+        </div>
+        <%= simple_form_for [ @chatroom, @message ] do |f| %>
+        <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
+        <% end %>
+    </div>
 </div>
-
-<%# <div class="delete button">
-    <%= link_to 'Clear Messages', chatroom_path(@chatroom.id), class: "btn btn-info", method: :delete, data: { confirm: "Are you sure you want to remove your bookmark?"} %>
-<%# </div> %>
