@@ -22,16 +22,17 @@
     <h3>Activities you created</h3>
     <% end %>
 
-<ul>
     <% @activities.each do |activity| %>
-      <% if activity.user == current_user %>
-        <br>
-        <br>
-        <h5><strong><%= activity.name %></strong></h5>
-        <div>
-          <%= link_to 'Edit', edit_activity_path(activity), class: "btn btn-warning" %>
-          <%= link_to 'Delete', activity_path(activity.id), method: :delete, data: { confirm: "Are you sure you want to delete your activity?"}, class: "btn btn-danger" %>
-        </div>
+      <%= link_to category_activity_path(activity.category, activity) do %>
+        <% if activity.user == current_user %>
+          <br>
+          <br>
+          <h5><strong><%= activity.name %></strong></h5>
+          <div>
+            <%= link_to 'Edit', edit_activity_path(activity), class: "btn btn-warning" %>
+            <%= link_to 'Delete', activity_path(activity.id), method: :delete, data: { confirm: "Are you sure you want to delete your activity?"}, class: "btn btn-danger" %>
+          </div>
+        <% end %>
       <% end %>
     <% end %>
-  </ul>
+

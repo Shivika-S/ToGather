@@ -70,9 +70,9 @@ class ActivitiesController < ApplicationController
     # user_date = utc_date.in_time_zone(time_zone)
   end
 
-  def activities_on_day(activities, date)
-    activities = activities.where(:start_time => date.beginning_of_day..date.end_of_day)
-  end
+  # def activities_on_day(activities, date)
+  #   activities = activities.where(:start_time => date.beginning_of_day..date.end_of_day)
+  # end
 
   def activity_params
     params.require(:activity).permit(:name, :start_time, :address, :category_id, :cover_photo, photos: [])
