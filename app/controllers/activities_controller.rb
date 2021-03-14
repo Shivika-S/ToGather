@@ -42,6 +42,17 @@ class ActivitiesController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @activity.update(activity_params)
+      redirect_to dashboard_path
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @activity = Activity.find(params[:id])
     @activity.destroy
