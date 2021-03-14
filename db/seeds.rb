@@ -6,11 +6,11 @@ require "open-uri"
 
 
 # Cleans and resets database.
-Category.delete_all
 Activity.delete_all
-User.delete_all
-Chatroom.delete_all
+Category.delete_all
 Message.delete_all
+Chatroom.delete_all
+User.delete_all
 
 # Create default users
 
@@ -97,7 +97,7 @@ Category.find_by(name: "Low-Fi").activities.create(name: "Como House & Gardens",
 # Turnt Category
 Category.find_by(name: "Turnt").activities.create(name: "Milk the Cow", address: "323 Lygon Street, Carlton, Victoria, 3053", description: "Not literally... But! You sure can satisfy those late-night cheese cravings at Milk the Cow, a sophisticated wine and cheese bar. This licensed fromagerie boasts a selection of more than 150 artisan cheeses from across the globe as well as seasonal cheeses which are available to enjoy on site, by the gram or in a takeaway Cheesebox.", start_time: "2021-03-31")
 Category.find_by(name: "Turnt").activities.create(name: "Pawn & Co.", address: "177 Greville Street, Prahran Victoria, 3181", description: "Everything inside is up for sale so you can spend a little cash on furniture for instance alongside ordering one of the many unique cocktails on offer such as the Gunpowder Iced Tea with rum, chilli-infused peach tea and chocolate! Pawn & Co. is one of those bars that you need to visit whether you’re a local or a visitor…just make sure if you’re travelling you don’t purchase a grand piano…might be a little large for carry-on luggage!", start_time: "2021-03-21")
-Category.find_by(name: "Turnt").activities.create(name: "Antique Bar", address: "218 Glen Huntly Road, Elsternwick Victoria, 3185", description: "Feel like an endless supply of wine? Antique Bar has you covered! With a $29 wine buffet every Sunday, you’ll be in for a well-worthy hangover on Monday (and a potential sick day!")
+Category.find_by(name: "Turnt").activities.create(name: "Antique Bar", address: "218 Glen Huntly Road, Elsternwick Victoria, 3185", description: "Feel like an endless supply of wine? Antique Bar has you covered! With a $29 wine buffet every Sunday, you’ll be in for a well-worthy hangover on Monday (and a potential sick day!", start_time: "2021-03-31")
 Category.find_by(name: "Turnt").activities.create(name: "George’s Bar", address: "120 Johnston Street, Fitzroy Victoria, 3065", description: "If you’re obsessed with the American sitcom Seinfeld and want anything and everything George Constanza related, then you’ve come to the right place. A welcoming environment and uber cool vibe that will keep you coming back for more. Whether you’re in the mood for a $5 toastie to ago alongside your drink, $2 pretzels or a hump day catch up with a friends in one of their cosy booths, George’s Bar is the place for you.", start_time: "2021-03-21")
 Category.find_by(name: "Turnt").activities.create(name: "Berlin Bar", address: "160 Corrs Lane, Melbourne Victoria, 3000", description: "Firstly, you need to ring the doorbell to get in. But once “invited in”, you ‘ll see why Berlin Bar is an old favourite. The venue is split into two sections, East and West – just like Berlin city. Once you’ve decided which side you’re a part of, and think carefully, you can let the fun begin! Order one of Berlin Bar’s quirky cocktails and enjoy it in their cosy 1980’s indoor setting with dim lighting for a glamorous ambiance.", start_time: "2021-03-24")
 
@@ -160,20 +160,42 @@ sweat_url = [
 romance_url = [
   "https://mir-s3-cdn-cf.behance.net/user/276/43d12a484375211.5e82cb9aa97e0.jpg",
   "https://avatars0.githubusercontent.com/u/18610657",
-  "https://unsplash.com/photos/plYDwH5DVNg",
+  "https://images.unsplash.com/photo-1609150883040-cfd45714ce10?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80",
   "https://c.files.bbci.co.uk/C05F/production/_91374294_kennytrottmedals.jpg",
-  "https://unsplash.com/photos/WUmb_eBrpjs",
-  "https://unsplash.com/photos/AWOl7qqsffM",
+  "https://images.unsplash.com/photo-1516251193007-45ef944ab0c6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+  "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1049&q=80",
   "https://tramrestaurant.com.au/wp-content/uploads/2016/05/TCR-HERO2-WEB.jpg",
   "https://cdn.theculturetrip.com/wp-content/uploads/2016/01/TWOskyhighmtdandenong.jpg",
-  "https://unsplash.com/photos/6Woj_wozqmA",
-  "https://unsplash.com/photos/J39X2xX_8CQ",
-  "https://unsplash.com/photos/hzp_aT02R48",
-  "https://unsplash.com/photos/vGQ49l9I4EE",
-  "https://unsplash.com/photos/FQLlUw5-zBo",
-  "https://unsplash.com/photos/-sKTFTKTkKg",
-  "https://unsplash.com/photos/0SC8Ir7AzUg",
-  "https://unsplash.com/photos/Y0NJeNm0zIY"
+  "https://images.unsplash.com/photo-1504609813442-a8924e83f76e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+  "https://images.unsplash.com/photo-1478720568477-152d9b164e26?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80",
+  "https://images.unsplash.com/photo-1534294228306-bd54eb9a7ba8?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1423483641154-5411ec9c0ddf?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+  "https://images.unsplash.com/photo-1524312313182-97977efa82a6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+  "https://images.unsplash.com/photo-1610520342147-1c2208882eab?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80",
+  "https://images.unsplash.com/photo-1535679706075-20c8cf734c95?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1025&q=80",
+  "https://images.unsplash.com/photo-1572037958571-83764a7e4f9e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=675&q=80"
+]
+
+turnt_url = [
+  "https://images.unsplash.com/photo-1551790629-9d5c2d781d8b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1399&q=80",
+  "https://images.unsplash.com/photo-1588324277032-12be8278042c?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=668&q=80",
+  "https://images.unsplash.com/photo-1543007630-9710e4a00a20?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80",
+  "https://cdn.concreteplayground.com/content/uploads/2017/06/The-George-Collins-Earl-Carter-1440x1440.jpeg",
+  "https://images.unsplash.com/photo-1612127265620-72d07b96558f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=712&q=80"
+]
+
+outdoorsy = [
+  "https://images.unsplash.com/photo-1607304664767-33f6a01ef9b4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80",
+  "https://images.unsplash.com/flagged/photo-1593971784349-9681f0662bc6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80",
+  "https://images.unsplash.com/photo-1591793923243-5000761483c8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+  "https://mir-s3-cdn-cf.behance.net/project_modules/disp/f3fe7715195021.5628e548e2076.JPG",
+  "https://images.unsplash.com/photo-1499384048662-8f714ec1420d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1355&q=80",
+  "https://images.unsplash.com/photo-1611244806964-91d204d4a2a7?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
+  "https://images.unsplash.com/photo-1522866348293-55be2c6caa1f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
+  "https://www.parks.vic.gov.au/-/media/project/pv/main/parks/images/places-to-see/croajingolong-national-park/point-hicks-dispersal-area/aerial-view-croajingalong-national-park-1920x1124.jpg?thn=0&w=764&bc=FFFFFF&hash=39C4096569827BE994FB76904274F147FFD94B3C",
+  "https://images.unsplash.com/photo-1536598271160-65bd0d8380bd?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1268&q=80",
+  "https://images.unsplash.com/photo-1535082623926-b39352a03fb7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1368&q=80",
+  "https://images.unsplash.com/photo-1508974462591-3c124867fdf8?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1352&q=80"
 ]
 
 i = 0
@@ -190,6 +212,19 @@ Category.find_by(name: "Romance").activities.each do |activity|
   i += 1
 end
 
+i = 0
+Category.find_by(name: "Turnt").activities.each do |activity|
+  file = URI.open(turnt_url[i])
+  activity.cover_photo.attach(io: file, filename: "#{activity.name.downcase.gsub(' ', '_')}.jpg", content_type: 'image/jpg')
+  i += 1
+end
+
+i = 0
+Category.find_by(name: "Outdoorsy").activities.each do |activity|
+  file = URI.open(outdoorsy_url[i])
+  activity.cover_photo.attach(io: file, filename: "#{activity.name.downcase.gsub(' ', '_')}.jpg", content_type: 'image/jpg')
+  i += 1
+end
 
 file = URI.open("https://images.unsplash.com/photo-1544622428-56b8d9eed7db?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1500&q=80")
 Category.find_by(name: "Romance").activities.find_by(name: "Cute dinner with Thembi").photos.attach(io: file, filename: "tajmahal1.jpg", content_type: 'image/jpg')
