@@ -1,0 +1,14 @@
+
+<div class="container">
+  <h1>Update your activity</h1>
+
+  <%= simple_form_for [ @activity ] do |f| %>
+    <%= f.input :category, as: :select, collection: Category.all, prompt: 'Select a category', label: false %>
+    <%= f.input :name %>
+    <%= f.input :start_time, as: :date %>
+    <%= f.input :cover_photo, as: :file %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.submit "Update", class: "btn btn-primary" %>
+  <% end %>
+</div>
+
