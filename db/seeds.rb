@@ -13,11 +13,16 @@ Chatroom.delete_all
 Message.delete_all
 
 # Create default users
-User.create(email: "sam@user.com", nickname: 'SammyMacDaddy', password: "password")
-User.create(email: "thembi@user.com", nickname: 'Thembizzle', password: "password")
-User.create(email: "shiv@user.com", nickname: "BigShiv", password: "password")
-User.create(email: "fili@user.com", nickname: "FiliSexy", password: "password")
-User.create(email: "chuck-norris@user.com", nickname: "Sensei Chuck", password: "password")
+
+User.create(email: "one@user.com", nickname: "Userone", password: "password")
+User.create(email: "two@user.com", nickname: "usertwo", password: "password")
+
+
+# User.create(email: "sam@user.com", nickname: 'SammyMacDaddy', password: "password")
+# User.create(email: "thembi@user.com", nickname: 'Thembizzle', password: "password")
+# User.create(email: "shiv@user.com", nickname: "BigShiv", password: "password")
+# User.create(email: "fili@user.com", nickname: "FiliSexy", password: "password")
+# User.create(email: "chuck-norris@user.com", nickname: "Sensei Chuck", password: "password")
 
 # Create default chatrooms
 Chatroom.create(name: "general")
@@ -101,6 +106,17 @@ Category.find_by(name: "Broke-Ass").activities.create(name: "Spleen (Bar)", addr
 Category.find_by(name: "Broke-Ass").activities.create(name: "Sample, Samples, Samples", address: "Queen Street, Melbourne Victoria 3000", description: "Did you know that one of the best things to do in Melbourne is also free? Yep, here at Queen Vic Market, you’ll be able to peruse the sheds and spy all the great fruit, veg, meat, dairy and smallgoods. If you’re lucky, there might be a few stalls handing out free samples - stick around the cheese section and you will be rewarded!",start_time: "2021-03-19")
 Category.find_by(name: "Broke-Ass").activities.create(name: "Creator's market", address: "Queen Street, Melbourne Victoria 3000", description: "Melbourne is home to many unique designers and independent makers, and one of the best events to discover local talent is at The Creator’s Market. As one of the largest handmade and homemade markets, you’ll find a huge selection of tasty sweets, savoury treats, home wares, emerging fashion and jewellery designers, children’s toys and much more. Specially curated so there are no more than two exhibitors selling similar items, they showcase a diverse range of Melbourne’s best creators.", start_time: "2021-03-23")
 Category.find_by(name: "Broke-Ass").activities.create(name: "Readings", address: "309 Lygon Street, Carlton Victoria 3053", description: "It’s not often that you see crowds hanging out at a bookshop at 10pm on a Saturday night, but that’s Readings for you – proof that there’s still a place for great independent bookshops (which don’t frown on people reading a little before they buy, mind you). This landmark bookstore isn’t just famous in Melbourne either. Readings Carlton won international acclaim in 2016 when it was awarded the ‘Bookstore of the Year’ award at the London Book Fair International Excellence Awards.", start_time: "2021-03-25")
+
+# Assigning a user to each activity
+Activity.all.each do |activity|
+  if activity.id.odd?
+    activity.user = User.find_by(email: "one@user.com")
+    activity.save
+  else
+    activity.user = User.find_by(email: "two@user.com")
+    activity.save
+  end
+end
 
 # Scraping data tha relates to outdoor related activities.
 response = HTTParty.get('https://api.meetup.com/outdoors-adventure/events?page=20')
