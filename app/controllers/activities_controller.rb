@@ -1,5 +1,6 @@
 class ActivitiesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show, :new, :create, :destroy]
+  before_action :set_activity, only: [:show, :edit, :update, :destroy]
 
   def index
     if params[:activity] && activity_params[:category_id] && activity_params[:start_time]
@@ -15,7 +16,6 @@ class ActivitiesController < ApplicationController
   end
 
   def show
-    @activity = Activity.find(params[:id])
     @markers = [{
       lat: @activity.latitude,
       lng: @activity.longitude,
@@ -54,12 +54,15 @@ class ActivitiesController < ApplicationController
   end
 
   def destroy
-    @activity = Activity.find(params[:id])
     @activity.destroy
     redirect_to dashboard_path, :notice => "Your Activity has been deleted"
   end
 
   private
+
+  def set_activity
+    @activity = Activity.find(params[:id])
+  end
 
   def format_datetime(date)
     utc_datetime = Date.parse(date).to_datetime
