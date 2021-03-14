@@ -16,10 +16,10 @@
           <%= link_to 'Save', bookmark_path(activity_id: activity.id), method: :post, class: "btn btn-outline-success" %>
         </div>
         <%= link_to category_activity_path(:category_id, activity) do %>
-            <% if activity.cover_photo.attached? %>
-              <%= cl_image_tag(activity.cover_photo.key,
-                class: "card-images", height: 300, fit: :clip) %>
-            <% end %>
+          <% if activity.cover_photo.attached? %>
+            <%= cl_image_tag(activity.cover_photo.key,
+              class: "card-images", height: 300, fit: :clip) %>
+          <% end %>
           <div id="card_details">
             <h5><%= activity.name %></h5>
             <p class="mb-3"><%= activity.description %></p>
