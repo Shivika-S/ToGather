@@ -10,9 +10,6 @@
 //   height: 400px;
 //   width: 800px;
 // }
-.modal-height {
-  height: 100vh;
-}
 
 .show-image {
   height: 95vh;
@@ -21,10 +18,8 @@
 }
 
 .carousel {
-  position: relative;
   display: flex;
   justify-content: center;
-  height: 95vh;
   width: 100%;
 }
 
@@ -92,9 +87,9 @@
   height: 400px;
 }
 
-.carousel-indicators {
-  height: 262px;
-}
+// .carousel-indicators {
+//   height: 262px;
+// }
 
 .index-carousel-pic {
   height: 95vh;
