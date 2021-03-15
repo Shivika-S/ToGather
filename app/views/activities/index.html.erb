@@ -33,33 +33,35 @@
       <!-- Modal -->
       <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
+          <div class="modal-content" style="border-radius: 10px;">
+            <div class="modal-body" id="body-of-modal">
               <div class="d-flex justify-content-center">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                   <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
                   </ol>
                   <div id="show-title">
                     <h1><%= @activity.name %></h1>
                   </div>
                   <div class="carousel-inner">
-                    <div class="show-card" style="background-image: url(<%= cl_image_path(activity.photos[0].key,
-                      class: "card-images", height: 600, fit: :clip) %>)">
+                    <div class="carousel-item active">
+                      <img class="carousel-pic" src=<%= cl_image_path(activity.cover_photo.key,
+                        height: 200) %> alt="#">
                     </div>
                     <div class="carousel-item">
-                      <img class="d-block show-image" src="https://images.unsplash.com/photo-1423483641154-5411ec9c0ddf?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="Second slide">
+                      <img class="carousel-pic" src=<%= cl_image_path(activity.photos[0].key,
+                        height: 200) %> alt="#">
                     </div>
                     <div class="carousel-item">
-                      <img class="d-block show-image" src="https://images.unsplash.com/photo-1535679706075-20c8cf734c95?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1025&q=80" alt="Third slide">
+                      <img class="carousel-pic" src=<%= cl_image_path(activity.photos[1].key,
+                        height: 200) %> alt="#">
+                    </div>
+                    <div class="carousel-item">
+                      <img class="carousel-pic" src=<%= cl_image_path(activity.photos[2].key,
+                        height: 200) %> alt="#">
                     </div>
                   </div>
                   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

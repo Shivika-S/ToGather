@@ -31,3 +31,24 @@
   top: 120px;
   z-index: 1000;
 }
+
+
+.carousel-pic {
+  height: 400px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.modal-body {
+  height: 430px;
+}
+
+#body-of-modal {
+  padding: 0;
+}
+
+#carouselExampleIndicators {
+  height: 400px;
+}
