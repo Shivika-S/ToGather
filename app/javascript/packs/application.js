@@ -31,3 +31,10 @@ document.addEventListener("turbolinks:load", () => {
   initMapbox();
   initChatroomCable();
 });
+
+import { initUpdateNavbarOnScroll } from '../channels/navbar';
+
+document.addEventListener('turbolinks:load', () => {
+  // Call your JS functions here
+  initUpdateNavbarOnScroll();
+});

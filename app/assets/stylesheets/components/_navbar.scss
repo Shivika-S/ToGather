@@ -1,17 +1,26 @@
 #main-navbar {
   display: flex;
   justify-content: space-between;
+  background-color: rgba( 255, 255, 255, 0.1);
+  transition: 0.5s background-color ease;
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
 }
 
 .navbar {
   height: 55px;
   font-size: 12px;
   display: flex;
-  justify-content: space-between;
-  .navbar-dice img {
-    width: 40px;
-    height: 40px;
-  }
+  // justify-content: space-between;
+  // .navbar-dice img {
+  //   width: 40px;
+  //   height: 40px;
+  // }
+}
+
+.nav-link {
+   color: white !important;
 }
 
 .navbar-logo .navbar-brand img {
@@ -23,7 +32,7 @@
   justify-content: flex-end;
 }
 
-.middle-nav {
-  display: flex;
-  justify-content: center;
-}
+// .middle-nav {
+//   display: flex;
+//   justify-content: center;
+// }
