@@ -12,3 +12,4 @@ const initUpdateNavbarOnScroll = () => {
 }
 
 export { initUpdateNavbarOnScroll };
+
