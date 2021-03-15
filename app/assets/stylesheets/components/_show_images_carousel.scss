@@ -1,5 +1,5 @@
 // img {
-//   height: 400px;
+//   height: 50vh;
 //   width: 800px;
 //   object-fit: cover;
 // }
@@ -7,12 +7,9 @@
 // .carousel {
 //   display: flex;
 //   justify-content: center;
-//   height: 400px;
+//   height: 50vh;
 //   width: 800px;
 // }
-.modal {
-  margin-top: 88px;
-}
 
 .show-image {
   height: 95vh;
@@ -21,10 +18,8 @@
 }
 
 .carousel {
-  position: relative;
   display: flex;
   justify-content: center;
-  height: 95vh;
   width: 100%;
 }
 
@@ -38,7 +33,7 @@
 
 
 .carousel-pic {
-  height: 400px;
+  height: 50vh;
   width: 100%;
   border: none;
   border-radius: 8px;
@@ -46,7 +41,7 @@
 }
 
 #body-of-modal {
-  height: 400px;
+  height: 50vh;
   padding: 0;
   position: relative;
 }
@@ -80,21 +75,22 @@
   right: 0;
   background-color: rgba(0,0,0,0.2);
   z-index: 5;
+  border-radius: 10px;
 }
 
 .carousel-control-prev {
   z-index: 10;
-  height: 400px;
+  height: 50vh;
 }
 
 .carousel-control-next {
   z-index: 10;
-  height: 400px;
+  height: 50vh;
 }
 
-.carousel-indicators {
-  height: 262px;
-}
+// .carousel-indicators {
+//   height: 262px;
+// }
 
 .index-carousel-pic {
   height: 95vh;
