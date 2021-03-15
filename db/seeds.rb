@@ -78,7 +78,6 @@ Category.find_by(name: "Outdoorsy").activities.create(name: "Amazing Race!", add
 Category.find_by(name: "Outdoorsy").activities.create(name: "Croajingolong", address: "W Wingan Rd, Wingan River Victoria 3891", description: "They say that good things come to those who wait. And while six hours may seem like a long time, it's well worth the road-trip for the swimming spot of your dreams. Grab a few mates, a tent and get ready to hit the beach. Spread across hundreds of kilometres in Gippsland, the Croajingolong National Park is beautifully wild. Think eucalypt forests leading to long, white sandy beaches. It's truly a secluded paradise and offers crystal clear waters ideal for snorkelling. Get ready to Instagram like crazy, or fully disconnect and make sandcastles on the beach instead.", start_time: "2021-04-01", url:"https://www.parks.vic.gov.au/places-to-see/parks/croajingolong-national-park")
 Category.find_by(name: "Outdoorsy").activities.create(name: "Half Moon Bay", address: "232 Beach Rd, Black Rock Victoria 3193", description: "Throw down your towel and get ready to frolic along this lunar-shaped beach and its luxurious sandy shores. Half Moon Bay is more for floating and bobbing than for surfing or getting dumped by waves. And that's a huge appeal when all you want is a leisurely day by the beach. For the rest of you, take a jaunt around the surrounding cliffs, where gorgeous coastal views await you. Once you're finished, head back to the beach where you can sink your toes in the sand and cool off with a dip. Then grab some fresh fish at one of Black Rock Wharf's seafood restaurants.", start_time: "2021-03-12", url:"https://www.bayside.vic.gov.au/facilities-venues/half-moon-bay-foreshore")
 Category.find_by(name: "Outdoorsy").activities.create(name: "Slumber Safari", address: "K Road, Werribee South VIC 3030", description: "Does a rhino get bed hair? Are giraffes grumpy in the morning? What does a lion eat for breakfast? Spend a night in your safari-styled tent fitted with all the creature comforts at the Werribee Open Range Zoo and find out all of these niggling questions that no amount of Googling can ever answer. Slumber Safari also includes delicious snacks, dinner, a night safari tour, campfire and the complimentary sparking wine. Plus an African-inspired brekkie the next morning on your own private deck.", start_time: "2021-03-12", url: "https://www.zoo.org.au/werribee/whats-on/animal-encounters/slumber-safari/")
-
 Category.find_by(name: "Outdoorsy").activities.create(name: "Cosy Tents", address: "6 Kanga Road, Yandoit, VIC 3461", description: "Goose down quilt? Check. Bose speakers? Check. Barbecue, esky and communal fire pit for adventurous campfire cooking? Check. Stunning views across Hepburn Shire? Yep — you guessed it — check. Cosy Tents is the perfect weekend getaway to explore the smorgasbord of gourmet food, wineries and award-winning restaurants in the region. Oh, and it's right near the spa capital of Australia. That's pretty handy too. Choose from a wide range of bell tents, all set with ample distance between them, but close enough to create a little glamping community, too.", start_time: "2021-03-12", url:"https://www.cosytents.com.au/")
 
 # Low-Fi Category
@@ -184,19 +183,19 @@ turnt_url = [
   "https://images.unsplash.com/photo-1612127265620-72d07b96558f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=712&q=80"
 ]
 
-outdoorsy = [
-  "https://images.unsplash.com/photo-1607304664767-33f6a01ef9b4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80",
-  "https://images.unsplash.com/flagged/photo-1593971784349-9681f0662bc6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80",
-  "https://images.unsplash.com/photo-1591793923243-5000761483c8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-  "https://mir-s3-cdn-cf.behance.net/project_modules/disp/f3fe7715195021.5628e548e2076.JPG",
-  "https://images.unsplash.com/photo-1499384048662-8f714ec1420d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1355&q=80",
-  "https://images.unsplash.com/photo-1611244806964-91d204d4a2a7?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
-  "https://images.unsplash.com/photo-1522866348293-55be2c6caa1f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
-  "https://www.parks.vic.gov.au/-/media/project/pv/main/parks/images/places-to-see/croajingolong-national-park/point-hicks-dispersal-area/aerial-view-croajingalong-national-park-1920x1124.jpg?thn=0&w=764&bc=FFFFFF&hash=39C4096569827BE994FB76904274F147FFD94B3C",
-  "https://images.unsplash.com/photo-1536598271160-65bd0d8380bd?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1268&q=80",
-  "https://images.unsplash.com/photo-1535082623926-b39352a03fb7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1368&q=80",
-  "https://images.unsplash.com/photo-1508974462591-3c124867fdf8?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1352&q=80"
-]
+# outdoorsy_url = [
+#   "https://images.unsplash.com/photo-1607304664767-33f6a01ef9b4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80",
+#   "https://images.unsplash.com/flagged/photo-1593971784349-9681f0662bc6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80",
+#   "https://images.unsplash.com/photo-1591793923243-5000761483c8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+#   "https://mir-s3-cdn-cf.behance.net/project_modules/disp/f3fe7715195021.5628e548e2076.JPG",
+#   "https://images.unsplash.com/photo-1499384048662-8f714ec1420d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1355&q=80",
+#   "https://images.unsplash.com/photo-1611244806964-91d204d4a2a7?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
+#   "https://images.unsplash.com/photo-1522866348293-55be2c6caa1f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
+#   "https://www.parks.vic.gov.au/-/media/project/pv/main/parks/images/places-to-see/croajingolong-national-park/point-hicks-dispersal-area/aerial-view-croajingalong-national-park-1920x1124.jpg?thn=0&w=764&bc=FFFFFF&hash=39C4096569827BE994FB76904274F147FFD94B3C",
+#   "https://images.unsplash.com/photo-1536598271160-65bd0d8380bd?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1268&q=80",
+#   "https://images.unsplash.com/photo-1535082623926-b39352a03fb7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1368&q=80",
+#   "https://images.unsplash.com/photo-1508974462591-3c124867fdf8?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1352&q=80"
+# ]
 
 i = 0
 Category.find_by(name: "Sweat").activities.each do |activity|
@@ -219,12 +218,12 @@ Category.find_by(name: "Turnt").activities.each do |activity|
   i += 1
 end
 
-i = 0
-Category.find_by(name: "Outdoorsy").activities.each do |activity|
-  file = URI.open(outdoorsy_url[i])
-  activity.cover_photo.attach(io: file, filename: "#{activity.name.downcase.gsub(' ', '_')}.jpg", content_type: 'image/jpg')
-  i += 1
-end
+# i = 0
+# Category.find_by(name: "Outdoorsy").activities.each do |activity|
+#   file = URI.open(outdoorsy_url[i])
+#   activity.cover_photo.attach(io: file, filename: "#{activity.name.downcase.gsub(' ', '_')}.jpg", content_type: 'image/jpg')
+#   i += 1
+# end
 
 file = URI.open("https://images.unsplash.com/photo-1544622428-56b8d9eed7db?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1500&q=80")
 Category.find_by(name: "Romance").activities.find_by(name: "Cute dinner with Thembi").photos.attach(io: file, filename: "tajmahal1.jpg", content_type: 'image/jpg')
