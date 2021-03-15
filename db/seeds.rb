@@ -6,15 +6,22 @@ require "open-uri"
 
 
 # Cleans and resets database.
-Bookmark.delete_all
-Activity.delete_all
-Category.delete_all
-Message.delete_all
-Chatroom.delete_all
-User.delete_all
+Bookmark.destroy_all
+Activity.destroy_all
+Category.destroy_all
+Message.destroy_all
+Chatroom.destroy_all
+User.destroy_all
+
+# Create categories(moods)
+Category.create(name: "Sweat")
+Category.create(name: "Romance")
+Category.create(name: "Outdoorsy")
+Category.create(name: "Low-Fi")
+Category.create(name: "Turnt")
+Category.create(name: "Broke-Ass")
 
 # Create default users
-
 User.create(email: "one@user.com", nickname: "Userone", password: "password")
 User.create(email: "two@user.com", nickname: "usertwo", password: "password")
 
@@ -28,13 +35,6 @@ User.create(email: "two@user.com", nickname: "usertwo", password: "password")
 # Create default chatrooms
 Chatroom.create(name: "general")
 
-# Create categories(moods)
-Category.create(name: "Sweat")
-Category.create(name: "Romance")
-Category.create(name: "Outdoorsy")
-Category.create(name: "Low-Fi")
-Category.create(name: "Turnt")
-Category.create(name: "Broke-Ass")
 
 # Sweat Category
 Category.find_by(name: "Sweat").activities.create(name: "Yoga at Inspire 9", address: "1/41-43 Stewart St, Richmond VIC 3121", description: "Do yoga with friends!", start_time: "2021-03-12", url:"https://www.inspire9.com/")
