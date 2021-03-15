@@ -1,12 +1,33 @@
-img {
-  height: 400px;
-  width: 800px;
+// img {
+//   height: 400px;
+//   width: 800px;
+//   object-fit: cover;
+// }
+
+// .carousel {
+//   display: flex;
+//   justify-content: center;
+//   height: 400px;
+//   width: 800px;
+// }
+
+.show-image {
+  height: 95vh;
+  width: 100%;
   object-fit: cover;
 }
 
 .carousel {
+  position: relative;
   display: flex;
   justify-content: center;
-  height: 400px;
-  width: 800px;
+  height: 95vh;
+  width: 100%;
+}
+
+#show-title {
+  text-align: center;
+  position: absolute;
+  top: 120px;
+  z-index: 1000;
 }

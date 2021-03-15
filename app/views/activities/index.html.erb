@@ -15,7 +15,8 @@
         <div class="bookmark-buttons">
           <%= link_to 'Save', bookmark_path(activity_id: activity.id), method: :post, class: "btn btn-outline-success" %>
         </div>
-        <%= link_to category_activity_path(:category_id, activity) do %>
+        <%# link_to category_activity_path(:category_id, activity) do %>
+        <div class="popup" onclick="myFunction()">
           <% if activity.cover_photo.attached? %>
             <%= cl_image_tag(activity.cover_photo.key,
               class: "card-images", height: 300, fit: :clip) %>
@@ -28,7 +29,8 @@
               <button class="btn btn-outline-warning">Today</button>
             <% end %>
           </div>
-        <% end %>
+        </div>
+        <%# end %>
       </div>
     <% end %>
   </div>
