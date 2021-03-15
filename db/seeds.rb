@@ -6,6 +6,7 @@ require "open-uri"
 
 
 # Cleans and resets database.
+Bookmark.delete_all
 Activity.delete_all
 Category.delete_all
 Message.delete_all
