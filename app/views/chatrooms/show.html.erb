@@ -1,29 +1,26 @@
-<div class="chat-wrapper">
-    <div class="events-wrapper">
-        <div class="event-name">
-        chat #1
-        </div>
-        <div class="event-name">
-        chat #2
-        </div>
-        <div class="event-name">
-        chat #3
-        </div>
-        <div class="event-name">
-        chat #4
+
+<div class="chat-conversation">
+<div class="grid-container">
+    <div class="chatrooms">
+        <div class="chatroom">
+            chatroom #1
         </div>
     </div>
-    <div class="conversation-wrapper">
-        <h1><%= @chatroom.name %></h1>
-        <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-        <% @chatroom.messages.each do |message| %>
-            <%= render 'messages/message', message: message%>
-        <% end %>
+    <div class="conversations">
+            <div class="conversation-wrapper">
+            <h1><%= @chatroom.name %></h1>
+            <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+            <% @chatroom.messages.each do |message| %>
+                <%= render 'messages/message', message: message%>
+            <% end %>
+            </div>
+            <div class="input-bar">
+            <%= simple_form_for [ @chatroom, @message ] do |f| %>
+            <%= f.input :content, label: false, placeholder: "Enter message" %>
+            <% end %>
+            </div>
         </div>
-        <div class="input-bar">
-        <%= simple_form_for [ @chatroom, @message ] do |f| %>
-        <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
-        <% end %>
-        </div>
+    </div>
     </div>
 </div>
+
