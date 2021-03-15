@@ -40,14 +40,14 @@ Chatroom.create(name: "general")
 Category.find_by(name: "Sweat").activities.create(name: "Yoga at Inspire 9", address: "1/41-43 Stewart St, Richmond VIC 3121", description: "Do yoga with friends!", start_time: "2021-03-12", url:"https://www.inspire9.com/")
 Category.find_by(name: "Sweat").activities.create(name: "Workout with The Rock", address: "367 Flinders St, Melbourne VIC 3000", description: "Work on your Gainz or just stare at The Rock all day and be aroused.", start_time: "2021-03-12", url:"https://therockgear.com/workout/")
 Category.find_by(name: "Sweat").activities.create(name: "Pole Dancing", address: "6/277 Flinders Ln, Melbourne Victoria 3000", description: "Twerk them calories away!", start_time: "2021-03-12", url:"https://www.thepoleroom.com.au/intropack/?gclid=Cj0KCQiAnKeCBhDPARIsAFDTLTLDOtcPqk_KcXPNl43e2YVKqYIb1jmct5SRYqZXBvl7swQaZ8D9x5AaAp6ZEALw_wcB")
-Category.find_by(name: "Sweat").activities.create(name: "Learn how to roundhouse kick", address: "191 Racecourse Rd, Kensington VIC 3031", description: "Come and learn how to roundhouse kick like the undefeated intergalactic champion, Chuck Norris!", start_time: "2021-03-30", url:"https://g.co/kgs/Y7nUJV")
+Category.find_by(name: "Sweat").activities.create(name: "Muay Thai", address: "191 Racecourse Rd, Kensington VIC 3031", description: "Come and learn how to roundhouse kick like the undefeated intergalactic champion, Chuck Norris!", start_time: "2021-03-30", url:"https://g.co/kgs/Y7nUJV")
 Category.find_by(name: "Sweat").activities.create(name: "Salsa dancing", address: "1/281 Swan St, Richmond VIC 3121", description: "Learn how to move your body like an elegant, majestic swan from the legendary, Damian Lonel.", start_time: "2021-04-12", url:"https://youtu.be/k9qVeZU4msw")
 Category.find_by(name: "Sweat").activities.create(name: "Cocktails and Zumba", address: "130 Gladstone St, South Melbourne VIC 3205", description: "Cocktails and Zumba? Yes.", start_time: "2021-04-30", url:"https://youtu.be/gCROJglfRxo")
 Category.find_by(name: "Sweat").activities.create(name: "Bodhi & Ride", address: "416-418 Bay Street, Port Melbourne, VIC 3207", description: " This spin class is anything but typical, blending endurance, interval and weight training into a 40-minute clubbing experience where stilettos are replaced by trainers. Sweat it out with rock star instructors under strobe lights with a 3 million dollar sound system blasting the latest club tracks..", start_time: "2021-03-30", url:"https://www.bodhiandride.com.au/")
 Category.find_by(name: "Sweat").activities.create(name: "Bey Dance", address: "4-10 Yorkshire Street, Richmond, Victoria 3121", description: "Unleash your inner diva at a dance class dedicated to Beyonce. Bey Dance takes your secret passion for dancing around your room and brings it to the main stage where your Bey Captains are ready to teach you the chorography to hits like Love on Top, Single Ladies and Run the World.", start_time: "2021-04-01", url:"http://www.dancefactory.com.au/")
 Category.find_by(name: "Sweat").activities.create(name: "Snowga", address: "16 Schuss St, Falls Creek Victoria 3699", description: "If you’re bored with Bikram and Disco Yoga and don’t mind frost bite then it’s time to visit the slopes and try Snowga. Greet the day in the downward dog position at dawn and become one with the profound silence of the mountains. Stretch out your hamstrings, quadriceps and shoulders before you carve up the mountain with a day of skiing, followed by a restorative yoga session at the end of the day. !", start_time: "2021-04-01", url:"https://www.theyogavine.com.au/")
 Category.find_by(name: "Sweat").activities.create(name: "Sky High Yoga", address: "The District Docklands, 101 Waterfront Way, Docklands VIC 3008", description: "Connect again with your inner guiding star with a Slow Flow Yoga practice on the Melbourne Star. Meditate in peace above the world in the quiet of fully enclosed glass cabins, temperature-controlled to create the perfect environment.Stretch and relax with popular and traditional yoga postures, then return to earth for a drink of your choice from Boost Juice.", start_time: "2021-05-01", url:"https://melbournestar.com/experiences/yoga-sky/")
-Category.find_by(name: "Sweat").activities.create(name: "F* It", address: "544 Mt Alexander Rd, Ascot Vale, Victoria 3032", description: " Thumping beats first thing in the morning. The kind that makes your drink bottle reverb like Jurassic Park. It means lasers and coloured lighting that changes based on your instructor’s mood. It means LED-lined mirrors and ‘murder black’ treadmills with built-in touchscreen Android systems. It’s kind of like that underground rave scene in the Matrix, only everyone’s incredibly buff.", start_time: "2021-05-01", url:"https://fk-it.com.au/" )
+Category.find_by(name: "Sweat").activities.create(name: "F* It", address: "544 Mt Alexander Rd, Ascot Vale, Victoria 3032", description: "Thumping beats first thing in the morning. The kind that makes your drink bottle reverb like Jurassic Park. It means lasers and coloured lighting that changes based on your instructor’s mood. It means LED-lined mirrors and ‘murder black’ treadmills with built-in touchscreen Android systems. It’s kind of like that underground rave scene in the Matrix, only everyone’s incredibly buff.", start_time: "2021-05-01", url:"https://fk-it.com.au/" )
 
 # Romance Category
 Category.find_by(name: "Romance").activities.create(name: "Cute dinner with Thembi", address: "4/3 Murphy St, South Yarra VIC 3141", description: "Have a cute dinner with Thembi (pop the question at this romantic venue)", start_time: "2021-03-12", url:"https://www.youtube.com/playlist?list=UUZPQfUQNPZojG8DCdg8Mh9Q" )
@@ -157,17 +157,17 @@ end
 #   end
 
 sweat_url = [
-  "https://images.pexels.com/photos/6089998/pexels-photo-6089998.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
-  "https://images.pexels.com/photos/6089998/pexels-photo-6089998.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
-  "https://images.pexels.com/photos/6089998/pexels-photo-6089998.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
-  "https://images.pexels.com/photos/6089998/pexels-photo-6089998.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
-  "https://images.pexels.com/photos/6089998/pexels-photo-6089998.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
-  "https://images.pexels.com/photos/6089998/pexels-photo-6089998.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
-  "https://images.pexels.com/photos/6089998/pexels-photo-6089998.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
-  "https://images.pexels.com/photos/6089998/pexels-photo-6089998.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
-  "https://images.pexels.com/photos/6089998/pexels-photo-6089998.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
-  "https://images.pexels.com/photos/6089998/pexels-photo-6089998.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
-  "https://images.pexels.com/photos/6089998/pexels-photo-6089998.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
+  "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1094&q=80",
+  "https://wallpapercave.com/wp/wp1990689.jpg",
+  "https://classpass.com/blog/wp-content/uploads/2019/06/shutterstock_1050458822.jpg",
+  "https://images.pexels.com/photos/7045482/pexels-photo-7045482.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+  "https://images.unsplash.com/photo-1504609813442-a8924e83f76e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80",
+  "https://images.unsplash.com/photo-1518644961665-ed172691aaa1?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8enVtYmF8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+  "https://www.google.com/url?sa=i&url=http%3A%2F%2Fwww.thebeco.com%2Fproject%2Fbodhiandride&psig=AOvVaw3KpNX1hG0d8lp0lJqEAZSu&ust=1615897549737000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKCG2uSlsu8CFQAAAAAdAAAAABAX",
+  "https://static.onecms.io/wp-content/uploads/sites/28/2017/10/beyonce-dance-AUCLASS1017.jpg",
+  "https://images.unsplash.com/photo-1429277096327-11ee3b761c93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80",
+  "https://www.visitvictoria.com/-/media/atdw/melbourne/things-to-do/family/7b20493938de028df67be2c83fa3b96b_1600x900.jpeg?ts=20201221310652",
+  "https://fk-it.com.au/wp-content/uploads/2017/07/fit2.jpg"
 ]
 
 romance_url = [
@@ -200,7 +200,7 @@ turnt_url = [
   "https://images.pexels.com/photos/4457039/pexels-photo-4457039.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   "https://images.pexels.com/photos/341858/pexels-photo-341858.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   "https://images.pexels.com/photos/159291/beer-machine-alcohol-brewery-159291.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-  "https://vinesoftheyarravalley.com.au/wp-content/uploads/2019/12/cigar-bar-bucks-party.jpg",
+  "https://vinesoftheyarravalley.com.au/wp-content/uploads/2019/12/cigar-bar-bucks-party.jpg"
 ]
 
 outdoorsy_url = [
