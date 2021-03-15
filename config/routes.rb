@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+
   resources :activities, only: [:index, :new, :create, :destroy, :edit, :update]
   resources :categories, only: [:index] do
     resources :activities, only: [:show]
@@ -13,6 +14,9 @@ Rails.application.routes.draw do
   get "dashboard", to: "dashboards#show"
   get "bookmark", to: "dashboards#show"
 
+  devise_scope :user do
+   get '/users/sign_out' => 'devise/sessions#destroy'
+end
 
   root to: 'pages#home'
 
