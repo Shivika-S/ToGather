@@ -236,3 +236,19 @@ Category.find_by(name: "Romance").activities.find_by(name: "Cute dinner with The
 
 file = URI.open("https://images.unsplash.com/photo-1598639753591-053c3e1477dd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1908&q=80")
 Category.find_by(name: "Romance").activities.find_by(name: "Cute dinner with Thembi").photos.attach(io: file, filename: "tajmahal4.jpg", content_type: 'image/jpg')
+
+# TURNT
+
+Category.find_by(name: "Turnt").activities.each do |activity|
+  file = URI.open("https://images.unsplash.com/photo-1544622428-56b8d9eed7db?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1500&q=80")
+  activity.photos.attach(io: file, filename: "tajmahal1.jpg", content_type: 'image/jpg')
+
+  file = URI.open("https://images.unsplash.com/photo-1575489181784-a99aa58e4bb5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2791&q=80")
+  activity.photos.attach(io: file, filename: "tajmahal2.jpg", content_type: 'image/jpg')
+
+  file = URI.open("https://images.unsplash.com/photo-1524491887412-14c265900364?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1780&q=80")
+  activity.photos.attach(io: file, filename: "tajmahal3.jpg", content_type: 'image/jpg')
+
+  file = URI.open("https://images.unsplash.com/photo-1598639753591-053c3e1477dd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1908&q=80")
+  activity.photos.attach(io: file, filename: "tajmahal4.jpg", content_type: 'image/jpg')
+end
