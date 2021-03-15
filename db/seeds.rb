@@ -163,7 +163,7 @@ sweat_url = [
   "https://images.pexels.com/photos/7045482/pexels-photo-7045482.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   "https://images.unsplash.com/photo-1504609813442-a8924e83f76e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80",
   "https://images.unsplash.com/photo-1518644961665-ed172691aaa1?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8enVtYmF8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-  "https://www.google.com/url?sa=i&url=http%3A%2F%2Fwww.thebeco.com%2Fproject%2Fbodhiandride&psig=AOvVaw3KpNX1hG0d8lp0lJqEAZSu&ust=1615897549737000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKCG2uSlsu8CFQAAAAAdAAAAABAX",
+  "http://www.thebeco.com/wp-content/uploads/2020/06/Bodhi_studio2.jpg",
   "https://static.onecms.io/wp-content/uploads/sites/28/2017/10/beyonce-dance-AUCLASS1017.jpg",
   "https://images.unsplash.com/photo-1429277096327-11ee3b761c93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80",
   "https://www.visitvictoria.com/-/media/atdw/melbourne/things-to-do/family/7b20493938de028df67be2c83fa3b96b_1600x900.jpeg?ts=20201221310652",
