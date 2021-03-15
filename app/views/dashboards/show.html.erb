@@ -1,7 +1,7 @@
 <div class="container">
   <h1>My Dashboard</h1>
   <br>
-  <h3>Activities you saved</h3>
+  <h4>Saved activties</h4>
 
   <ul>
     <% @bookmarks.each do |bookmark| %>
@@ -15,14 +15,14 @@
   </ul>
 
   <% if @activities.exists? %>
-    <h3>Activities you created</h3>
+    <h4>Your activties</h4>
   <% end %>
 
   <% @activities.each do |activity| %>
     <%= link_to category_activity_path(:category_id, activity) do %>
       <% if activity.cover_photo.attached? %>
         <%= cl_image_tag(activity.cover_photo.key,
-        class: "card-images", height: 300, fit: :clip) %>
+        class: "card-images", height: 100, width: 100, fit: :clip) %>
       <% end %>
       <% if activity.user == current_user %>
         <h5><strong><%= activity.name %></strong></h5>
