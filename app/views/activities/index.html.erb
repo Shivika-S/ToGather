@@ -11,11 +11,10 @@
 <div class="container">
   <div class="card-columns">
     <% @activities.each do |activity| %>
-      <div class="card" data-toggle="modal" data-target=".bd-example-modal-lg">
+      <div class="card" data-toggle="modal" data-target=".js-activity-<%= activity.id %>">
         <div class="bookmark-buttons">
           <%= link_to 'Save', bookmark_path(activity_id: activity.id), method: :post, class: "btn btn-outline-success" %>
         </div>
-        <%# link_to category_activity_path(:category_id, activity) do %>
           <% if activity.cover_photo.attached? %>
             <%= cl_image_tag(activity.cover_photo.key,
               class: "card-images", height: 300, fit: :clip) %>
@@ -28,24 +27,20 @@
               <button class="btn btn-outline-warning">Today</button>
             <% end %>
           </div>
-        <%# end %>
-      </div>
-      <!-- Modal -->
-      <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        </div>
+        <!-- Modal -->
+        <div class="modal fade js-activity-<%= activity.id %>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
           <div class="modal-content" style="border-radius: 10px;">
             <div class="modal-body" id="body-of-modal">
               <div class="d-flex justify-content-center">
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <div id="js-carousel-indicators-<%= activity.id %>" class="carousel slide" data-ride="carousel">
                   <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                    <li data-target="#js-carousel-indicators-<%= activity.id %>" data-slide-to="0" class="active"></li>
+                    <li data-target="#js-carousel-indicators-<%= activity.id %>" data-slide-to="1"></li>
+                    <li data-target="#js-carousel-indicators-<%= activity.id %>" data-slide-to="2"></li>
+                    <li data-target="#js-carousel-indicators-<%= activity.id %>" data-slide-to="3"></li>
                   </ol>
-                  <div id="show-title">
-                    <h1><%= @activity.name %></h1>
-                  </div>
                   <div class="carousel-inner">
                     <div class="carousel-item active">
                       <img class="carousel-pic" src=<%= cl_image_path(activity.cover_photo.key,
@@ -64,11 +59,11 @@
                         height: 200) %> alt="#">
                     </div>
                   </div>
-                  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                  <a class="carousel-control-prev" href="#js-carousel-indicators-<%= activity.id %>" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
                   </a>
-                  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                  <a class="carousel-control-next" href="#js-carousel-indicators-<%= activity.id %>" role="button" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                   </a>
@@ -76,13 +71,17 @@
               </div>
             </div>
             <div class="d-flex justify-content-center">
+              <h1 id="carousel-name-tag"><%= activity.name %></h1>
+            </div>
+            <div class="d-flex justify-content-center">
               <%= link_to "More details", category_activity_path(:category_id, activity), class: "btn btn-secondary", id: "carousel-show-link"%>
 <!--               <button id="carousel-show-link" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-            </div>
+          </div>
+          <div id="carousel-gradient">
+          </div>
           </div>
         </div>
       </div>
-
     <% end %>
   </div>
 </div>
