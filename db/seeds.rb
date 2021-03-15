@@ -1,4 +1,4 @@
-# require 'csv'
+,,# require 'csv'
 require "open-uri"
 
 # # This file should contain all the record creation needed to seed the database with its default values.
@@ -199,23 +199,23 @@ outdoorsy_url = [
 ]
 
 lowfi_url = [
-  "https://images.unsplash.com/photo-1610359247414-83b06e486f86?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80"
-  "https://images.unsplash.com/photo-1527871899604-f1425bcce779?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
-  "https://images.unsplash.com/photo-1533271802434-53997a5f9e6c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
-  "https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=431&q=80"
-  "https://images.unsplash.com/photo-1606167668584-78701c57f13d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
-  "https://images.unsplash.com/photo-1559596116-5f4c539c1b24?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80"
-  "https://images.unsplash.com/photo-1534247555660-d4af46712d27?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=378&q=80"
-  "https://images.unsplash.com/photo-1572099317626-344a00980345?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=801&q=80"
-  "https://images.unsplash.com/photo-1605158743762-f887b36eef11?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=584&q=80"
-  "https://images.unsplash.com/photo-1517584640132-9379fc085be0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=753&q=80"
+  "https://images.unsplash.com/photo-1610359247414-83b06e486f86?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80",
+  "https://images.unsplash.com/photo-1527871899604-f1425bcce779?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
+  "https://images.unsplash.com/photo-1533271802434-53997a5f9e6c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
+  "https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=431&q=80",
+  "https://images.unsplash.com/photo-1606167668584-78701c57f13d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
+  "https://images.unsplash.com/photo-1559596116-5f4c539c1b24?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80",
+  "https://images.unsplash.com/photo-1534247555660-d4af46712d27?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=378&q=80",
+  "https://images.unsplash.com/photo-1572099317626-344a00980345?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=801&q=80",
+  "https://images.unsplash.com/photo-1605158743762-f887b36eef11?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=584&q=80",
+  "https://images.unsplash.com/photo-1517584640132-9379fc085be0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=753&q=80",
   "https://www.nationaltrust.org.au/wp-content/uploads/2018/01/Como_LowRes_JPEG_22-1200x616.jpg"
 ]
 
 brokeass_url = [
-  "https://www.hiddencitysecrets.com.au/wp-content/uploads/2018/08/Spleen-Bar-cbd-city-bars-Melbourne-hidden-laneway-cool-grungy-dive-cocktail-beer-small-intimate-drinks-after-work-live-music-001.jpg"
-  "https://images.unsplash.com/photo-1580998577850-cfcbed268932?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
-  "https://images.unsplash.com/photo-1508997449629-303059a039c0?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80"
+  "https://www.hiddencitysecrets.com.au/wp-content/uploads/2018/08/Spleen-Bar-cbd-city-bars-Melbourne-hidden-laneway-cool-grungy-dive-cocktail-beer-small-intimate-drinks-after-work-live-music-001.jpg",
+  "https://images.unsplash.com/photo-1580998577850-cfcbed268932?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
+  "https://images.unsplash.com/photo-1508997449629-303059a039c0?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80",
   "https://i.guim.co.uk/img/media/f1d4257d99b45600cd9229f22e6c460c0ac1240b/0_30_1000_600/master/1000.jpg?width=700&quality=85&auto=format&fit=max&s=6d48517af75e4e54703cb81d6b372868"
 ]
 
