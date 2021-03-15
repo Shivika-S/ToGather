@@ -91,7 +91,7 @@ Category.find_by(name: "Low-Fi").activities.create(name: "Hotbox Wednesdays", ad
 Category.find_by(name: "Low-Fi").activities.create(name: "Onsen Ma Japanese Bathhouse", address: "12-18 Meyers Place, Melbourne VIC 3000", description: "Wash your worries away at this traditional Japanese bathhouse in the CBD. Onsen Ma is a little slice of heaven where you can soak in private or public baths, or bliss out with a shiatsu massage.", start_time: "2021-03-29")
 Category.find_by(name: "Low-Fi").activities.create(name: "Reading Room at the State Library", address: "328 Swanston Street, Melbourne VIC 3000", description: "Flex your brain power under the iconic glass dome of the State Library’s La Trobe Reading Room. A popular tourist attraction, it might not be a cone of silence these days, but it will soothe the soul of anyone feeling studious.", start_time: "2021-03-30")
 Category.find_by(name: "Low-Fi").activities.create(name: "Gravity Floatation", address: "559 High Street, Northcote Victoria 3070", description: "Being alone, naked, in darkness and silence, floating in an Epsom Salt bath in an enclosed pod might sound kinda creepy. But you’d be hella surprised how relaxing this meditative experience is.", start_time: "2021-03-30")
-Category.find_by(name: "Low-Fi").activities.create(name: " Travelling Samovar Tea House", address: "40 Marine Parade, Abbotsford Victoria 3067", description: "There are few things as relaxing as a warm cup of tea. Travelling Samovar elevates the art of the tea ceremony to the next level, and has a gorgeous leafy courtyard to recline in.", start_time: "2021-03-30")
+Category.find_by(name: "Low-Fi").activities.create(name: "Travelling Samovar Tea House", address: "40 Marine Parade, Abbotsford Victoria 3067", description: "There are few things as relaxing as a warm cup of tea. Travelling Samovar elevates the art of the tea ceremony to the next level, and has a gorgeous leafy courtyard to recline in.", start_time: "2021-03-30")
 Category.find_by(name: "Low-Fi").activities.create(name: "Como House & Gardens", address: "Williams Road &, Lechlade Avenue, South Yarra VIC 3141", description: "The gardens at South Yarra’s historic Como House are a gorgeous spot to unwind. Grab a delish hamper from the Stables of Como and enjoy a lazy, weekend picnic. They're also home to the annual Paris to Provence Festival, which takes place every November. Bon appétit.", start_time: "2021-03-31")
 
 # Turnt Category
@@ -119,28 +119,28 @@ Activity.all.each do |activity|
 end
 
 # Scraping data tha relates to outdoor related activities.
-response = HTTParty.get('https://api.meetup.com/outdoors-adventure/events?page=20')
-filepath = File.join(__dir__, 'activities.csv')
+# response = HTTParty.get('https://api.meetup.com/outdoors-adventure/events?page=20')
+# filepath = File.join(__dir__, 'activities.csv')
 
-CSV.open(filepath, "wb") do |csv|
-    csv << %w[name start_time description url latitude longitude status ]
-    response.each do |activity|
-      csv << [activity["name"], activity["local_time"], activity["description"], activity["link"], activity["venue"]["lat"], activity["venue"]["lon"], activity["status"]]
-    end
-  end
+# CSV.open(filepath, "wb") do |csv|
+#     csv << %w[name start_time description url latitude longitude status ]
+#     response.each do |activity|
+#       csv << [activity["name"], activity["local_time"], activity["description"], activity["link"], activity["venue"]["lat"], activity["venue"]["lon"], activity["status"]]
+#     end
+#   end
 
-  csv_options = { headers: :first_row, header_converters: :symbol }
-  CSV.foreach(filepath, csv_options) do |row|
-    Category.find_by(name: "Outdoorsy").activities.create!(
-        name: row[:name],
-        start_time: row[:start_time],
-        description: row[:description],
-        url: row[:url],
-        latitude: row[:latitude].to_f,
-        longitude: row[:longitude].to_f,
-        status: row[:status]
-    )
-  end
+#   csv_options = { headers: :first_row, header_converters: :symbol }
+#   CSV.foreach(filepath, csv_options) do |row|
+#     Category.find_by(name: "Outdoorsy").activities.create!(
+#         name: row[:name],
+#         start_time: row[:start_time],
+#         description: row[:description],
+#         url: row[:url],
+#         latitude: row[:latitude].to_f,
+#         longitude: row[:longitude].to_f,
+#         status: row[:status]
+#     )
+#   end
 
 
 sweat_url = [
@@ -249,7 +249,7 @@ Category.find_by(name: "Outdoorsy").activities.each do |activity|
 end
 
 i = 0
-Category.find_by(name: "Lo-Fi").activities.each do |activity|
+Category.find_by(name: "Low-Fi").activities.each do |activity|
   file = URI.open(lowfi_url[i])
   activity.cover_photo.attach(io: file, filename: "#{activity.name.downcase.gsub(' ', '_')}.jpg", content_type: 'image/jpg')
   i += 1
@@ -292,3 +292,15 @@ Category.find_by(name: "Turnt").activities.each do |activity|
   activity.photos.attach(io: file, filename: "turnt#{count}.jpg", content_type: 'image/jpg')
   count += 1
 end
+
+# cute_dinner_with_thembi_url = [
+#   "https://images.unsplash.com/photo-1544622428-56b8d9eed7db?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1500&q=80",
+#   "https://images.unsplash.com/photo-1544622428-56b8d9eed7db?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1500&q=80",
+#   "https://images.unsplash.com/photo-1544622428-56b8d9eed7db?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1500&q=80",
+#   "https://images.unsplash.com/photo-1544622428-56b8d9eed7db?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1500&q=80"
+# ]
+
+# cute_dinner_with_thembi_url.each do |url|
+#   file = URI.open(url)
+#   Activity.find_by(name: "Cute dinner with Thembi").photos.attach(io: file, filename: "cute_dinner_with_thembi + #{i.to_s}.jpg", content_type: 'image/jpg')
+# end
