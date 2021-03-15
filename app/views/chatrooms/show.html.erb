@@ -27,36 +27,38 @@
     <!-- Chat Box-->
     <div class="col-7 px-0">
       <div class="px-4 py-5 chat-box bg-white">
-
+        
         <!-- Sender Message-->
-        <% @chatroom.messages.each do |message| %>
-            <div class="media w-50 mb-3">
-                <div class="media-body ml-3">
-                    <div class="bg-light rounded py-2 px-3 mb-2">
-                        <p class="text-small mb-0 text-muted">
-                        <%= render 'messages/message', message: message%>
+        <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+            <% @chatroom.messages.each do |message| %>
+                <% if @current_user.id == message.user_id%>
+                <div class="media w-50 mb-3">
+                    <div class="media-body ml-3">
+                        <div class="bg-light rounded py-2 px-3 mb-2">
+                            <p class="text-small mb-0 text-muted">
+                            <%= render 'messages/message', message: message%>
+                            </p>
+                        </div>
+                        <p class="small text-muted"><%= message.created_at.strftime("%l:%M%p | %b %e") %>
                         </p>
                     </div>
-                    <p class="small text-muted"><%= message.created_at.strftime("%l:%M%p | %b %e") %></p>
                 </div>
-            </div>
-        <% end %>
-
-        <!-- Reciever Message-->
-        <% @chatroom.messages.each do |message| %>
-            <div class="media w-50 ml-auto mb-3">
-            <div class="media-body">
-                <div class="bg-primary rounded py-2 px-3 mb-2">
-                <p class="text-small mb-0 text-white">
-                <%= render 'messages/message', message: message%>
-                </p>
-                </div>
-                <p class="small text-muted"><%= message.created_at.strftime("%l:%M%p | %b %e") %>
-                </p>
-            </div>
-            </div>
-        <% end %>
-      </div>
+                <% else %>
+                <!-- Reciever Message-->
+                    <div class="media w-50 ml-auto mb-3">
+                        <div class="media-body">
+                            <div class="bg-primary rounded py-2 px-3 mb-2">
+                                <p class="text-small mb-0 text-white">
+                                <%= render 'messages/message', message: message%>
+                                </p>
+                            </div>
+                            <p class="small text-muted"><%= message.created_at.strftime("%l:%M%p | %b %e") %>
+                            </p>
+                        </div>
+                    </div>
+                <% end %>
+            <% end %>
+        </div>
 
       <!-- Typing area -->
       
