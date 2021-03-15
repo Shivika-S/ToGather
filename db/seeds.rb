@@ -6,15 +6,22 @@ require "open-uri"
 
 
 # Cleans and resets database.
-Bookmark.delete_all
-Activity.delete_all
-Category.delete_all
-Message.delete_all
-Chatroom.delete_all
-User.delete_all
+Bookmark.destroy_all
+Activity.destroy_all
+Category.destroy_all
+Message.destroy_all
+Chatroom.destroy_all
+User.destroy_all
+
+# Create categories(moods)
+Category.create(name: "Sweat")
+Category.create(name: "Romance")
+Category.create(name: "Outdoorsy")
+Category.create(name: "Low-Fi")
+Category.create(name: "Turnt")
+Category.create(name: "Broke-Ass")
 
 # Create default users
-
 User.create(email: "one@user.com", nickname: "Userone", password: "password")
 User.create(email: "two@user.com", nickname: "usertwo", password: "password")
 
@@ -28,13 +35,6 @@ User.create(email: "two@user.com", nickname: "usertwo", password: "password")
 # Create default chatrooms
 Chatroom.create(name: "general")
 
-# Create categories(moods)
-Category.create(name: "Sweat")
-Category.create(name: "Romance")
-Category.create(name: "Outdoorsy")
-Category.create(name: "Low-Fi")
-Category.create(name: "Turnt")
-Category.create(name: "Broke-Ass")
 
 # Sweat Category
 Category.find_by(name: "Sweat").activities.create(name: "Yoga at Inspire 9", address: "1/41-43 Stewart St, Richmond VIC 3121", description: "Do yoga with friends!", start_time: "2021-03-12", url:"https://www.inspire9.com/")
@@ -184,19 +184,41 @@ turnt_url = [
   "https://images.unsplash.com/photo-1612127265620-72d07b96558f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=712&q=80"
 ]
 
-# outdoorsy_url = [
-#   "https://images.unsplash.com/photo-1607304664767-33f6a01ef9b4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80",
-#   "https://images.unsplash.com/flagged/photo-1593971784349-9681f0662bc6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80",
-#   "https://images.unsplash.com/photo-1591793923243-5000761483c8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-#   "https://mir-s3-cdn-cf.behance.net/project_modules/disp/f3fe7715195021.5628e548e2076.JPG",
-#   "https://images.unsplash.com/photo-1499384048662-8f714ec1420d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1355&q=80",
-#   "https://images.unsplash.com/photo-1611244806964-91d204d4a2a7?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
-#   "https://images.unsplash.com/photo-1522866348293-55be2c6caa1f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
-#   "https://www.parks.vic.gov.au/-/media/project/pv/main/parks/images/places-to-see/croajingolong-national-park/point-hicks-dispersal-area/aerial-view-croajingalong-national-park-1920x1124.jpg?thn=0&w=764&bc=FFFFFF&hash=39C4096569827BE994FB76904274F147FFD94B3C",
-#   "https://images.unsplash.com/photo-1536598271160-65bd0d8380bd?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1268&q=80",
-#   "https://images.unsplash.com/photo-1535082623926-b39352a03fb7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1368&q=80",
-#   "https://images.unsplash.com/photo-1508974462591-3c124867fdf8?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1352&q=80"
-# ]
+outdoorsy_url = [
+  "https://images.unsplash.com/photo-1607304664767-33f6a01ef9b4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80",
+  "https://images.unsplash.com/flagged/photo-1593971784349-9681f0662bc6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80",
+  "https://images.unsplash.com/photo-1591793923243-5000761483c8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+  "https://images.unsplash.com/photo-1596398235916-3a8f3717dfd0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=890&q=80",
+  "https://images.unsplash.com/photo-1499384048662-8f714ec1420d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1355&q=80",
+  "https://images.unsplash.com/photo-1611244806964-91d204d4a2a7?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
+  "https://images.unsplash.com/photo-1522866348293-55be2c6caa1f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
+  "https://images.unsplash.com/photo-1533757879476-8f4a3cb1ae4b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80",
+  "https://images.unsplash.com/photo-1536598271160-65bd0d8380bd?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1268&q=80",
+  "https://images.unsplash.com/photo-1535082623926-b39352a03fb7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1368&q=80",
+  "https://images.unsplash.com/photo-1508974462591-3c124867fdf8?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1352&q=80"
+]
+
+lowfi_url = [
+  "https://images.unsplash.com/photo-1610359247414-83b06e486f86?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80"
+  "https://images.unsplash.com/photo-1527871899604-f1425bcce779?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
+  "https://images.unsplash.com/photo-1533271802434-53997a5f9e6c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
+  "https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=431&q=80"
+  "https://images.unsplash.com/photo-1606167668584-78701c57f13d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
+  "https://images.unsplash.com/photo-1559596116-5f4c539c1b24?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80"
+  "https://images.unsplash.com/photo-1534247555660-d4af46712d27?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=378&q=80"
+  "https://images.unsplash.com/photo-1572099317626-344a00980345?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=801&q=80"
+  "https://images.unsplash.com/photo-1605158743762-f887b36eef11?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=584&q=80"
+  "https://images.unsplash.com/photo-1517584640132-9379fc085be0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=753&q=80"
+  "https://www.nationaltrust.org.au/wp-content/uploads/2018/01/Como_LowRes_JPEG_22-1200x616.jpg"
+]
+
+brokeass_url = [
+  "https://www.hiddencitysecrets.com.au/wp-content/uploads/2018/08/Spleen-Bar-cbd-city-bars-Melbourne-hidden-laneway-cool-grungy-dive-cocktail-beer-small-intimate-drinks-after-work-live-music-001.jpg"
+  "https://images.unsplash.com/photo-1580998577850-cfcbed268932?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
+  "https://images.unsplash.com/photo-1508997449629-303059a039c0?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80"
+  "https://i.guim.co.uk/img/media/f1d4257d99b45600cd9229f22e6c460c0ac1240b/0_30_1000_600/master/1000.jpg?width=700&quality=85&auto=format&fit=max&s=6d48517af75e4e54703cb81d6b372868"
+]
+
 
 i = 0
 Category.find_by(name: "Sweat").activities.each do |activity|
@@ -219,12 +241,27 @@ Category.find_by(name: "Turnt").activities.each do |activity|
   i += 1
 end
 
-# i = 0
-# Category.find_by(name: "Outdoorsy").activities.each do |activity|
-#   file = URI.open(outdoorsy_url[i])
-#   activity.cover_photo.attach(io: file, filename: "#{activity.name.downcase.gsub(' ', '_')}.jpg", content_type: 'image/jpg')
-#   i += 1
-# end
+i = 0
+Category.find_by(name: "Outdoorsy").activities.each do |activity|
+  file = URI.open(outdoorsy_url[i])
+  activity.cover_photo.attach(io: file, filename: "#{activity.name.downcase.gsub(' ', '_')}.jpg", content_type: 'image/jpg')
+  i += 1
+end
+
+i = 0
+Category.find_by(name: "Lo-Fi").activities.each do |activity|
+  file = URI.open(lowfi_url[i])
+  activity.cover_photo.attach(io: file, filename: "#{activity.name.downcase.gsub(' ', '_')}.jpg", content_type: 'image/jpg')
+  i += 1
+end
+
+i = 0
+Category.find_by(name: "Broke-Ass").activities.each do |activity|
+  file = URI.open(brokeass_url[i])
+  activity.cover_photo.attach(io: file, filename: "#{activity.name.downcase.gsub(' ', '_')}.jpg", content_type: 'image/jpg')
+  i += 1
+end
+
 
 file = URI.open("https://images.unsplash.com/photo-1544622428-56b8d9eed7db?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1500&q=80")
 Category.find_by(name: "Romance").activities.find_by(name: "Cute dinner with Thembi").photos.attach(io: file, filename: "tajmahal1.jpg", content_type: 'image/jpg')
