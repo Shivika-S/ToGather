@@ -1,27 +1,64 @@
-<div class="chat-wrapper">
-    <div class="events">
-        <div class="event-name">
-        chat #1
+  <div class="row rounded-lg overflow-hidden shadow">
+    <!-- Users box-->
+    <div class="col-5 px-0">
+      <div class="bg-white">
+
+        <div class="bg-gray px-4 py-2 bg-light">
+          <p class="h5 mb-0 py-1">Chatrooms</p>
         </div>
-        <div class="event-name">
-        chat #2
+
+        <div class="messages-box">
+          <% current_user.chatrooms.each do |chatroom| %>
+            <% print_active_class = chatroom == @chatroom ? "active" : "" %>
+                <div class="list-group rounded-0 <%= print_active_class%>">
+                <a class="list-group-item list-group-item-action list-group-item rounded-0" id="event-background">
+                <div class="media">
+                    <div class="media-body ml-4">
+                    <div class="d-flex align-items-center justify-content-between mb-1">
+                        <h6 class="mb-0"><%= chatroom.name %></h6><small class="small font-weight-bold"><%= chatroom.created_at.to_s.slice(0..9) %></small>
+                    </div>
+                    </div>
+                </div>
+                </a>
+                </div>
+          <% end %>
+
         </div>
-        <div class="event-name">
-        chat #3
-        </div>
-        <div class="event-name">
-        chat #4
-        </div>
+      </div>
     </div>
-    <div class="conversation-wrap">
-        <h1>#<%= @chatroom.name %></h1>
+    <!-- Chat Box-->
+    <div class="col-7 px-0" id="chat-wrapper">
+      <div class="px-4 py-5 chat-box bg-white">
+        
+        <!-- Sender Message-->
         <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-        <% @chatroom.messages.each do |message| %>
-            <%= render 'messages/message', message: message%>
-        <% end %>
+            <% @chatroom.messages.each do |message| %>
+                <% message_style = current_user == message.chatroom_user.user ? "bg-light" : "bg-primary" %>
+                <div class="media w-50 mb-3">
+                    <div class="media-body ml-3">
+                        <div class="<%= message_style %> rounded py-2 px-3 mb-2">
+                            <p class="text-small mb-0 text-muted">
+                            <%= render 'messages/message', message: message%>
+                            </p>
+                        </div>
+                        <p class="small text-muted"><%= message.created_at.strftime("%l:%M%p | %b %e") %>
+                        </p>
+                    </div>
+                </div>
+            <% end %>
         </div>
-        <%= simple_form_for [ @chatroom, @message ] do |f| %>
-        <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
-        <% end %>
+
+      <!-- Typing area -->
+      
+        <div class="input-group">
+          <%= simple_form_for [ @chatroom, @message ] do |f| %>
+            <%= f.input :content, label: false, class: "form-control rounded-0 border-0 py-4 bg-light", id: "chat-input", placeholder: "Type a message" %>
+          <% end %>
+          <div class="input-group-append">
+            <button id="button-addon2" type="submit" class="btn btn-link"> <i class="fa fa-paper-plane"></i></button>
+          </div>
+        </div>
+
     </div>
+  </div>
 </div>

@@ -22,9 +22,13 @@ class ActivitiesController < ApplicationController
       infoWindow: render_to_string(partial: "info_window", locals: { activity: @activity }),
       # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
     }]
+    # @chatroom will be set to nil if no chat room with same name as activity exist
     @chatroom = Chatroom.find_by(name: @activity.name)
     # ||= will only set to value if @chatroom is nil
     @chatroom ||= Chatroom.create!(name: @activity.name)
+    # lets create a link between the user and the chatroom.. AKA a ChatroomUser instance
+
+    
   end
 
   def new
