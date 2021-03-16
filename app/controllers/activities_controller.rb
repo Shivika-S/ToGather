@@ -26,8 +26,9 @@ class ActivitiesController < ApplicationController
     @chatroom = Chatroom.find_by(name: @activity.name)
     # ||= will only set to value if @chatroom is nil
     @chatroom ||= Chatroom.create!(name: @activity.name)
-    @chatroom.user_id = current_user.id
-    @chatroom.save
+    # lets create a link between the user and the chatroom.. AKA a ChatroomUser instance
+
+    
   end
 
   def new
