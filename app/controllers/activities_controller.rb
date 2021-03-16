@@ -12,7 +12,7 @@ class ActivitiesController < ApplicationController
     else
       @activities = Activity.all
     end
-    @activity = Activity.new
+    @activity = Activity.new(activity_params)
   end
 
   def show
