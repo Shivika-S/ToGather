@@ -132,30 +132,6 @@ Activity.all.each do |activity|
   end
 end
 
-Scraping data tha relates to outdoor related activities.
-response = HTTParty.get('https://api.meetup.com/outdoors-adventure/events?page=20')
-filepath = File.join(__dir__, 'activities.csv')
-
-CSV.open(filepath, "wb") do |csv|
-    csv << %w[name start_time description url latitude longitude status ]
-    response.each do |activity|
-      csv << [activity["name"], activity["local_time"], activity["description"], activity["link"], activity["venue"]["lat"], activity["venue"]["lon"], activity["status"]]
-    end
-  end
-
-  csv_options = { headers: :first_row, header_converters: :symbol }
-  CSV.foreach(filepath, csv_options) do |row|
-    Category.find_by(name: "Outdoorsy").activities.create!(
-        name: row[:name],
-        start_time: row[:start_time],
-        description: row[:description],
-        url: row[:url],
-        latitude: row[:latitude].to_f,
-        longitude: row[:longitude].to_f,
-        status: row[:status]
-    )
-  end
-
 sweat_url = [
   "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1094&q=80",
   "https://wallpapercave.com/wp/wp1990689.jpg",
@@ -214,7 +190,7 @@ outdoorsy_url = [
   "https://images.unsplash.com/photo-1533757879476-8f4a3cb1ae4b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80",
   "https://images.unsplash.com/photo-1536598271160-65bd0d8380bd?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1268&q=80",
   "https://images.unsplash.com/photo-1535082623926-b39352a03fb7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1368&q=80",
-  "https://images.unsplash.com/photo-1508974462591-3c124867fdf8?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1352&q=80"
+  "https://images.unsplash.com/photo-1508974462591-3c124867fdf8?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1352&q=80",
   "https://images.pexels.com/photos/6173860/pexels-photo-6173860.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
 ]
 
@@ -331,3 +307,27 @@ end
 #   file = URI.open(url)
 #   Activity.find_by(name: "Cute dinner with Thembi").photos.attach(io: file, filename: "cute_dinner_with_thembi + #{i.to_s}.jpg", content_type: 'image/jpg')
 # end
+
+#Scraping data tha relates to outdoor related activities.
+# response = HTTParty.get('https://api.meetup.com/outdoors-adventure/events?page=20')
+# filepath = File.join(__dir__, 'activities.csv')
+
+# CSV.open(filepath, "wb") do |csv|
+#     csv << %w[name start_time description url latitude longitude status ]
+#     response.each do |activity|
+#       csv << [activity["name"], activity["local_time"], activity["description"], activity["link"], activity["venue"]["lat"], activity["venue"]["lon"], activity["status"]]
+#     end
+#   end
+
+#   csv_options = { headers: :first_row, header_converters: :symbol }
+#   CSV.foreach(filepath, csv_options) do |row|
+#     Category.find_by(name: "Outdoorsy").activities.create!(
+#         name: row[:name],
+#         start_time: row[:start_time],
+#         description: row[:description],
+#         url: row[:url],
+#         latitude: row[:latitude].to_f,
+#         longitude: row[:longitude].to_f,
+#         status: row[:status]
+#     )
+#   end
