@@ -7,19 +7,20 @@
     <div class="banner-question">
     <button class="js-home-init-btn">Lets get togather</button>
     </div>
-    <%= simple_form_for @activity, method: :get do |f| %>
-      <div class="banner-question js-home-category-question">
-        <div class="category-buttons">
-          <%= f.input :category, as: :radio_buttons, collection: ['Sweat', 'Romance', 'Outdoorsy', 'Low-fi', 'Turnt', 'Broke-ass'], :item_wrapper_class => 'inline' %>
-        </div>
-      </div>
-      <div class="banner-question js-home-date-question">
-        <%= f.date_field :start_time %>
-        <%= f.submit "Search", class: "btn btn-primary" %>
-      </div>
-    <% end %>
   </div>
 </div>
+<div class="filler-div"></div>
+<%= simple_form_for @activity, method: :get do |f| %>
+  <div class="banner-question js-home-category-question">
+    <div class="category-buttons">
+      <%= f.input :category, as: :radio_buttons, collection: ['Sweat', 'Romance', 'Outdoorsy', 'Low-fi', 'Turnt', 'Broke-ass'], :item_wrapper_class => 'inline' %>
+    </div>
+  </div>
+  <div class="banner-question js-home-date-question">
+    <%= f.date_field :start_time %>
+    <%= f.submit "Search", class: "btn btn-primary" %>
+  </div>
+<% end %>
 
 <!-- <div>
   <h2> Pick a mood</h2>
