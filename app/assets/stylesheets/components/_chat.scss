@@ -16,58 +16,61 @@
 
 #chat-wrapper {
     position: relative;
+    background-color: #7bb2e2;
+    .chat-box {
+        background-color: #7bb2e2;
+        .input-group {
+            position: absolute;
+            bottom: 0;
+            #new_message {
+                width: 93%;
+                input::placeholder {
+                    font-size: 0.9rem;
+                    color: #999;
+                    }
+            }
+        }
+    }
+    
 }
 
-input-group {
-    position: absolute;
-    bottom: 0;
+#messages {
+    #reciever-message {
+        border-radius: 10px;
+        color: white;
+    }
+    #sender-message {
+        border-radius: 10px;
+    }
 }
 
-#new_message {
-    width: 93%;
-}
-
-#chat-input {
-    width: 680px;
-    // position: absolute;
-    bottom: 0;
-    right: 228px;
-    text-align: center;
-    border-radius: 30px;
-}
-  
-  .text-small {
+.text-small {
     font-size: 0.9rem;
-  }
-  
-  .messages-box {
-    background-color: #251C3B;
-  }
+}
 
-  .messages-box,
-  .chat-box {
-    height: 85vh;
-    width: 100%;
-    overflow-y: scroll;
-  }
-  
-  .rounded-lg {
-    border-radius: 0.5rem;
-    padding-top: 56px;
-  }
-  
-  input::placeholder {
-    font-size: 0.9rem;
-    color: #999;
-  }
+.chatrooms {
+background-color: #251C3B;
+}
 
-  h6 {
-      color: #A09EAB;
-  }
+.chatrooms,
+.chat-box {
+height: 85vh;
+width: 100%;
+overflow-y: scroll;
+}
 
-  #event-background {
-      background-color: transparent;
-      color: #A09EAB;
-  }
+.rounded-lg {
+border-radius: 0.5rem;
+padding-top: 56px;
+}
+
+#chatroom-background {
+    background-color: transparent;
+    color: #A09EAB;
+    #chatroom-header {
+        color: #A09EAB;
+        font-size: 1.5rem;
+    }
+}
   
   
