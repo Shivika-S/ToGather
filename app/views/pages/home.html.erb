@@ -1,27 +1,38 @@
-<div class="banner">
-  <div class="container">
-    <h1 class="rellax" data-rellax-speed="5">ToGather</h1>
-    <p class="rellax" data-rellax-speed="3">We gather together</p>
-  </div>
-  <div class="container">
-    <div class="banner-question">
-    <button class="js-home-init-btn">Lets get togather</button>
+<div>
+  <div class="banner">
+    <div class="container">
+      <h1 id="home-title" class="rellax" data-rellax-speed="2">ToGather</h1>
+    </div>
+    <div class="container">
+      <div class="banner-question">
+        <button class="home-init-button js-home-init-btn rellax" data-rellax-speed="1">Lets get togather</button>
+      </div>
+    </div>
+    <div class="category-form-container">
+    <!--   <div class="filler-div"></div> -->
+      <%= simple_form_for @activity, method: :get do |f| %>
+        <div class="banner-question-category js-home-category-question d-flex justify-content-center align-items-center">
+          <div class="container">
+            <div class="category-buttons">
+              <%= f.input :category, as: :radio_buttons, collection: ['Sweat', 'Romance', 'Outdoorsy', 'Low-fi', 'Turnt', 'Broke-ass'], :item_wrapper_class => 'inline' %>
+            </div>
+          </div>
+        </div>
+        <div class="banner-question-date js-home-date-question d-flex justify-content-center align-items-center">
+          <div class="container d-flex justify-content-center">
+            <div class="date-buttons">
+              <%= f.date_field :start_time %>
+              <%= f.submit "Search", class: "btn btn-primary" %>
+            </div>
+          </div>
+          <h1 id="banner-question-date-header">Choose a date!</h1>
+          <div class="tree-image"></div>
+          <div class="sun-image"></div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
-<div class="filler-div"></div>
-<%= simple_form_for @activity, method: :get do |f| %>
-  <div class="banner-question js-home-category-question">
-    <div class="category-buttons">
-      <%= f.input :category, as: :radio_buttons, collection: ['Sweat', 'Romance', 'Outdoorsy', 'Low-fi', 'Turnt', 'Broke-ass'], :item_wrapper_class => 'inline' %>
-    </div>
-  </div>
-  <div class="banner-question js-home-date-question">
-    <%= f.date_field :start_time %>
-    <%= f.submit "Search", class: "btn btn-primary" %>
-  </div>
-<% end %>
-
 <!-- <div>
   <h2> Pick a mood</h2>
 <% @categories.each do |category| %>

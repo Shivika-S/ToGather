@@ -1,3 +1,7 @@
+#home-title {
+  font-size: 100px;
+}
+
 .banner {
   background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), image-url('collage.png');
   background-size: 100%;
@@ -27,6 +31,11 @@
 //   margin: 25px;
 //   text-align: center;
 //   // align-items: center;
+// }
+
+// .home-form-container {
+//   background: rgb(183,236,255);
+//   background: radial-gradient(circle, rgba(183,236,255,1) 0%, rgba(255,173,250,1) 80%);
 // }
 
 .filler-div {
