@@ -8,18 +8,21 @@
         </div>
 
         <div class="messages-box">
-
-          <div class="list-group rounded-0">
-            <a class="list-group-item list-group-item-action list-group-item rounded-0" id="event-background">
-              <div class="media">
-                <div class="media-body ml-4">
-                  <div class="d-flex align-items-center justify-content-between mb-1">
-                    <h6 class="mb-0"><%= @chatroom.name %></h6><small class="small font-weight-bold"><%= @chatroom.created_at.to_s.slice(0..9) %></small>
-                  </div>
+          <% @chatroom_index.each do |event| %>
+            <% if event.user_id == @current_user.id %>
+                <div class="list-group rounded-0">
+                <a class="list-group-item list-group-item-action list-group-item rounded-0" id="event-background">
+                <div class="media">
+                    <div class="media-body ml-4">
+                    <div class="d-flex align-items-center justify-content-between mb-1">
+                        <h6 class="mb-0"><%= event.name %></h6><small class="small font-weight-bold"><%= @chatroom.created_at.to_s.slice(0..9) %></small>
+                    </div>
+                    </div>
                 </div>
-              </div>
-            </a>
-          </div>
+                </a>
+                </div>
+            <% end %>
+          <% end %>
 
         </div>
       </div>

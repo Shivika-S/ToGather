@@ -26,6 +26,8 @@ class ActivitiesController < ApplicationController
     @chatroom = Chatroom.find_by(name: @activity.name)
     # ||= will only set to value if @chatroom is nil
     @chatroom ||= Chatroom.create!(name: @activity.name)
+    @chatroom.user_id = current_user.id
+    @chatroom.save
   end
 
   def new
