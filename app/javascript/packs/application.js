@@ -7,7 +7,7 @@ require("@rails/ujs").start();
 require("turbolinks").start();
 require("@rails/activestorage").start();
 require("channels");
-require("components");
+// require("components");
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -23,9 +23,10 @@ require("components");
 
 // External imports
 import "bootstrap";
+import Rellax from "rellax";
 import { initMapbox } from "../plugins/init_mapbox";
 import { initChatroomCable } from "../channels/chatroom_channel";
-import { chosenCategory } from "../components/homepage_form";
+import { chosenCategory, homePageInit } from "../components/homepage_form";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -33,7 +34,10 @@ document.addEventListener("turbolinks:load", () => {
   initMapbox();
   initChatroomCable();
   chosenCategory();
+  homePageInit();
 });
+
+var rellax = new Rellax('.rellax');
 
 // import { initUpdateNavbarOnScroll } from '../channels/navbar';
 

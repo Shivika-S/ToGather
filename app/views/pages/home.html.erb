@@ -1,8 +1,27 @@
-<div class="banner" style=">
+<div class="banner" style="">
   <div class="container">
-    <h1>ToGather</h1>
-    <p>We gather together</p>
+    <h1 class="rellax" data-rellax-speed="5">ToGather</h1>
+    <p class="rellax" data-rellax-speed="3">We gather together</p>
   </div>
+    <div class="container">
+      <div class="banner-question">
+      <button class="js-home-init-btn">Lets get togather</button>
+      </div>
+      <%= simple_form_for @activity, method: :get do |f| %>
+        <div class="banner-question js-home-category-question">
+          <div class="category-buttons">
+            <%= f.input :category, as: :radio_buttons, collection: ['Sweat', 'Romance', 'Outdoorsy', 'Low-fi', 'Turnt', 'Broke-ass'], :item_wrapper_class => 'inline' %>
+          </div>
+        </div>
+        <div class="banner-question js-home-date-question">
+          <%= f.date_field :start_time %>
+        </div>
+        <%= f.submit "Search", class: "btn btn-primary" %>
+      <% end %>
+
+    </div>
+
+
 </div>
 
 <!-- <div>
@@ -11,20 +30,6 @@
 <%# link_to category.name, new_category_activity_path(category), class: "btn btn-primary" %>
 <% end %>
 </div> -->
-
-<div class="container">
-  <h1>Choose your preferences</h1>
-
-  <%= simple_form_for @activity, method: :get do |f| %>
-    <div class="category-buttons">
-      <%= f.input :category, as: :radio_buttons, collection: ['Sweat', 'Romance', 'Outdoorsy', 'Low-fi', 'Turnt', 'Broke-ass'], :item_wrapper_class => 'inline' %>
-    </div>
-    <%= f.date_field :start_time %>
-    <%= f.submit "Search", class: "btn btn-primary" %>
-  <% end %>
-
-</div>
-
 
 
 
