@@ -132,29 +132,29 @@ Activity.all.each do |activity|
   end
 end
 
-# Scraping data tha relates to outdoor related activities.
-# response = HTTParty.get('https://api.meetup.com/outdoors-adventure/events?page=20')
-# filepath = File.join(__dir__, 'activities.csv')
+Scraping data tha relates to outdoor related activities.
+response = HTTParty.get('https://api.meetup.com/outdoors-adventure/events?page=20')
+filepath = File.join(__dir__, 'activities.csv')
 
-# CSV.open(filepath, "wb") do |csv|
-#     csv << %w[name start_time description url latitude longitude status ]
-#     response.each do |activity|
-#       csv << [activity["name"], activity["local_time"], activity["description"], activity["link"], activity["venue"]["lat"], activity["venue"]["lon"], activity["status"]]
-#     end
-#   end
+CSV.open(filepath, "wb") do |csv|
+    csv << %w[name start_time description url latitude longitude status ]
+    response.each do |activity|
+      csv << [activity["name"], activity["local_time"], activity["description"], activity["link"], activity["venue"]["lat"], activity["venue"]["lon"], activity["status"]]
+    end
+  end
 
-#   csv_options = { headers: :first_row, header_converters: :symbol }
-#   CSV.foreach(filepath, csv_options) do |row|
-#     Category.find_by(name: "Outdoorsy").activities.create!(
-#         name: row[:name],
-#         start_time: row[:start_time],
-#         description: row[:description],
-#         url: row[:url],
-#         latitude: row[:latitude].to_f,
-#         longitude: row[:longitude].to_f,
-#         status: row[:status]
-#     )
-#   end
+  csv_options = { headers: :first_row, header_converters: :symbol }
+  CSV.foreach(filepath, csv_options) do |row|
+    Category.find_by(name: "Outdoorsy").activities.create!(
+        name: row[:name],
+        start_time: row[:start_time],
+        description: row[:description],
+        url: row[:url],
+        latitude: row[:latitude].to_f,
+        longitude: row[:longitude].to_f,
+        status: row[:status]
+    )
+  end
 
 sweat_url = [
   "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1094&q=80",

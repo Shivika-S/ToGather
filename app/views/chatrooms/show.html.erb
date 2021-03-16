@@ -14,7 +14,7 @@
               <div class="media">
                 <div class="media-body ml-4">
                   <div class="d-flex align-items-center justify-content-between mb-1">
-                    <h6 class="mb-0">Yoga at Inspire 9</h6><small class="small font-weight-bold">25 Dec</small>
+                    <h6 class="mb-0"><%= @chatroom.name %></h6><small class="small font-weight-bold"><%= @chatroom.created_at.to_s.slice(0..9) %></small>
                   </div>
                 </div>
               </div>
@@ -26,7 +26,7 @@
     </div>
     <!-- Chat Box-->
     <div class="col-7 px-0">
-      <div class="px-4 py-5 chat-box bg-white">
+      <div class="px-4 py-5 chat-box bg-white" id="chat-wrapper">
         
         <!-- Sender Message-->
         <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
