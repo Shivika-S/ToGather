@@ -14,11 +14,60 @@
     border-radius: 1rem;
 }
 
+.chatrooms,
+.chat-box {
+height: 85vh;
+width: 100%;
+overflow-y: scroll;
+}
+
+.rounded-lg {
+border-radius: 0.5rem;
+padding-top: 56px;
+}
+
+.text-small {
+    font-size: 0.9rem;
+}
+
+.chatrooms {
+    background-color: #645785;
+    #chatroom-background {
+        background-color: #645785;
+        color: #F8F8F8;
+        transition: ease 1s;
+        #chatroom-header {
+            color: #CBBEDA;
+            font-size: 1.2rem;
+            transition: ease-in-out 1s;
+        }
+        #chatroom-header:hover {
+            color: rgb(231, 220, 220);
+            transition: ease-in-out 1s;
+        }
+    }
+    #chatroom-background:hover {
+        background-color: rgb(144, 126, 185);
+        transition: ease-in-out 1s;
+    }
+}
+
 #chat-wrapper {
     position: relative;
-    background-color: #7bb2e2;
+    background-color: #cbbeda;
     .chat-box {
-        background-color: #7bb2e2;
+        background-color: #cbbeda;
+        #messages {
+            #reciever-message {
+                border-radius: 10px;
+                color: white;
+                background-color: #a08695;
+            }
+            #sender-message {
+                border-radius: 10px;
+                background-color: #f8f8f8;
+            }
+        }
         .input-group {
             position: absolute;
             bottom: 0;
@@ -34,43 +83,10 @@
     
 }
 
-#messages {
-    #reciever-message {
-        border-radius: 10px;
-        color: white;
-    }
-    #sender-message {
-        border-radius: 10px;
-    }
-}
 
-.text-small {
-    font-size: 0.9rem;
-}
 
-.chatrooms {
-background-color: #251C3B;
-}
 
-.chatrooms,
-.chat-box {
-height: 85vh;
-width: 100%;
-overflow-y: scroll;
-}
 
-.rounded-lg {
-border-radius: 0.5rem;
-padding-top: 56px;
-}
 
-#chatroom-background {
-    background-color: transparent;
-    color: #A09EAB;
-    #chatroom-header {
-        color: #A09EAB;
-        font-size: 1.5rem;
-    }
-}
   
   
