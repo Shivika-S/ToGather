@@ -11,15 +11,15 @@
           <% current_user.chatrooms.each do |chatroom| %>
             <% print_active_class = chatroom == @chatroom ? "active" : "" %>
                 <div class="list-group rounded-0 <%= print_active_class%>">
-                <a class="list-group-item list-group-item-action list-group-item rounded-0" id="event-background">
-                <div class="media">
-                    <div class="media-body ml-4">
-                    <div class="d-flex align-items-center justify-content-between mb-1">
-                        <h6 class="mb-0"><%= chatroom.name %></h6>
-                    </div>
-                    </div>
-                </div>
-                </a>
+                    <a href="<%= chatroom_path(chatroom.id) %>" class="list-group-item list-group-item-action list-group-item rounded-0" id="event-background">
+                        <div class="media">
+                            <div class="media-body ml-4">
+                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                <h6 class="mb-0"><%= chatroom.name %></h6>
+                            </div>
+                            </div>
+                        </div>
+                    </a>
                 </div>
           <% end %>
 
@@ -33,9 +33,13 @@
         <!-- Messages-->
         <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
             <% @chatroom.messages.each do |message| %>
+
                 <% message_style = current_user == message.chatroom_user.user ? "bg-light" : "bg-primary" %>
-                <% reciever_id = current_user == message.chatroom_user.user ? "" : "reciever-message" %>
+
+                <% reciever_id = current_user == message.chatroom_user.user ? "sender-message" : "reciever-message" %>
+
                 <% ml_auto = current_user == message.chatroom_user.user ? "" : "ml-auto" %>
+
                 <div class="media w-50 <%= ml_auto %> mb-3">
                     <div class="media-body ml-3">
                         <div class="<%= message_style %> rounded py-2 px-3 mb-2" id="<%= reciever_id %>">
@@ -43,8 +47,8 @@
                             <%= render 'messages/message', message: message%>
                             </p>
                         </div>
-                        <%# <p class="small text-muted"><%= message.created_at.strftime("%l:%M%p | %b %e") %>
-                        <%# </p> %>
+                        <p class="small text-muted"><%= message.created_at.strftime("%l:%M%p | %b %e") %>
+                        </p>
                     </div>
                 </div>
             <% end %>
