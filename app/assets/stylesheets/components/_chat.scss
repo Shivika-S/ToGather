@@ -35,6 +35,7 @@ padding-top: 56px;
     #chatroom-background {
         background-color: #645785;
         color: #F8F8F8;
+        border: none;
         transition: ease 1s;
         #chatroom-header {
             color: #CBBEDA;
@@ -58,21 +59,27 @@ padding-top: 56px;
     .chat-box {
         background-color: #cbbeda;
         #messages {
-            #reciever-message {
-                border-radius: 10px;
-                color: white;
-                background-color: #a08695;
-            }
             #sender-message {
                 border-radius: 10px;
+                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
                 background-color: #f8f8f8;
+            }
+            #reciever-message {
+                border-radius: 10px;
+                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                color: white;
+                background-color: #af8ca1;
             }
         }
         .input-group {
             position: absolute;
             bottom: 0;
+            #message_content {
+                border-radius: 15px;
+            }
             #new_message {
-                width: 93%;
+                width: 91%;
+                
                 input::placeholder {
                     font-size: 0.9rem;
                     color: #999;
