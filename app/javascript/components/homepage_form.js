@@ -22,7 +22,7 @@ const homePageInit = () => {
   const homePageInitBtn = document.querySelector('.js-home-init-btn');
   homePageInitBtn.addEventListener('click', function() {
     const categorySectionEl = document.querySelector('.js-home-category-question');
-    const categoryEl = document.querySelector('.activity_category');
+    const categoryEl = document.querySelector('.category-buttons');
     window.scrollTo({
       top: categorySectionEl.offsetTop-((window.innerHeight-categoryEl.offsetHeight)/2),
       behavior: 'smooth',

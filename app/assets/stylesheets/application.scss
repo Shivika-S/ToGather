@@ -17,7 +17,23 @@
   margin-top: 20px;
 }
 
+#footer-stuff {
+  display: flex;
+  justify-content: center;
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+}
+
 .footer-basic {
+  position: absolute;
+  bottom: 0;
   padding-top: 10px;
   padding-bottom: 0px;
   flex-shrink: 0;
@@ -25,7 +41,7 @@
   color:#4b4c4d;
   height: 40px;
   display: block;
-  margin-top: 0px;
+  // margin-top: 0px;
 }
 
 .footer-basic ul {
