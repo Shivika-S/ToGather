@@ -25,6 +25,7 @@ require("channels");
 import "bootstrap";
 import Rellax from "rellax";
 import { initMapbox } from "../plugins/init_mapbox";
+import { initShowpage } from "../plugins/init_showpage";
 import { initChatroomCable } from "../channels/chatroom_channel";
 import { initUpdateNavbarOnScroll } from "../components/navbar";
 import { chosenCategory, homePageInit } from "../components/homepage_form";
@@ -33,6 +34,7 @@ import { chosenCategory, homePageInit } from "../components/homepage_form";
 
 document.addEventListener("turbolinks:load", () => {
   initMapbox();
+  initShowpage();
   initChatroomCable();
   initUpdateNavbarOnScroll();
 });
