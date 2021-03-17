@@ -49,9 +49,9 @@
       <div class="activity-details">
         <h1><%= @activity.name %></h1>
         <br>
-        <p><%= @activity.description %></p>
-        <p><%= @activity.address %></p>
-        <p><%= DateTime.parse(@activity.start_time.to_s).strftime(("%d of %B, %Y")) %></p>
+        <p class="activity-description"><%= @activity.description %></p>
+        <p class="address-date"><span><%= @activity.address %></span></p>
+        <p class="address-date"><span><%= DateTime.parse(@activity.start_time.to_s).strftime(("%d of %B, %Y")) %></span></p>
         <%= link_to "Join the chat!", chatroom_path(@chatroom.id), class: "btn btn-info", id: "join-chat-btn" %>
       </div>
 
