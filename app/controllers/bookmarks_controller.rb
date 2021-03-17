@@ -1,6 +1,5 @@
 class BookmarksController < ApplicationController
-
-   def create
+  def create
     @bookmark = Bookmark.new
     @activity = Activity.find(params[:activity_id])
     @bookmark.user = current_user
