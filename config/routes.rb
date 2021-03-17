@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   get "dashboard", to: "dashboards#show"
   get "bookmark", to: "dashboards#show"
+  get "/activities/:id" => "activities#destroy"
 
   devise_scope :user do
    get '/users/sign_out' => 'devise/sessions#destroy'
