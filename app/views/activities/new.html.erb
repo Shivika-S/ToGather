@@ -11,7 +11,7 @@
     <%= f.input :description, :input_html => {class: 'description'} %>
     <%= f.input :address, :input_html => {class: 'response-project'} %>
     <%= f.input :start_time, as: :date, :input_html => {class: 'response-project'} %>
-    <%= f.input :cover_photo, as: :file %>
+    <%= f.input :cover_photo, as: :file, :input_html => {class: 'upload'} %>
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     <%= f.submit "Submit", class: "btn btn-primary" %>
   <% end %>
