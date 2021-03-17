@@ -17,10 +17,16 @@ body.activities {
   background-color: #183974;
   padding: 5px 15px;
   border-radius: 10px;
+  transition: ease-in 0.5;
 }
 
 #join-chat-btn:hover {
-  sc
+  transform: scale(1.05);
+  transition: ease-in 0.5;
+}
+
+.activity-details {
+  width: 492px;
 }
 
 
