@@ -8,7 +8,12 @@ const initChatroomCable = () => {
       { channel: "ChatroomChannel", id: id },
       {
         received(data) {
-          messagesContainer.insertAdjacentHTML("beforeend", data);
+          messagesContainer.insertAdjacentHTML(
+            "beforeend",
+            data
+              .replace("sender-message", "reciever-message")
+              .replace("ml-chat", "ml-auto")
+          );
         },
       }
     );

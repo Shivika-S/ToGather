@@ -26,6 +26,7 @@ import "bootstrap";
 import Rellax from "rellax";
 import { initMapbox } from "../plugins/init_mapbox";
 import { initChatroomCable } from "../channels/chatroom_channel";
+import { initUpdateNavbarOnScroll } from "../components/navbar";
 import { chosenCategory, homePageInit } from "../components/homepage_form";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -33,11 +34,12 @@ import { chosenCategory, homePageInit } from "../components/homepage_form";
 document.addEventListener("turbolinks:load", () => {
   initMapbox();
   initChatroomCable();
+  initUpdateNavbarOnScroll();
   chosenCategory();
   homePageInit();
 });
 
-var rellax = new Rellax('.rellax');
+var rellax = new Rellax(".rellax");
 
 // import { initUpdateNavbarOnScroll } from '../channels/navbar';
 
