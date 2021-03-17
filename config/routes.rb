@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'errors/not_found'
+  get 'errors/unacceptable'
+  get 'errors/internal_error'
   devise_for :users
 
   resources :activities, only: [:index, :new, :create, :destroy, :edit, :update]
