@@ -35,10 +35,11 @@ document.addEventListener("turbolinks:load", () => {
   initMapbox();
   initChatroomCable();
   initUpdateNavbarOnScroll();
+  chosenCategory();
+  homePageInit();
+  outdoorsyCategory();
+
+  var rellax = new Rellax(".rellax");
 });
 
-chosenCategory();
-homePageInit();
-outdoorsyCategory();
 
-var rellax = new Rellax(".rellax");
