@@ -46,28 +46,38 @@
 }
 
 label[for="activity_category_sweat"] {
-  background: rgb(27,255,216);
-  background: radial-gradient(circle, rgba(27,255,216,1) 0%, rgba(0,0,0,0) 100%);
+  background-image: url('sweat.jpg');
+  background-size: cover;
 }
 label[for="activity_category_romance"] {
-  background: rgb(255,27,45);
-  background: radial-gradient(circle, rgba(255,27,45,1) 0%, rgba(0,0,0,0) 100%);
+  // background: rgb(255,27,45);
+  // background: radial-gradient(circle, rgba(255,27,45,1) 0%, rgba(0,0,0,0) 100%);
+  background-image: url('romance.jpg');
+  background-size: cover;
 }
 label[for="activity_category_outdoorsy"] {
-  background: rgb(60,157,0);
-  background: radial-gradient(circle, rgba(60,157,0,1) 0%, rgba(0,0,0,0) 100%);
+  // background: rgb(60,157,0);
+  // background: radial-gradient(circle, rgba(60,157,0,1) 0%, rgba(0,0,0,0) 100%);
+  background-image: url('outdoorsy.jpg');
+  background-size: cover;
 }
 label[for="activity_category_low-fi"] {
-  background: rgb(255,174,27);
-  background: radial-gradient(circle, rgba(255,174,27,1) 0%, rgba(0,0,0,0) 100%);
+  // background: rgb(255,174,27);
+  // background: radial-gradient(circle, rgba(255,174,27,1) 0%, rgba(0,0,0,0) 100%);
+  background-image: url('lowfi.jpg');
+  background-size: cover;
 }
 label[for="activity_category_turnt"] {
-  background: rgb(105,27,255);
-  background: radial-gradient(circle, rgba(105,27,255,1) 0%, rgba(0,0,0,0) 100%);
+  // background: rgb(105,27,255);
+  // background: radial-gradient(circle, rgba(105,27,255,1) 0%, rgba(0,0,0,0) 100%);
+  background-image: url('turnt.jpg');
+  background-size: cover;
 }
 label[for="activity_category_broke-ass"] {
-  background: rgb(27,60,255);
-  background: radial-gradient(circle, rgba(27,60,255,1) 0%, rgba(0,0,0,0) 100%);
+  // background: rgb(27,60,255);
+  // background: radial-gradient(circle, rgba(27,60,255,1) 0%, rgba(0,0,0,0) 100%);
+  background-image: url('brokeass.jpg');
+  background-size: cover;
 }
 
 .question-category-container {
@@ -191,14 +201,8 @@ label[for="activity_category_broke-ass"] {
 .form-control {
 border-radius: 20px;
 background: #white;
-
 }
 
-#login_button {
-  background: orange;
-  border-radius: 20px;
-  width: 100%;
-}
 .signup_button {
   background: #183974;
   border-radius: 20px;
@@ -223,6 +227,7 @@ background: #white;
   color: #041f4e;
 }
 
+<<<<<<< HEAD
 .response-project {
   width: 650px;
   margin: 0 auto;
