@@ -76,7 +76,7 @@ label[for="activity_category_broke-ass"] {
   padding: 5px 35px;
   // margin-left: 20vw;
   #banner-question-category-header {
-    color: white;
+    color: #FCCE3A;
     text-align: center;
   }
 }
@@ -92,7 +92,7 @@ label[for="activity_category_broke-ass"] {
   position: relative;
   #banner-question-date-header {
     margin-bottom: 3vh;
-    color: white;
+    color: #FCCE3A;
   }
 }
 
@@ -121,9 +121,11 @@ label[for="activity_category_broke-ass"] {
 }
 
 #form-search-button {
+  color: #495057;
   background-color: #FCCE3A;
   border: none;
   padding: 5px 20px;
+  border-radius: 20px;
 }
 
 .date-buttons {
