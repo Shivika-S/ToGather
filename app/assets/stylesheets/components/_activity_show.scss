@@ -9,17 +9,10 @@ body.activities {
   box-sizing: border-box;
 }
 
-.slider {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: linear-gradient(to left, #ba7453, #d1a984);
-  z-index: -1;
+#show-background {
+  background: $aqua;
 }
 
-section {
-  display: flex;
-  height: 80vh;
-}
+
+
+
