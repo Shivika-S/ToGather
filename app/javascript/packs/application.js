@@ -7,6 +7,7 @@ require("@rails/ujs").start();
 require("turbolinks").start();
 require("@rails/activestorage").start();
 require("channels");
+// require("components");
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -22,19 +23,25 @@ require("channels");
 
 // External imports
 import "bootstrap";
+import Rellax from "rellax";
 import { initMapbox } from "../plugins/init_mapbox";
 import { initChatroomCable } from "../channels/chatroom_channel";
+import { chosenCategory, homePageInit } from "../components/homepage_form";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener("turbolinks:load", () => {
   initMapbox();
   initChatroomCable();
+  chosenCategory();
+  homePageInit();
 });
 
-import { initUpdateNavbarOnScroll } from '../channels/navbar';
+var rellax = new Rellax('.rellax');
 
-document.addEventListener('turbolinks:load', () => {
-  // Call your JS functions here
-  initUpdateNavbarOnScroll();
-});
+// import { initUpdateNavbarOnScroll } from '../channels/navbar';
+
+// document.addEventListener('turbolinks:load', () => {
+//   // Call your JS functions here
+//   initUpdateNavbarOnScroll();
+// });
