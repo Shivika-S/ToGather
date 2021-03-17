@@ -3,4 +3,45 @@
   color: white;
 }
 
+body.activities {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#show-background {
+  background: $aqua;
+}
+
+#join-chat-btn {
+  background-color: #183974;
+  padding: 5px 15px;
+  border-radius: 10px;
+  transition: ease-in 0.5s;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#join-chat-btn:hover {
+  transform: scale(1.05);
+  transition: ease-in 0.5s;
+}
+
+.activity-details {
+  width: 492px;
+  h1 {
+    text-shadow: 2px 3px 5px rgba(0,0,0,0.5);
+  }
+  .activity-description {
+    letter-spacing: 0.5px;
+    text-shadow: 2px 3px 5px rgba(0,0,0,0.5);
+  }
+  .address-date {
+    font-size: 0.8rem;
+    font-style: italic;
+    text-shadow: 2px 3px 5px rgba(0,0,0,0.5);
+  }
+}
+
+
+
 
