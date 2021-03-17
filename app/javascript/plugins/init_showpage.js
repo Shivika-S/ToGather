@@ -1,0 +1,5 @@
+const initShowpage = () => {
+    
+}
+
+export { initShowpage };
