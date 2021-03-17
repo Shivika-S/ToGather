@@ -12,7 +12,7 @@
       <link rel="stylesheet" href="assets/css/style.css">
   </head>
 
-  <body>
+  <body class="<%= params[:controller]%>">
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <% if params[:action] == "show" && params[:controller] == "activities" %>

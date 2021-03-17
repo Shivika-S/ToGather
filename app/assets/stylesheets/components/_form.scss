@@ -13,7 +13,7 @@
   padding: 10px;
   font-size: 15px;
   transition: border-color 0.3s;
-
+  background-position: center;
   color: gray;
 }
 
@@ -29,6 +29,37 @@
 
 .form-control {
 border-radius: 20px;
-// background: rgb(2,0,36);
-// background: linear-gradient(90deg, rgba(2,0,36,1) 34%, rgba(24,57,116,0.9962359943977591) 73%, rgba(43,17,118,1) 100%);
+background: #white;
+
 }
+
+#login_button {
+  background: orange;
+  border-radius: 20px;
+  width: 100%;
+}
+.signup_button {
+  background: #183974;
+  border-radius: 20px;
+  color: white;
+  padding: 5px;
+  width: 100%;
+  position: left;
+}
+
+.forgot_button {
+  background: #183974;
+  border-radius: 20px;
+  color: white;
+  padding: 5px;
+  width: 100%;
+  position: right;
+}
+
+#sign_in_body {
+  height: 100vh;
+  background: white;
+  color: #041f4e;
+}
+
+
