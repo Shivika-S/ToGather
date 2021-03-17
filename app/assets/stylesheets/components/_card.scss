@@ -26,6 +26,14 @@
     }
 }
 
+#home-tab {
+  color: black;
+}
+
+#profile-tab {
+  color: black;
+}
+
 .card {
   margin-top: 40px;
   width: 100%;
@@ -44,6 +52,18 @@
   }
 
 }
+
+#show,#content {
+  display:none;
+  // -webkit-transition: opacity 1s ease-out;
+    transition: opacity 1s ease-out;
+}
+
+#show:checked~#content{display:block;}
+
+#show,#bookmark{display:none;}
+#show:checked~#bookmark{display:block;}
+
 
 .card:hover {
   -webkit-transform: scale(1.05);
@@ -71,6 +91,52 @@
   border-radius: 8px 8px 0 0;
   object-fit: cover;
 }
+
+.dashboard-cards-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+
+  .dashboard-cards {
+      flex-wrap: wrap;
+      display: flex;
+      border: none;
+      border-radius: 8px 8px 0 0;
+      float: left;
+      width: 100%;
+      /* max-width: 1000px; */
+      box-sizing: border-box;
+
+      .activity-card {
+        width: calc(100% / 3);
+        display: inline-block;
+        padding: 30px;
+        overflow: hidden;
+        box-sizing: border-box;
+
+        a {
+          width: 100%;
+
+          .image-container {
+            width: 100%;
+            height: 100px;
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+
+            }
+          }
+
+        }
+      }
+  }
+}
+
+
 
 #card_details {
   position: relative;
