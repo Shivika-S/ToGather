@@ -47,28 +47,34 @@
 }
 
 label[for="activity_category_sweat"] {
-  background: rgb(27,255,216);
-  background: radial-gradient(circle, rgba(27,255,216,1) 0%, rgba(0,0,0,0) 100%);
+  background: rgb(255,174,27);
+  background: radial-gradient(circle, rgba(255,174,27,1) 0%, rgba(0,0,0,0) 100%);
+
 }
 label[for="activity_category_romance"] {
-  background: rgb(255,27,45);
-  background: radial-gradient(circle, rgba(255,27,45,1) 0%, rgba(0,0,0,0) 100%);
+  background: rgb(255,174,27);
+  background: radial-gradient(circle, rgba(255,174,27,1) 0%, rgba(0,0,0,0) 100%);
+
 }
 label[for="activity_category_outdoorsy"] {
-  background: rgb(60,157,0);
-  background: radial-gradient(circle, rgba(60,157,0,1) 0%, rgba(0,0,0,0) 100%);
+  background: rgb(255,174,27);
+  background: radial-gradient(circle, rgba(255,174,27,1) 0%, rgba(0,0,0,0) 100%);
+
 }
 label[for="activity_category_low-fi"] {
   background: rgb(255,174,27);
   background: radial-gradient(circle, rgba(255,174,27,1) 0%, rgba(0,0,0,0) 100%);
+
 }
 label[for="activity_category_turnt"] {
-  background: rgb(105,27,255);
-  background: radial-gradient(circle, rgba(105,27,255,1) 0%, rgba(0,0,0,0) 100%);
+  background: rgb(255,174,27);
+  background: radial-gradient(circle, rgba(255,174,27,1) 0%, rgba(0,0,0,0) 100%);
+
 }
 label[for="activity_category_broke-ass"] {
-  background: rgb(27,60,255);
-  background: radial-gradient(circle, rgba(27,60,255,1) 0%, rgba(0,0,0,0) 100%);
+  background: rgb(255,174,27);
+  background: radial-gradient(circle, rgba(255,174,27,1) 0%, rgba(0,0,0,0) 100%);
+
 }
 
 .question-category-container {
@@ -125,17 +131,19 @@ label[for="activity_category_broke-ass"] {
   background-color: #FCCE3A;
   border: none;
   padding: 5px 20px;
-  border-radius: 20px;
+  border-radius: 8px;
 }
 
 .date-buttons {
   text-align: center;
+  position: relative;
 }
 
 .activity_start_time > div {
   width: 30vw;
   flex-direction: column-reverse !important;
   select {
+    border-radius: 8px;
     margin-bottom: 5vh;
     text-align: center;
     background-color: #FCCE3A;
@@ -147,14 +155,64 @@ label[for="activity_category_broke-ass"] {
   background-color: blue !important;
 }
 
-#activity_category_low-fi {
 
+#autotype-day {
+  position: absolute;
+  top: 13px;
+  right: -11vw;
+  color: #FCCE3A;
+  transform: rotate(-22deg);
+  font-size: 22px;
 }
 
-// .category-form-container {
-//   position: absolute;
-//   top: 30vh;
-// }
+#autotype-month {
+  position: absolute;
+  top: 13px;
+  left: -11vw;
+  color: #FCCE3A;
+  transform: rotate(-22deg);
+  font-size: 22px;
+}
+
+#autotype-year {
+  position: absolute;
+  top: 130px;
+  right: -11vw;
+  color: #FCCE3A;
+  transform: rotate(-22deg);
+  font-size: 22px;
+}
+
+#arrow-day-date {
+  position: absolute;
+  background-size: contain;
+  top: 0;
+  right: -8vw;
+  width: 100px;
+  height: 100px;
+  transform: rotate(40deg);
+}
+
+#arrow-day-month {
+  position: absolute;
+  background-size: contain;
+  top: 55px;
+  left: -8vw;
+  width: 100px;
+  height: 100px;
+  transform: rotate(180deg);
+}
+
+#arrow-day-year {
+  position: absolute;
+  background-size: contain;
+  top: 140px;
+  right: -8vw;
+  width: 100px;
+  height: 100px;
+  transform: rotate(40deg);
+}
+
 .banner-call {
   position: absolute;
   top: 27vh;
