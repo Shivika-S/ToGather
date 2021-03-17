@@ -1,3 +1,7 @@
+body.chatrooms {
+    box-sizing: border-box;
+}
+
 ::-webkit-scrollbar {
     width: 5px;
 }
@@ -41,11 +45,11 @@ padding-top: 56px;
             #chatroom-header {
                 color: #CBBEDA;
                 font-size: 1.2rem;
-                transition: ease-in-out 1s;
+                transition: ease-in-out 0.7s;
             }
             #chatroom-header:hover {
                 color: rgb(231, 220, 220);
-                transition: ease-in-out 1s;
+                transition: ease-in-out 0.7s;
             }
         }
         #chatroom-background:hover {
@@ -93,6 +97,12 @@ padding-top: 56px;
             bottom: 0;
             #message_content {
                 border-radius: 20px;
+                opacity: 0.5;
+                transition: ease-in-out 0.7s;
+            }
+            #message_content:hover {
+                opacity: 1;
+                transition: ease-in-out 0.7s;
             }
             #new_message {
                 width: 91%;
@@ -107,9 +117,7 @@ padding-top: 56px;
     
 }
 
-body.chatrooms {
-    background-color : blue;
-}
+
 
 
 
