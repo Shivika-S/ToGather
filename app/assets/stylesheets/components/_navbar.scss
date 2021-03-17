@@ -1,7 +1,7 @@
 #main-navbar {
   display: flex;
   justify-content: space-between;
-  background-color: rgba( 255, 255, 255, 0.1);
+  background-color: white;
   transition: 0.5s background-color ease;
   position: absolute;
   z-index: 1000;
@@ -12,6 +12,7 @@
   height: 55px;
   font-size: 12px;
   display: flex;
+  background-color: white;
   // justify-content: space-between;
   // .navbar-dice img {
   //   width: 40px;
@@ -20,7 +21,7 @@
 }
 
 .nav-link {
-   color: white !important;
+   color: gray !important;
 }
 
 .navbar-logo .navbar-brand img {

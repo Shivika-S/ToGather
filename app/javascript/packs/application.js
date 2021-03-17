@@ -35,16 +35,10 @@ document.addEventListener("turbolinks:load", () => {
   initMapbox();
   initChatroomCable();
   initUpdateNavbarOnScroll();
-  chosenCategory();
-  homePageInit();
-  outdoorsyCategory();
 });
 
+chosenCategory();
+homePageInit();
+outdoorsyCategory();
+
 var rellax = new Rellax(".rellax");
-
-// import { initUpdateNavbarOnScroll } from '../channels/navbar';
-
-// document.addEventListener('turbolinks:load', () => {
-//   // Call your JS functions here
-//   initUpdateNavbarOnScroll();
-// });

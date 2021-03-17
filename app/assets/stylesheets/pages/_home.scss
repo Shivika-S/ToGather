@@ -1,11 +1,11 @@
 .home-page {
-  background-color: #420186;
+  background-color: white;
 }
 
 #home-title {
-  font-size: 100px;
-  color: #FCCE3A;
   text-shadow: 1px 1px 5px black;
+  font-size: 70px;
+  color: white;
 }
 
 .banner-card {
@@ -18,7 +18,7 @@
   align-items: center;
   justify-content: space-around;
   font-size: 22px;
-  color: white;
+  color: black;
   font-weight: bolder;
   text-shadow: 0 0 10px rgba(0,0,0,0.7);
 }
@@ -45,14 +45,14 @@
 
 .banner h1 {
   margin: 0;
-  color: white;
+  color: black;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-weight: bold;
 }
 
 .banner p {
   font-size: 20px;
-  color: white;
+  color: black;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 // Specific CSS for your home-page
