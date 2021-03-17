@@ -8,26 +8,22 @@
     <%= stylesheet_pack_tag 'application' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-      <link rel="stylesheet" href="/path/to/flickity.css" media="screen">
       <link rel="stylesheet" href="assets/css/style.css">
   </head>
 
-  <body>
+  <body class="<%= params[:controller]%>">
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <% if params[:action] == "show" && params[:controller] == "activities" %>
       <%= render 'pages/activities_show' %>
     <% end %>
     <%= yield %>
+
+    <!-- Footer -->
     <div class="footer-basic">
         <footer>
             <div class="social"><a href="https://www.instagram.com/lewagonmelbourne/?hl=en"><i class="icon ion-social-instagram"></i></a><a href="https://github.com/Shivika-S/ToGather"><i class="icon ion-social-github"></i></a><a href="https://twitter.com/LeWagonMEL?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i class="icon ion-social-twitter"></i></a><a href="https://www.facebook.com/lewagonaustralia/"><i class="icon ion-social-facebook"></i></a></div>
-            <ul class="list-inline">
-                <li class="list-inline-item"><a href="#">Home</a></li>
-                <li class="list-inline-item"><a href="#">About</a></li>
-            </ul>
             <p class="copyright">ToGather © 2021</p>
         </footer>
     </div>
