@@ -30,9 +30,9 @@
   align-items: center;
   justify-content: space-around;
   font-size: 22px;
-  color: white;
+  color: #495057;
   font-weight: bolder;
-  text-shadow: 0 0 10px rgba(0,0,0,0.7);
+  // text-shadow: 0 0 10px rgba(0,0,0,0.7);
   transition: transform 0.6s, box-shadow 0.6s;
   -webkit-backface-visibility: hidden;
   &:hover {
@@ -86,7 +86,7 @@ label[for="activity_category_broke-ass"] {
   padding: 5px 35px;
   // margin-left: 20vw;
   #banner-question-category-header {
-    color: #FCCE3A;
+    color: #495057;
     text-align: center;
   }
 }
@@ -102,7 +102,7 @@ label[for="activity_category_broke-ass"] {
   position: relative;
   #banner-question-date-header {
     margin-bottom: 3vh;
-    color: #FCCE3A;
+    color: #495057;
   }
 }
 
@@ -163,27 +163,27 @@ label[for="activity_category_broke-ass"] {
 
 #autotype-day {
   position: absolute;
-  top: 0;
+  top: 15px;
   right: -140px;
-  color: #FCCE3A;
+  color: #420186;
   transform: rotate(-22deg);
   font-size: 22px;
 }
 
 #autotype-month {
   position: absolute;
-  top: 60px;
+  top: 75px;
   left: -175px;
-  color: #FCCE3A;
+  color: #420186;
   transform: rotate(-22deg);
   font-size: 22px;
 }
 
 #autotype-year {
   position: absolute;
-  top: 155px;
+  top: 170px;
   right: -145px;
-  color: #FCCE3A;
+  color: #420186;
   transform: rotate(-22deg);
   font-size: 22px;
 }

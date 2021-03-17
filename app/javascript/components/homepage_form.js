@@ -40,6 +40,15 @@ const chosenCategory = () => {
     categoryEls.forEach(categoryEl => {
       categoryEl.addEventListener('click', (e) => {
         const dateSectionEl = document.querySelector('.js-home-date-question');
+        const autotypeDay = document.getElementById("autotype-day");
+        const autotypeMonth = document.getElementById("autotype-month");
+        const autotypeYear = document.getElementById("autotype-year");
+        document.getElementById("arrow-day-date").style.setProperty('display', 'none');
+        document.getElementById("arrow-day-month").style.setProperty('display', 'none');
+        document.getElementById("arrow-day-year").style.setProperty('display', 'none');
+        autotypeDay.innerHTML = ""
+        autotypeMonth.innerHTML = ""
+        autotypeYear.innerHTML = ""
         window.scrollTo({
           top: dateSectionEl.offsetTop,
           behavior: 'smooth',
@@ -50,7 +59,7 @@ const chosenCategory = () => {
         const speed = 150;
         function typeWriterDay() {
           if (d < txtday.length) {
-            document.getElementById("autotype-day").innerHTML += txtday.charAt(d);
+            autotypeDay.innerHTML += txtday.charAt(d);
             d++;
             setTimeout(typeWriterDay, speed);
           }
@@ -62,7 +71,7 @@ const chosenCategory = () => {
         const txtmonth = 'month';
         function typeWriterMonth() {
           if (m < txtmonth.length) {
-            document.getElementById("autotype-month").innerHTML += txtmonth.charAt(m);
+            autotypeMonth.innerHTML += txtmonth.charAt(m);
             m++;
             setTimeout(typeWriterMonth, speed);
           }
@@ -74,7 +83,7 @@ const chosenCategory = () => {
         const txtyear = 'year';
         function typeWriterYear() {
           if (y < txtyear.length) {
-            document.getElementById("autotype-year").innerHTML += txtyear.charAt(y);
+            autotypeYear.innerHTML += txtyear.charAt(y);
             y++;
             setTimeout(typeWriterYear, speed);
           }
