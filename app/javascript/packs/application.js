@@ -24,17 +24,12 @@ require("channels");
 import "bootstrap";
 import { initMapbox } from "../plugins/init_mapbox";
 import { initChatroomCable } from "../channels/chatroom_channel";
+import { initUpdateNavbarOnScroll } from "../components/navbar";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener("turbolinks:load", () => {
   initMapbox();
   initChatroomCable();
-});
-
-import { initUpdateNavbarOnScroll } from '../channels/navbar';
-
-document.addEventListener('turbolinks:load', () => {
-  // Call your JS functions here
   initUpdateNavbarOnScroll();
 });
