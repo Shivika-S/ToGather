@@ -38,17 +38,39 @@ const chosenCategory = () => {
           top: dateSectionEl.offsetTop,
           behavior: 'smooth',
         });
-        let i = 0;
-        const txt = 'day';
-        const speed = 250;
-        function typeWriter() {
-          if (i < txt.length) {
-            document.getElementById("autotype-day").innerHTML += txt.charAt(i);
-            i++;
-            setTimeout(typeWriter, speed);
+        let d = 0;
+        const txtday = 'day';
+        const speed = 150;
+        function typeWriterDay() {
+          if (d < txtday.length) {
+            document.getElementById("autotype-day").innerHTML += txtday.charAt(d);
+            d++;
+            setTimeout(typeWriterDay, speed);
           }
         }
-        setTimeout(() => { typeWriter(); }, 1500);
+        setTimeout(() => { typeWriterDay(); }, 1000);
+
+        let m = 0;
+        const txtmonth = 'month';
+        function typeWriterMonth() {
+          if (m < txtmonth.length) {
+            document.getElementById("autotype-month").innerHTML += txtmonth.charAt(m);
+            m++;
+            setTimeout(typeWriterMonth, speed);
+          }
+        }
+        setTimeout(() => { typeWriterMonth(); }, 1600);
+
+        let y = 0;
+        const txtyear = 'year';
+        function typeWriterYear() {
+          if (y < txtyear.length) {
+            document.getElementById("autotype-year").innerHTML += txtyear.charAt(y);
+            y++;
+            setTimeout(typeWriterYear, speed);
+          }
+        }
+        setTimeout(() => { typeWriterYear(); }, 2200);
       });
     })
   }
