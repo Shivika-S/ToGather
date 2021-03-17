@@ -45,6 +45,14 @@
 
 }
 
+
+#show,#content{display:none;}
+#show:checked~#content{display:block;}
+
+#show,#bookmark{display:none;}
+#show:checked~#bookmark{display:block;}
+
+
 .card:hover {
   -webkit-transform: scale(1.05);
   transform: scale(1.05);
