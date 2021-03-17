@@ -13,6 +13,7 @@ const homePageInit = () => {
 const outdoorsyCategory = () => {
   const outdoorsyEl = document.querySelector('#activity_category_outdoorsy');
   const treeImage = document.querySelector('.tree-image');
+  const sunImage = document.querySelector('.sun-image');
       outdoorsyEl.addEventListener('change', (e) => {
           if (e.target.checked) {
             setTimeout(() => { treeImage.style.setProperty('bottom', '0px'); }, 1000);
@@ -20,6 +21,11 @@ const outdoorsyCategory = () => {
               treeImage.style.setProperty('bottom', '-50px');
               setTimeout(() => { treeImage.style.setProperty('bottom', '0px'); }, 1000);
             }, 2000);
+
+            setTimeout(() => { $(".sun-image").fadeIn(); }, 600)
+            setInterval(function(){
+              sunImage.style.transform = 'rotate(180deg)';
+            }, 1000)
           };
           const dateSectionEl = document.querySelector('.js-home-date-question');
           window.scrollTo({
@@ -38,6 +44,7 @@ const chosenCategory = () => {
           top: dateSectionEl.offsetTop,
           behavior: 'smooth',
         });
+
         let d = 0;
         const txtday = 'day';
         const speed = 150;
@@ -48,6 +55,7 @@ const chosenCategory = () => {
             setTimeout(typeWriterDay, speed);
           }
         }
+        setTimeout(() => { $("#arrow-day-date").fadeIn(); }, 600 )
         setTimeout(() => { typeWriterDay(); }, 1000);
 
         let m = 0;
@@ -59,7 +67,8 @@ const chosenCategory = () => {
             setTimeout(typeWriterMonth, speed);
           }
         }
-        setTimeout(() => { typeWriterMonth(); }, 1600);
+        setTimeout(() => { $("#arrow-day-month").fadeIn(); }, 1400 )
+        setTimeout(() => { typeWriterMonth(); }, 1800);
 
         let y = 0;
         const txtyear = 'year';
@@ -70,7 +79,8 @@ const chosenCategory = () => {
             setTimeout(typeWriterYear, speed);
           }
         }
-        setTimeout(() => { typeWriterYear(); }, 2200);
+        setTimeout(() => { $("#arrow-day-year").fadeIn(); }, 2000 )
+        setTimeout(() => { typeWriterYear(); }, 2400);
       });
     })
   }

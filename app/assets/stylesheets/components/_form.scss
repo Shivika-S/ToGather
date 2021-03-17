@@ -116,14 +116,15 @@ label[for="activity_category_broke-ass"] {
 
 .sun-image {
   background-image: url('http://pngimg.com/uploads/sun/sun_PNG13415.png');
-  background-size: cover;
+  background-size: contain;
   height: 30vh;
   width: 20vw;
   position: absolute;
-  top: -3vh;
+  top: 0;
   right: 0;
-  transition: 1s;
-  transition-timing-function: ease-in-out;
+  transition: 60s;
+  background-repeat: no-repeat;
+  display: none;
 }
 
 #form-search-button {
@@ -158,8 +159,8 @@ label[for="activity_category_broke-ass"] {
 
 #autotype-day {
   position: absolute;
-  top: 13px;
-  right: -8vw;
+  top: 0;
+  right: -140px;
   color: #FCCE3A;
   transform: rotate(-22deg);
   font-size: 22px;
@@ -167,8 +168,8 @@ label[for="activity_category_broke-ass"] {
 
 #autotype-month {
   position: absolute;
-  top: 130px;
-  left: -8vw;
+  top: 60px;
+  left: -175px;
   color: #FCCE3A;
   transform: rotate(-22deg);
   font-size: 22px;
@@ -176,8 +177,8 @@ label[for="activity_category_broke-ass"] {
 
 #autotype-year {
   position: absolute;
-  top: 160px;
-  right: -8vw;
+  top: 155px;
+  right: -145px;
   color: #FCCE3A;
   transform: rotate(-22deg);
   font-size: 22px;
@@ -186,31 +187,34 @@ label[for="activity_category_broke-ass"] {
 #arrow-day-date {
   position: absolute;
   background-size: contain;
-  top: 0;
-  right: -6vw;
+  top: -10px;
+  right: -100px;
   width: 100px;
   height: 100px;
   transform: rotate(40deg);
+  display: none;
 }
 
 #arrow-day-month {
   position: absolute;
   background-size: contain;
-  top: 55px;
-  left: -6vw;
+  top: 35px;
+  left: -100px;
   width: 100px;
   height: 100px;
-  transform: rotate(180deg);
+  transform: rotate(220deg);
+  display: none;
 }
 
 #arrow-day-year {
   position: absolute;
   background-size: contain;
-  top: 140px;
-  right: -6vw;
+  top: 150px;
+  right: -100px;
   width: 100px;
   height: 100px;
   transform: rotate(40deg);
+  display: none;
 }
 
 .banner-call {
