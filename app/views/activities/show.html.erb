@@ -51,7 +51,7 @@
         <br>
         <p><%= @activity.description %></p>
         <p><%= @activity.address %></p>
-        <p><%= @activity.start_time %></p>
+        <p><%= DateTime.parse(@activity.start_time.to_s).strftime(("%d of %B, %Y")) %></p>
         <%= link_to "Join the chat!", chatroom_path(@chatroom.id), class: "btn btn-info", id: "join-chat-btn" %>
       </div>
 
@@ -68,6 +68,7 @@
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
+        
         <div class="map-info">
             <a href="https://maps.google.com/maps?ll=<%= @activity.latitude%>,<%= @activity.longitude%>&z=15&t=m&hl=en&gl=AU&mapclient=embed&daddr=<%= @activity.address%>@<%= @activity.latitude%>,<%= @activity.longitude%>">Directions</a>
         </div>
