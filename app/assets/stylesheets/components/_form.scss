@@ -4,11 +4,15 @@
   flex-wrap: wrap;
 }
 
+.title-and-call {
+  margin-top: 14vh;
+}
+
 .home-init-button {
   padding: 12px 36px;
   border-radius: 15% / 50%;
   border: none;
-  background-color: #FCCE3A;
+  background-color: white;
 }
 
 .form-check-input {
@@ -20,6 +24,7 @@
 }
 
 .form-check-label {
+  border-radius: 10px;
   height: 30vh;
   width: 20vw;
   margin-bottom: 30px !important;
@@ -29,10 +34,11 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  font-size: 22px;
-  color: #495057;
-  font-weight: bolder;
-  // text-shadow: 0 0 10px rgba(0,0,0,0.7);
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  // font-weight: bolder;
+  text-shadow: 0 0 10px rgba(0,0,0,0.7);
   transition: transform 0.6s, box-shadow 0.6s;
   -webkit-backface-visibility: hidden;
   &:hover {
@@ -47,37 +53,37 @@
 }
 
 label[for="activity_category_sweat"] {
-  background-image: url('sweat.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url('sweat-gradient.jpg');
   background-size: cover;
 }
 label[for="activity_category_romance"] {
   // background: rgb(255,27,45);
   // background: radial-gradient(circle, rgba(255,27,45,1) 0%, rgba(0,0,0,0) 100%);
-  background-image: url('romance.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url('romance-gradient.jpg');
   background-size: cover;
 }
 label[for="activity_category_outdoorsy"] {
   // background: rgb(60,157,0);
   // background: radial-gradient(circle, rgba(60,157,0,1) 0%, rgba(0,0,0,0) 100%);
-  background-image: url('outdoorsy.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url('outdoorsy-gradient.jpg');
   background-size: cover;
 }
 label[for="activity_category_low-fi"] {
   // background: rgb(255,174,27);
   // background: radial-gradient(circle, rgba(255,174,27,1) 0%, rgba(0,0,0,0) 100%);
-  background-image: url('lowfi.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url('low-fi-gradient.jpg');
   background-size: cover;
 }
 label[for="activity_category_turnt"] {
   // background: rgb(105,27,255);
   // background: radial-gradient(circle, rgba(105,27,255,1) 0%, rgba(0,0,0,0) 100%);
-  background-image: url('turnt.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url('turnt-gradient.jpg');
   background-size: cover;
 }
 label[for="activity_category_broke-ass"] {
   // background: rgb(27,60,255);
   // background: radial-gradient(circle, rgba(27,60,255,1) 0%, rgba(0,0,0,0) 100%);
-  background-image: url('brokeass.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url('broke-gradient.jpg');
   background-size: cover;
 }
 
