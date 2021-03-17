@@ -1,12 +1,14 @@
 <div class="container">
   <div style="width:500px;">
   <br>
+  <br>
+  <br>
   <h1>Create your activity</h1>
   <br>
 <%= simple_form_for [ @activity ] do |f| %>
-    <%= f.input :category, as: :select, collection: Category.all, prompt: 'Select a category', label: false, :input_html => {:style=> 'width: 650px', class: 'response-project'} %>
+    <%= f.input :category, as: :select, collection: Category.all, prompt: 'Select a category', label: false, :input_html => {class: 'response-project'} %>
     <%= f.input :name, :input_html => {class: 'response-project'} %>
-    <%= f.input :description, :input_html => {class: 'response-project'} %>
+    <%= f.input :description, :input_html => {class: 'description'} %>
     <%= f.input :address, :input_html => {class: 'response-project'} %>
     <%= f.input :start_time, as: :date, :input_html => {class: 'response-project'} %>
     <%= f.input :cover_photo, as: :file %>
