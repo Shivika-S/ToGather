@@ -10,12 +10,11 @@ const homePageInit = () => {
   });
 }
 
-const chosenCategory = () => {
-  const categoryEls = document.querySelectorAll('.form-check-input');
+const outdoorsyCategory = () => {
+  const outdoorsyEl = document.querySelector('#activity_category_outdoorsy');
   const treeImage = document.querySelector('.tree-image');
-    categoryEls.forEach(categoryEl => {
-      categoryEl.addEventListener('change', (e) => {
-        categoryEls.forEach(categoryEl => {
+  const sunImage = document.querySelector('.sun-image');
+      outdoorsyEl.addEventListener('change', (e) => {
           if (e.target.checked) {
             setTimeout(() => { treeImage.style.setProperty('bottom', '0px'); }, 1000);
             setInterval(function(){
@@ -23,18 +22,78 @@ const chosenCategory = () => {
               setTimeout(() => { treeImage.style.setProperty('bottom', '0px'); }, 1000);
             }, 2000);
 
+            setTimeout(() => { $(".sun-image").fadeIn(); }, 600)
+            setInterval(function(){
+              sunImage.style.transform = 'rotate(180deg)';
+            }, 1000)
+          };
+          const dateSectionEl = document.querySelector('.js-home-date-question');
+          window.scrollTo({
+            top: dateSectionEl.offsetTop,
+            behavior: 'smooth',
+          });
+      });
+    }
 
-          }
-        });
+const chosenCategory = () => {
+  const categoryEls = document.querySelectorAll('.form-check-input');
+    categoryEls.forEach(categoryEl => {
+      categoryEl.addEventListener('click', (e) => {
         const dateSectionEl = document.querySelector('.js-home-date-question');
-        const dateEl = document.querySelector('#activity_start_time');
+        const autotypeDay = document.getElementById("autotype-day");
+        const autotypeMonth = document.getElementById("autotype-month");
+        const autotypeYear = document.getElementById("autotype-year");
+        document.getElementById("arrow-day-date").style.setProperty('display', 'none');
+        document.getElementById("arrow-day-month").style.setProperty('display', 'none');
+        document.getElementById("arrow-day-year").style.setProperty('display', 'none');
+        autotypeDay.innerHTML = ""
+        autotypeMonth.innerHTML = ""
+        autotypeYear.innerHTML = ""
         window.scrollTo({
           top: dateSectionEl.offsetTop,
           behavior: 'smooth',
         });
+
+        let d = 0;
+        const txtday = 'day';
+        const speed = 150;
+        function typeWriterDay() {
+          if (d < txtday.length) {
+            autotypeDay.innerHTML += txtday.charAt(d);
+            d++;
+            setTimeout(typeWriterDay, speed);
+          }
+        }
+        setTimeout(() => { $("#arrow-day-date").fadeIn(); }, 600 )
+        setTimeout(() => { typeWriterDay(); }, 1000);
+
+        let m = 0;
+        const txtmonth = 'month';
+        function typeWriterMonth() {
+          if (m < txtmonth.length) {
+            autotypeMonth.innerHTML += txtmonth.charAt(m);
+            m++;
+            setTimeout(typeWriterMonth, speed);
+          }
+        }
+        setTimeout(() => { $("#arrow-day-month").fadeIn(); }, 1400 )
+        setTimeout(() => { typeWriterMonth(); }, 1800);
+
+        let y = 0;
+        const txtyear = 'year';
+        function typeWriterYear() {
+          if (y < txtyear.length) {
+            autotypeYear.innerHTML += txtyear.charAt(y);
+            y++;
+            setTimeout(typeWriterYear, speed);
+          }
+        }
+        setTimeout(() => { $("#arrow-day-year").fadeIn(); }, 2000 )
+        setTimeout(() => { typeWriterYear(); }, 2400);
       });
     })
   }
 
-export { chosenCategory, homePageInit };
+
+export { homePageInit, chosenCategory, outdoorsyCategory };
 // window.scrollTo(($(document).width()-$(window).width())/2,0);

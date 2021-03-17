@@ -4,10 +4,15 @@
   flex-wrap: wrap;
 }
 
+.title-and-call {
+  margin-top: 14vh;
+}
+
 .home-init-button {
   padding: 12px 36px;
   border-radius: 15% / 50%;
   border: none;
+  background-color: white;
 }
 
 .form-check-input {
@@ -19,6 +24,7 @@
 }
 
 .form-check-label {
+  border-radius: 10px;
   height: 30vh;
   width: 20vw;
   margin-bottom: 30px !important;
@@ -28,9 +34,10 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  font-size: 22px;
+  font-size: 28px;
   color: white;
-  font-weight: bolder;
+  cursor: pointer;
+  // font-weight: bolder;
   text-shadow: 0 0 10px rgba(0,0,0,0.7);
   transition: transform 0.6s, box-shadow 0.6s;
   -webkit-backface-visibility: hidden;
@@ -46,37 +53,37 @@
 }
 
 label[for="activity_category_sweat"] {
-  background-image: url('sweat.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url('sweat-gradient.jpg');
   background-size: cover;
 }
 label[for="activity_category_romance"] {
   // background: rgb(255,27,45);
   // background: radial-gradient(circle, rgba(255,27,45,1) 0%, rgba(0,0,0,0) 100%);
-  background-image: url('romance.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url('romance-gradient.jpg');
   background-size: cover;
 }
 label[for="activity_category_outdoorsy"] {
   // background: rgb(60,157,0);
   // background: radial-gradient(circle, rgba(60,157,0,1) 0%, rgba(0,0,0,0) 100%);
-  background-image: url('outdoorsy.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url('outdoorsy-gradient.jpg');
   background-size: cover;
 }
 label[for="activity_category_low-fi"] {
   // background: rgb(255,174,27);
   // background: radial-gradient(circle, rgba(255,174,27,1) 0%, rgba(0,0,0,0) 100%);
-  background-image: url('lowfi.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url('low-fi-gradient.jpg');
   background-size: cover;
 }
 label[for="activity_category_turnt"] {
   // background: rgb(105,27,255);
   // background: radial-gradient(circle, rgba(105,27,255,1) 0%, rgba(0,0,0,0) 100%);
-  background-image: url('turnt.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url('turnt-gradient.jpg');
   background-size: cover;
 }
 label[for="activity_category_broke-ass"] {
   // background: rgb(27,60,255);
   // background: radial-gradient(circle, rgba(27,60,255,1) 0%, rgba(0,0,0,0) 100%);
-  background-image: url('brokeass.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url('broke-gradient.jpg');
   background-size: cover;
 }
 
@@ -85,7 +92,7 @@ label[for="activity_category_broke-ass"] {
   padding: 5px 35px;
   // margin-left: 20vw;
   #banner-question-category-header {
-    color: white;
+    color: #495057;
     text-align: center;
   }
 }
@@ -101,7 +108,7 @@ label[for="activity_category_broke-ass"] {
   position: relative;
   #banner-question-date-header {
     margin-bottom: 3vh;
-    color: white;
+    color: #495057;
   }
 }
 
@@ -112,37 +119,42 @@ label[for="activity_category_broke-ass"] {
   width: 35vh;
   position: absolute;
   bottom: -400px;
-  left: 100px;
+  left: 50px;
   transition: 1s;
   transition-timing-function: ease-in-out;
 }
 
 .sun-image {
   background-image: url('http://pngimg.com/uploads/sun/sun_PNG13415.png');
-  background-size: cover;
+  background-size: contain;
   height: 30vh;
   width: 20vw;
   position: absolute;
-  top: -3vh;
+  top: 0;
   right: 0;
-  transition: 1s;
-  transition-timing-function: ease-in-out;
+  transition: 60s;
+  background-repeat: no-repeat;
+  display: none;
 }
 
 #form-search-button {
+  color: #495057;
   background-color: #FCCE3A;
   border: none;
   padding: 5px 20px;
+  border-radius: 8px;
 }
 
 .date-buttons {
   text-align: center;
+  position: relative;
 }
 
 .activity_start_time > div {
   width: 30vw;
   flex-direction: column-reverse !important;
   select {
+    border-radius: 8px;
     margin-bottom: 5vh;
     text-align: center;
     background-color: #FCCE3A;
@@ -154,14 +166,67 @@ label[for="activity_category_broke-ass"] {
   background-color: blue !important;
 }
 
-#activity_category_low-fi {
 
+#autotype-day {
+  position: absolute;
+  top: 15px;
+  right: -140px;
+  color: #420186;
+  transform: rotate(-22deg);
+  font-size: 22px;
 }
 
-// .category-form-container {
-//   position: absolute;
-//   top: 30vh;
-// }
+#autotype-month {
+  position: absolute;
+  top: 75px;
+  left: -175px;
+  color: #420186;
+  transform: rotate(-22deg);
+  font-size: 22px;
+}
+
+#autotype-year {
+  position: absolute;
+  top: 170px;
+  right: -145px;
+  color: #420186;
+  transform: rotate(-22deg);
+  font-size: 22px;
+}
+
+#arrow-day-date {
+  position: absolute;
+  background-size: contain;
+  top: -10px;
+  right: -100px;
+  width: 100px;
+  height: 100px;
+  transform: rotate(40deg);
+  display: none;
+}
+
+#arrow-day-month {
+  position: absolute;
+  background-size: contain;
+  top: 35px;
+  left: -100px;
+  width: 100px;
+  height: 100px;
+  transform: rotate(220deg);
+  display: none;
+}
+
+#arrow-day-year {
+  position: absolute;
+  background-size: contain;
+  top: 150px;
+  right: -100px;
+  width: 100px;
+  height: 100px;
+  transform: rotate(40deg);
+  display: none;
+}
+
 .banner-call {
   position: absolute;
   top: 27vh;
