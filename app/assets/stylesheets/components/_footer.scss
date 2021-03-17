@@ -9,17 +9,18 @@
   height: 40px;
   display: block;
   margin-top: 0px;
+  position: absolute;
+  width: 100vh;
 }
-
-
 
 .footer-basic .social {
   text-align:center;
   padding-bottom:5px;
+  background-color: white;
 }
 
 .footer-basic p {
-  background: white;
+  background-color: white;
 }
 
 .footer-basic .social > a {
@@ -44,4 +45,5 @@
   font-size: 12px;
   color:#aaa;
   margin-bottom: 5px;
+  background-color: white;
 }
