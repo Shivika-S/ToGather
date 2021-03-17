@@ -131,11 +131,17 @@ label[for="activity_category_broke-ass"] {
 
 .activity_start_time > div {
   width: 30vw;
-  flex-direction: column !important;
+  flex-direction: column-reverse !important;
   select {
     margin-bottom: 5vh;
     text-align: center;
+    background-color: #FCCE3A;
+    border: none;
   }
+}
+
+.control-label {
+  background-color: blue !important;
 }
 
 #activity_category_low-fi {

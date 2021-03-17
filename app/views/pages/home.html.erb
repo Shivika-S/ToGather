@@ -102,7 +102,7 @@
         <div class="container d-flex justify-content-center">
           <div class="date-buttons">
             <%# f.date_field :start_time %>
-            <%= f.input :start_time, as: :date, label: false %>
+            <%= f.input :start_time, as: :date, label: false, class: "text-right" %>
             <%= f.submit "Find me something to do!", class: "btn btn-primary", id: "form-search-button" %>
           </div>
         </div>
