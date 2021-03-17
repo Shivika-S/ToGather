@@ -26,6 +26,14 @@
     }
 }
 
+#home-tab {
+  color: black;
+}
+
+#profile-tab {
+  color: black;
+}
+
 .card {
   margin-top: 40px;
   width: 100%;
@@ -45,8 +53,12 @@
 
 }
 
+#show,#content {
+  display:none;
+  // -webkit-transition: opacity 1s ease-out;
+    transition: opacity 1s ease-out;
+}
 
-#show,#content{display:none;}
 #show:checked~#content{display:block;}
 
 #show,#bookmark{display:none;}
