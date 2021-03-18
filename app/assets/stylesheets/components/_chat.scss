@@ -56,11 +56,12 @@ padding-top: 1px;
             color: white;
             border: none;
             transition: ease 1s;
-            padding: 0.5rem 0rem
+            padding: 0.5rem 0rem;
             #chatroom-header {
                 color: white;
                 font-size: 1.2rem;
                 transition: ease-in-out 0.7s;
+                text-shadow: 2px 3px 5px #217796;
             }
             #chatroom-header:hover {
                 color: $aqua;
@@ -69,7 +70,7 @@ padding-top: 1px;
         }
         #chatroom-background:hover {
             background-color: rgb(131, 184, 194);
-            transition: ease-in-out 1s;
+            transition: ease-in-out 0.3s;
         }
     }
 }
