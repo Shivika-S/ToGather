@@ -44,19 +44,24 @@
               </div>
       <% end %>
         <% if activity.user == current_user %>
+        <div class="image-buttons" id="image-name">
           <h5><strong><%= activity.name %></strong></h5>
-            <div class="image-name">
+        </div>
+            <div class="image-buttons" id="dashboard-buttons">
               <%= link_to 'Edit', edit_activity_path(activity), class: "btn btn-warning" %>
-                <%= link_to 'Delete', activity_path(activity.id), method: :delete, data: { confirm: "Are you sure you want to delete your activity?"}, class: "btn btn-danger" %>
               </div>
-            <% end %>
-        <% end %>
+              <div class="image-buttons" id="second-button">
+              <%= link_to 'Delete', activity_path(activity.id), method: :delete, data: { confirm: "Are you sure you want to delete your activity?"}, class: "btn btn-danger" %>
             </div>
+          <% end %>
         <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
   </div>
   </div>
+</div>
 
 
 
