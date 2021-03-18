@@ -20,7 +20,7 @@
     <% @activities.each do |activity| %>
       <div class="card" data-toggle="modal" data-target=".js-activity-<%= activity.id %>">
         <div class="bookmark-buttons">
-          <%= link_to 'Save', bookmark_path(activity_id: activity.id), method: :post, class: " btn btn-outline-secondary" %>
+          <%= link_to 'Save', bookmark_path(activity_id: activity.id), method: :post, class: "index-save-btn btn btn-outline-secondary" %>
         </div>
           <% if activity.cover_photo.attached? %>
             <%= cl_image_tag(activity.cover_photo.key,
