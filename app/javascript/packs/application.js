@@ -28,6 +28,7 @@ import { initMapbox } from "../plugins/init_mapbox";
 import { initChatroomCable } from "../channels/chatroom_channel";
 import { initUpdateNavbarOnScroll } from "../components/navbar";
 import { chosenCategory, homePageInit, outdoorsyCategory, sweatCategory } from "../components/homepage_form";
+import { highlightSaveButton } from "../components/bookmark_save";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -42,6 +43,7 @@ document.addEventListener("turbolinks:load", () => {
   homePageInit();
   outdoorsyCategory();
   sweatCategory();
+  highlightSaveButton();
 
   var rellax = new Rellax(".rellax");
 });

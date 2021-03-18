@@ -1,15 +1,15 @@
 <div class="container index-search-container d-flex">
 
-  <%= simple_form_for @activity, method: :get do |f| %>
+  <%= simple_form_for @activity, method: :get, html: {novalidate: true, class: "no-bs-validation"} do |f| %>
     <div class="index-search-components">
       <div class="mr-3">
-        <%= f.association :category, label_method: :name, label: false, prompt: "Moods can change..." %>
+        <%= f.association :category, label_method: :name, label: false, prompt: "Select category" %>
       </div>
       <div>
         <%= f.date_field :start_time %>
       </div>
       <div>
-        <%= f.submit "Find me something to do!", class: "btn btn-primary index-search-button", id: "form-search-button" %>
+        <%= f.submit "Find me something to do!", class: "btn btn-primary", id: "form-search-button" %>
       </div>
     </div>
   <% end %>
@@ -20,7 +20,7 @@
     <% @activities.each do |activity| %>
       <div class="card" data-toggle="modal" data-target=".js-activity-<%= activity.id %>">
         <div class="bookmark-buttons">
-          <%= link_to 'Save', bookmark_path(activity_id: activity.id), method: :post, class: "btn btn-outline-secondary" %>
+          <%= link_to 'Save', bookmark_path(activity_id: activity.id), method: :post, class: "index-save-btn btn btn-outline-secondary" %>
         </div>
           <% if activity.cover_photo.attached? %>
             <%= cl_image_tag(activity.cover_photo.key,

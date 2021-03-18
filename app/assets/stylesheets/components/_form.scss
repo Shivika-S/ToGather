@@ -12,7 +12,11 @@
   padding: 12px 36px;
   border-radius: 15% / 50%;
   border: none;
-  background-color: white;
+  background-color: rgba(255,255,255,0.8);
+  transition: 0.3s;
+  &:hover {
+    background-color: white;
+  }
 }
 
 .form-check-input {
@@ -52,38 +56,38 @@
   }
 }
 
-label[for="activity_category_sweat"] {
-  background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url('sweat-gradient.jpg');
+label[for="activity_category_id_1"] {
+  background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), image-url('sweat-gradient.jpg');
   background-size: cover;
 }
-label[for="activity_category_romance"] {
+label[for="activity_category_id_2"] {
   // background: rgb(255,27,45);
   // background: radial-gradient(circle, rgba(255,27,45,1) 0%, rgba(0,0,0,0) 100%);
-  background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url('romance-gradient.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), image-url('romance-gradient.jpg');
   background-size: cover;
 }
-label[for="activity_category_outdoorsy"] {
+label[for="activity_category_id_3"] {
   // background: rgb(60,157,0);
   // background: radial-gradient(circle, rgba(60,157,0,1) 0%, rgba(0,0,0,0) 100%);
-  background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url('outdoorsy-gradient.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), image-url('outdoorsy-gradient.jpg');
   background-size: cover;
 }
-label[for="activity_category_low-fi"] {
+label[for="activity_category_id_4"] {
   // background: rgb(255,174,27);
   // background: radial-gradient(circle, rgba(255,174,27,1) 0%, rgba(0,0,0,0) 100%);
-  background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url('low-fi-gradient.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), image-url('low-fi-gradient.jpg');
   background-size: cover;
 }
-label[for="activity_category_turnt"] {
+label[for="activity_category_id_5"] {
   // background: rgb(105,27,255);
   // background: radial-gradient(circle, rgba(105,27,255,1) 0%, rgba(0,0,0,0) 100%);
-  background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url('turnt-gradient.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), image-url('turnt-gradient.jpg');
   background-size: cover;
 }
-label[for="activity_category_broke-ass"] {
+label[for="activity_category_id_6"] {
   // background: rgb(27,60,255);
   // background: radial-gradient(circle, rgba(27,60,255,1) 0%, rgba(0,0,0,0) 100%);
-  background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url('broke-gradient.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), image-url('broke-gradient.jpg');
   background-size: cover;
 }
 
@@ -106,6 +110,8 @@ label[for="activity_category_broke-ass"] {
 .banner-question-date {
   height: 100vh;
   position: relative;
+  overflow: hidden;
+
   #banner-question-date-header {
     margin-bottom: 3vh;
     color: #495057;
@@ -183,6 +189,7 @@ label[for="activity_category_broke-ass"] {
   border: none;
   padding: 5px 20px;
   border-radius: 8px;
+  height: 38px;
 }
 
 .date-buttons {

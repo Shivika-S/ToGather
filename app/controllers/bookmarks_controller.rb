@@ -4,11 +4,7 @@ class BookmarksController < ApplicationController
     @activity = Activity.find(params[:activity_id])
     @bookmark.user = current_user
     @bookmark.activity = @activity
-    if @bookmark.save
-      redirect_to request.referrer, :notice => "Saved to your dashboard"
-    else
-      render :new
-    end
+    @bookmark.save
   end
 
   def destroy
