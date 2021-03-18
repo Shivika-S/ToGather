@@ -199,6 +199,9 @@ label[for="activity_category_broke-ass"] {
     text-align: center;
     background-color: #FCCE3A;
     border: none;
+    &:focus {
+      background-color: #FCCE3A;
+    }
   }
 }
 
