@@ -29,10 +29,15 @@ import { initShowpage } from "../plugins/init_showpage";
 import { initChatroomCable } from "../channels/chatroom_channel";
 import { initUpdateNavbarOnScroll } from "../components/navbar";
 import { chosenCategory, homePageInit } from "../components/homepage_form";
+
+// require("social-share")
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener("turbolinks:load", () => {
+  if (document.querySelector(".rellax")) {
+  var rellax = new Rellax(".rellax");
+  }
   initMapbox();
   initShowpage();
   initChatroomCable();
@@ -42,4 +47,5 @@ document.addEventListener("turbolinks:load", () => {
 chosenCategory();
 homePageInit();
 
-var rellax = new Rellax(".rellax");
+
+
