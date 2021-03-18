@@ -137,6 +137,46 @@ label[for="activity_category_broke-ass"] {
   display: none;
 }
 
+.mario-image {
+  background-image: url('https://purepng.com/public/uploads/large/purepng.com-super-mario-runningmariofictional-charactervideo-gamefranchisenintendodesigner-1701528623599xkdyv.png');
+  background-size: contain;
+  height: 35vh;
+  width: 35vh;
+  position: absolute;
+  bottom: -35vh;
+  left: 5vw;
+  transition: 1.5s;
+  transition-timing-function: ease-in-out;
+  background-repeat: no-repeat;
+}
+
+.mario-two-image {
+  background-image: url('https://purepng.com/public/uploads/large/purepng.com-mario-runningmariofictional-charactervideo-gamefranchisenintendodesigner-1701528632734jk1v2.png');
+  background-size: contain;
+  height: 35vh;
+  width: 35vh;
+  position: absolute;
+  bottom: -35vh;
+  left: 5vw;
+  transition: 1.5s;
+  transition-timing-function: ease-in-out;
+  background-repeat: no-repeat;
+}
+
+.dumbbell-image {
+  background-image: url('https://purepng.com/public/uploads/large/purepng.com-dumbbell-hanteldumbbellhantelshort-barexercisemuscle-building-1701528136228621sh.png');
+  background-size: contain;
+  height: 25vh;
+  width: 15vw;
+  position: absolute;
+  top: 5vh;
+  right: 5vw;
+  transition: 1s;
+  transition-timing-function: ease-in-out;
+  background-repeat: no-repeat;
+  display: none;
+}
+
 #form-search-button {
   color: #495057;
   background-color: #FCCE3A;
@@ -159,6 +199,9 @@ label[for="activity_category_broke-ass"] {
     text-align: center;
     background-color: #FCCE3A;
     border: none;
+    &:focus {
+      background-color: #FCCE3A;
+    }
   }
 }
 
