@@ -1,6 +1,7 @@
-  <div class="row rounded-lg overflow-hidden shadow">
+  <div class="rounded-lg overflow-hidden shadow chatroom-layout">
     <!-- Users box-->
     <div class="col-5 px-0" id="chatroom-wrapper">
+      <h4>Chatrooms</h4>
       <div class="bg-white">
 
         <div class="chatrooms">
@@ -9,7 +10,7 @@
                 <div class="list-group rounded-0 <%= print_active_class%>">
                     <a href="<%= chatroom_path(chatroom.id) %>" class="list-group-item list-group-item-action list-group-item rounded-0" id="chatroom-background">
                         <div class="media">
-                            <div class="media-body ml-4">
+                            <div class="media-body">
                             <div class="d-flex align-items-center justify-content-between mb-1">
                                 <h6 class="mb-0" id="chatroom-header"><%= chatroom.name %></h6>
                             </div>

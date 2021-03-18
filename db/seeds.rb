@@ -128,8 +128,8 @@ Category.find_by(name: "Turnt").activities.create(name: "Strike QV", address: "2
 Category.find_by(name: "Turnt").activities.create(name: "Red Triangle", address: "110a Argyle Street Fitzroy Melbourne 3065", description: "This Fitzroy pool hall has barely changed in years – and that's why we love it. Order an old-school milkshake and while away a few hours carving up the felt. Best part is that they're open til' 2 am", start_time: "2021-03-19"),
 Category.find_by(name: "Turnt").activities.create(name: "Butterfly Club", address: "5 Carson Place Melbourne 3000", description: "This hidden CBD bar is arguably the home of cabaret in Melbourne, boasting an impressive program of shows every night of the week. Every Friday after 10.30pm, musical theatre-lovers and cast members from all over town flock to the kitsch-themed club for a night of sing-a-longs and performances – no alcohol necessary.", start_time: "2021-03-19"),
 Category.find_by(name: "Turnt").activities.create(name: "The Curtin", address: "29 Lygon St Carlton Melbourne 3053", description: "Any given night of the week, one Australia’s best rock, indie pop or songwriter acts will be playing in the John Curtin’s 300-person capacity upstairs band room. Top it off with a pint of sweet and malty Barrow Boys lager and you’ve got Melbourne pub gold.", start_time: "2021-03-19"),
-Category.find_by(name: "Turnt").activities.create(name: "The Curtin", address: "29 Lygon St Carlton Melbourne 3053", description: "Any given night of the week, one Australia’s best rock, indie pop or songwriter acts will be playing in the John Curtin’s 300-person capacity upstairs band room. Top it off with a pint of sweet and malty Barrow Boys lager and you’ve got Melbourne pub gold.", start_time: "2021-03-19"),
-Category.find_by(name: "Turnt").activities.create(name: "Glamorama", address: "393 Brunswick Street Fitzroy Melbourne 3065", description: "A red neon sign in shouty capitals marks the entrance on Brunswick Street. The cleaved head of American Psycho’s Patrick Bateman greets you as you walk up the stairs. In the cavernous room above, dismembered mannequins dangle from the ceiling. Glamorama is many things, but subtle isn’t one of them. DJs spinning electronica and a 5am liquor license on weekends (3am midweek) ram home the devil-may-care demeanour.", start_time: "2021-03-19"),
+Category.find_by(name: "Turnt").activities.create(name: "The Curtin", address: "29 Lygon St Carlton Melbourne 3053", description: "Any given night of the week, one Australia’s best rock, indie pop or songwriter acts will be playing in the John Curtin’s 300-person capacity upstairs band room. Top it off with a pint of sweet and malty Barrow Boys lager and you’ve got Melbourne pub gold.", start_time: "2021-03-19")
+# Category.find_by(name: "Turnt").activities.create(name: "Glamorama", address: "393 Brunswick Street Fitzroy Melbourne 3065", description: "A red neon sign in shouty capitals marks the entrance on Brunswick Street. The cleaved head of American Psycho’s Patrick Bateman greets you as you walk up the stairs. In the cavernous room above, dismembered mannequins dangle from the ceiling. Glamorama is many things, but subtle isn’t one of them. DJs spinning electronica and a 5am liquor license on weekends (3am midweek) ram home the devil-may-care demeanour.", start_time: "2021-03-19"),
 ]
 
 # Broke-Ass Category
@@ -270,7 +270,6 @@ turnt_url = [
   "https://images.unsplash.com/photo-1598214015728-bc73871186d8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1355&q=80",
   "https://media.timeout.com/images/104224728/1372/772/image.jpg",
 ]
-
 
 
 i = 0
