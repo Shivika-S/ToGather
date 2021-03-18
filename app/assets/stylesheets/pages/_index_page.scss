@@ -33,6 +33,10 @@
   background-color: rgba(255,255,255,0);
 }
 
+.index-save-btn {
+  transition: 0.6s;
+}
+
 .no-bs-validation {
   .is-valid, .is-invalid {
     border-color: $gray-400;
