@@ -37,12 +37,10 @@ import {
 
 document.addEventListener("turbolinks:load", () => {
   initMapbox();
-  // initShowpage();
   initChatroomCable();
   initUpdateNavbarOnScroll();
   chosenCategory();
-  // shomePageInit();
   homePageInit();
   outdoorsyCategory();
+  var rellax = new Rellax(".rellax");
 });
-var rellax = new Rellax(".rellax");

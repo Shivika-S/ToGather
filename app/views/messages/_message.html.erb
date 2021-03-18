@@ -1,5 +1,6 @@
 
 <% reciever_id = current_user == message.chatroom_user.user ? "sender-message" : "reciever-message" %>
+
 <% ml_auto = current_user == message.chatroom_user.user ? "ml-chat" : "ml-auto" %>
 
 <div class="media w-50 <%= ml_auto %> mb-3">
