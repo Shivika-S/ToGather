@@ -9,18 +9,16 @@ body.activities {
 }
 
 #join-chat-btn {
-  background-color: $yellow;
-  padding: 4px 20px;
-  border-radius: 30px;
-  transition: ease-in 0.5s;
-  // box-shadow: 2px 3px 5px #217796;
-  // text-shadow: 2px 3px 5px #b58a41;
-  color: #485156;
+  color: #495057;
+    background-color: #FCCE3A;
+    border: none;
+    padding: 5px 20px;
+    border-radius: 8px;
 }
 
 #join-chat-btn:hover {
   transform: scale(1.05);
-  transition: ease-in 0.5s;
+  transition: ease-in 0.2s;
 }
 
 .activity-details {
@@ -31,7 +29,7 @@ body.activities {
   }
   .activity-description {
     letter-spacing: 0.5px;
-    color: gray;
+    color: $gray;
     text-shadow: 2px 3px 5px rgba(206, 203, 203, 0.5);
   }
   .address-date {
@@ -91,6 +89,8 @@ body.activities {
   right: 0;
 }
 
-
+.social-share-button {
+  
+}   
 
 
