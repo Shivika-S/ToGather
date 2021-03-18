@@ -15,10 +15,10 @@ body.activities {
 
 #join-chat-btn {
   background-color: #183974;
-  padding: 5px 15px;
-  border-radius: 10px;
+  padding: 4px 20px;
+  border-radius: 30px;
   transition: ease-in 0.5s;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: 2px 3px 5px #217796;
 }
 
 #join-chat-btn:hover {
@@ -29,16 +29,16 @@ body.activities {
 .activity-details {
   width: 492px;
   h1 {
-    text-shadow: 2px 3px 5px rgba(0,0,0,0.5);
+    text-shadow: 2px 3px 5px #217796;
   }
   .activity-description {
     letter-spacing: 0.5px;
-    text-shadow: 2px 3px 5px rgba(0,0,0,0.5);
+    text-shadow: 2px 3px 5px #217796;
   }
   .address-date {
     font-size: 0.8rem;
     font-style: italic;
-    text-shadow: 2px 3px 5px rgba(0,0,0,0.5);
+    text-shadow: 2px 3px 5px #217796;
   }
 }
 
