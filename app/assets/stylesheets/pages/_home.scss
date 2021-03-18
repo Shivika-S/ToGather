@@ -1,8 +1,9 @@
 .home-page {
-  background-color: white;
+  background-color: #F7F7F7;
 }
 
 #home-title {
+  text-shadow: 1px 1px 5px black;
   font-size: 70px;
   color: white;
 }
@@ -10,7 +11,7 @@
 .banner-card {
   background-size: cover;
   background-position: center;
-  height: 23vh;
+  height: 25vh;
   border-radius: 1px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   display: flex;
@@ -24,10 +25,10 @@
 
 .banner-cards {
   // position: relative;
-  margin: 8px;
+  // margin: 8px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-gap: 4px;
+  // grid-gap: 4px;
   flex-grow: 1;
 }
 
