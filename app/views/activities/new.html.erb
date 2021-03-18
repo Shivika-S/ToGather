@@ -1,12 +1,27 @@
 <div class="container">
-  <h1>Choose your preferences</h1>
-
+  <div style="width:500px;">
+  <br>
+  <br>
+  <br>
+  <h1>Create your activity</h1>
+  <br>
 <%= simple_form_for [ @activity ] do |f| %>
-    <%= f.input :category, as: :select, collection: Category.all, prompt: 'Select a category', label: false %>
-    <%= f.input :name %>
-    <%= f.input :start_time, as: :date %>
-    <%= f.input :cover_photo, as: :file %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.input :category, as: :select, collection: Category.all, prompt: 'Select a category', label: false, :input_html => {class: 'response-project'} %>
+    <%= f.input :name, :input_html => {class: 'response-project'} %>
+    <%= f.input :description, :input_html => {class: 'description'} %>
+    <%= f.input :address, :input_html => {class: 'response-project'} %>
+    <%= f.input :start_time, as: :date, label: :Date, :input_html => {class: 'response-date'} %>
+    <%= f.input :cover_photo, as: :file, :input_html => {class: 'upload'} %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true, class: 'upload' } %>
+    <br>
+    <br>
     <%= f.submit "Submit", class: "btn btn-primary" %>
   <% end %>
 </div>
+</div>
+
+
+
+
+
+

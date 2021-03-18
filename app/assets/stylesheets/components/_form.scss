@@ -292,3 +292,46 @@ background: #white;
   color: #041f4e;
 }
 
+.response-project {
+  width: 650px;
+  margin: 0 auto;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.upload {
+  width: 300px;
+  display: right;
+  text-align: left;
+  // flex-direction: row;
+  justify-content: center;
+  // position: absolute;
+}
+
+.description {
+  width: 650px;
+  margin: 0 auto;
+  text-align: left;
+  height: 100px
+}
+
+div {
+  margin: 0 auto;
+  align: center;
+}
+
+.btn-primary {
+  margin: 0 auto;
+  text-align: left;
+  margin-bottom: 10px;
+  justify-content: center;
+  display: flex;
+}
+
+.response-date {
+  width: 500px;
+  margin: 0 auto;
+  text-align: left;
+  margin-bottom: 10px;
+  // height: 40px
+}
