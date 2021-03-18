@@ -3,7 +3,7 @@ class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show, :edit, :update, :destroy]
 
   def index
-    if params[:activity] && activity_params[:category_id] && activity_params[:start_time]
+    if params[:activity] && activity_params[:category_id]
       @start_time = format_datetime
       @category = Category.find(params[:activity][:category_id]) if params[:activity][:category_id].present?
       @activities = Activity.where(category: @category)
