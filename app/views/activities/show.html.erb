@@ -48,6 +48,7 @@
     <div class="activities-show d-flex justify-content-between align-items-center container mt-0 py-3" >
       <div class="activity-details">
         <h1><%= @activity.name %></h1>
+        <%= social_share_button_tag(@activity.name) %>
         <br>
         <p class="activity-description"><%= @activity.description %></p>
         <p class="address-date"><span><%= @activity.address %></span></p>
@@ -80,5 +81,5 @@
       </div>
     </div>
   </div>
-    <%= social_share_button_tag(@activity.name) %>
+    
 </div>
