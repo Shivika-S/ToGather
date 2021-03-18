@@ -1,13 +1,18 @@
 const homePageInit = () => {
   const homePageInitBtn = document.querySelector('.js-home-init-btn');
-  homePageInitBtn.addEventListener('click', function() {
-    const categorySectionEl = document.querySelector('.js-home-category-question');
-    const categoryEl = document.querySelector('.activity_category');
-    window.scrollTo({
-      top: categorySectionEl.offsetTop,
-      behavior: 'smooth',
+  if (homePageInitBtn) {
+
+
+
+    homePageInitBtn.addEventListener('click', function() {
+      const categorySectionEl = document.querySelector('.js-home-category-question');
+      const categoryEl = document.querySelector('.activity_category');
+      window.scrollTo({
+        top: categorySectionEl.offsetTop,
+        behavior: 'smooth',
+      });
     });
-  });
+  }
 }
 
 const outdoorsyCategory = () => {
