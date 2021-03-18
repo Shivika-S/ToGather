@@ -58,22 +58,20 @@
         </div>
       </div>
 
-      <div class="map-wrapper">
+      <a class="weatherwidget-io" href="https://forecast7.com/en/n37d81144d96/melbourne/" data-label_1="MELBOURNE" data-label_2="WEATHER" data-font="Jura" data-icons="Climacons Animated" data-mode="Current" data-days="3" data-textcolor="#ffffff" data-suncolor="#ff9500" >MELBOURNE WEATHER</a>
+      
+      <div class="map-weather-wrapper">
 
-        <a class="weatherwidget-io" href="https://forecast7.com/en/n37d81144d96/melbourne/" data-label_1="MELBOURNE" data-label_2="WEATHER" data-font="Jura" data-icons="Climacons Animated" data-mode="Current" data-days="3" data-textcolor="#ffffff" data-suncolor="#ff9500" >MELBOURNE WEATHER</a>
+        <div id="map-wrapper">
+          <div id="map-style"
+          style="width: 400px; height: 400px; border-radius: 50%;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+          </div>
 
-        <script>
-        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-        </script>
-
-        <div id="map"
-        style="width: 300px; height: 300px; border-radius: 50%;"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-        </div>
-
-        <div class="map-info">
-            <a href="https://maps.google.com/maps?ll=<%= @activity.latitude%>,<%= @activity.longitude%>&z=15&t=m&hl=en&gl=AU&mapclient=embed&daddr=<%= @activity.address%>@<%= @activity.latitude%>,<%= @activity.longitude%>">Directions</a>
+          <div class="map-info">
+              <a href="https://maps.google.com/maps?ll=<%= @activity.latitude%>,<%= @activity.longitude%>&z=15&t=m&hl=en&gl=AU&mapclient=embed&daddr=<%= @activity.address%>@<%= @activity.latitude%>,<%= @activity.longitude%>">Directions</a>
+          </div>
         </div>
       </div>
     </div>

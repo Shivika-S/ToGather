@@ -12,7 +12,7 @@ body.activities {
   background-color: $yellow;
   padding: 4px 20px;
   border-radius: 30px;
-  transition: ease-in 0.5s;
+  transition: ease-in 0.2s;
   // box-shadow: 2px 3px 5px #217796;
   // text-shadow: 2px 3px 5px #b58a41;
   color: #485156;
@@ -20,7 +20,7 @@ body.activities {
 
 #join-chat-btn:hover {
   transform: scale(1.05);
-  transition: ease-in 0.5s;
+  transition: ease-in 0.2s;
 }
 
 .activity-details {
