@@ -75,7 +75,7 @@ const chosenCategory = () => {
   }
 
 const outdoorsyCategory = () => {
-  const outdoorsyEl = document.querySelector('#activity_category_outdoorsy');
+  const outdoorsyEl = document.querySelector('#activity_category_id_3');
   const treeImage = document.querySelector('.tree-image');
   const sunImage = document.querySelector('.sun-image');
       outdoorsyEl.addEventListener('change', (e) => {
@@ -95,7 +95,7 @@ const outdoorsyCategory = () => {
     }
 
 const sweatCategory = () => {
-  const sweatEl = document.querySelector('#activity_category_sweat');
+  const sweatEl = document.querySelector('#activity_category_id_1');
   const dumbbellImage = document.querySelector('.dumbbell-image');
   const marioImage = document.querySelector('.mario-image');
   const marioImageTwo = document.querySelector('.mario-two-image');
