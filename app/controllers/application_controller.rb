@@ -12,3 +12,7 @@ class ApplicationController < ActionController::Base
   end
 end
 
+def default_url_options
+  { host: ENV["wegathertogather.com"] || "localhost:3000" }
+end
+
