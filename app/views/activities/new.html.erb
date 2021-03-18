@@ -1,9 +1,11 @@
-<div class="new-activity-container">
+<div class="the-activity-container">
   <div class="new-activity-container" style="max-width:500px;">
   <br>
   <br>
   <br>
+  <div class="the-title-container">
   <h1>Create your activity</h1>
+</div>
   <br>
 <%= simple_form_for [ @activity ] do |f| %>
     <%= f.input :category, as: :select, collection: Category.all, prompt: 'Select a category', label: false, :input_html => {class: 'response-project'} %>
@@ -15,8 +17,10 @@
     <%= f.input :photos, as: :file, input_html: { multiple: true, class: 'upload' } %>
     <br>
     <br>
+    <div class="submit-images">
     <%= f.submit "Submit", class: "btn btn-primary" %>
   <% end %>
+</div>
 </div>
 </div>
 

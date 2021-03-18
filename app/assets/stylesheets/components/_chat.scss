@@ -2,20 +2,34 @@ body.chatrooms {
     box-sizing: border-box;
 }
 
-::-webkit-scrollbar {
-    width: 5px;
-}
+// ::-webkit-scrollbar {
+//     width: 5px;
+// }
 
-::-webkit-scrollbar-track {
-    width: 5px;
-    background: #f5f5f5;
-}
+// ::-webkit-scrollbar-track {
+//     width: 5px;
+//     background: #f5f5f5;
+// }
 
-::-webkit-scrollbar-thumb {
-    width: 1em;
-    background-color: #ddd;
-    outline: 1px solid slategrey;
-    border-radius: 1rem;
+// ::-webkit-scrollbar-thumb {
+//     width: 1em;
+//     background-color: #ddd;
+//     outline: 1px solid slategrey;
+//     border-radius: 1rem;
+// }
+
+.chatroom-layout {
+  display: flex;
+
+  #chatroom-wrapper {
+    h4 {
+      background: #146380;
+      width: 100%;
+      color: white;
+      padding: 10px;
+      margin: 0px;
+    }
+  }
 }
 
 .chatrooms,
@@ -41,7 +55,8 @@ padding-top: 1px;
             background-color: $aqua;
             color: white;
             border: none;
-            transition: ease 0.3s;
+            transition: ease 1s;
+            padding: 0.5rem 0rem;
             #chatroom-header {
                 color: white;
                 font-size: 1.2rem;

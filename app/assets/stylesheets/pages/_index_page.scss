@@ -1,0 +1,29 @@
+#activity_category_id {
+  padding: 0 20px;
+  border-radius: 8px;
+}
+
+#activity_start_time {
+  height: 38px;
+  border-radius: 8px;
+  padding: 0 20px;
+  border: 1px solid #ced4da;
+  color: #495057;
+}
+
+.index-search-container {
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 60px !important;
+}
+
+.index-search-components {
+  display: flex;
+  justify-content: space-around;
+}
+
+.index-search-button {
+  height: 38px;
+  margin-left: 17px;
+}
