@@ -315,9 +315,10 @@ background: #white;
   height: 100px
 }
 
-div {
-  margin: 0 auto;
-  align: center;
+.new-activity-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .btn-primary {
