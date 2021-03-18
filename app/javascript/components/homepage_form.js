@@ -78,6 +78,7 @@ const outdoorsyCategory = () => {
   const outdoorsyEl = document.querySelector('#activity_category_id_3');
   const treeImage = document.querySelector('.tree-image');
   const sunImage = document.querySelector('.sun-image');
+    if (outdoorsyEl) {
       outdoorsyEl.addEventListener('change', (e) => {
           if (e.target.checked) {
             setTimeout(() => { treeImage.style.setProperty('bottom', '0px'); }, 1000);
@@ -92,13 +93,15 @@ const outdoorsyCategory = () => {
             }, 1000)
           };
       });
-    }
+    };
+}
 
 const sweatCategory = () => {
   const sweatEl = document.querySelector('#activity_category_id_1');
   const dumbbellImage = document.querySelector('.dumbbell-image');
   const marioImage = document.querySelector('.mario-image');
   const marioImageTwo = document.querySelector('.mario-two-image');
+    if (sweatEl) {
       sweatEl.addEventListener('change', (e) => {
           if (e.target.checked) {
             setTimeout(() => { $(".dumbbell-image").fadeIn(); }, 1000)
@@ -121,7 +124,8 @@ const sweatCategory = () => {
             }, 1000);
           };
       });
-    }
+    };
+}
 
 
 

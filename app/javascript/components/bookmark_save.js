@@ -1,5 +1,5 @@
 const highlightSaveButton = () => {
-  const saveButtons = document.querySelectorAll('.index-search-btn');
+  const saveButtons = document.querySelectorAll('.bookmark-buttons');
   saveButtons.forEach(saveButton => {
     saveButton.addEventListener('click', (e) => {
       e.preventDefault();
