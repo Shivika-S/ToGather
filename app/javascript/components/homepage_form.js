@@ -27,11 +27,35 @@ const outdoorsyCategory = () => {
               sunImage.style.transform = 'rotate(180deg)';
             }, 1000)
           };
-          const dateSectionEl = document.querySelector('.js-home-date-question');
-          window.scrollTo({
-            top: dateSectionEl.offsetTop,
-            behavior: 'smooth',
-          });
+      });
+    }
+
+const sweatCategory = () => {
+  const sweatEl = document.querySelector('#activity_category_sweat');
+  const dumbbellImage = document.querySelector('.dumbbell-image');
+  const marioImage = document.querySelector('.mario-image');
+  const marioImageTwo = document.querySelector('.mario-two-image');
+      sweatEl.addEventListener('change', (e) => {
+          if (e.target.checked) {
+            setTimeout(() => { $(".dumbbell-image").fadeIn(); }, 1000)
+            setInterval(function(){
+              dumbbellImage.style.transform = 'rotate(20deg)';
+              setTimeout(() => { dumbbellImage.style.transform = 'rotate(0deg)'; }, 1000);
+            }, 2000);
+
+            setTimeout(() => {
+              marioImage.style.setProperty('bottom', '10vh');
+              setTimeout(() => { marioImage.style.setProperty('bottom', '-35vh'); }, 1500);
+              setTimeout(() => { marioImageTwo.style.setProperty('bottom', '10vh'); }, 3000);
+              setTimeout(() => { marioImageTwo.style.setProperty('bottom', '-35vh'); }, 4500);
+              setInterval(function(){
+                marioImage.style.setProperty('bottom', '10vh');
+                setTimeout(() => { marioImage.style.setProperty('bottom', '-35vh'); }, 1500);
+                setTimeout(() => { marioImageTwo.style.setProperty('bottom', '10vh'); }, 3000);
+                setTimeout(() => { marioImageTwo.style.setProperty('bottom', '-35vh'); }, 4500);
+              }, 6000);
+            }, 1000);
+          };
       });
     }
 
@@ -95,5 +119,5 @@ const chosenCategory = () => {
   }
 
 
-export { homePageInit, chosenCategory, outdoorsyCategory };
+export { homePageInit, chosenCategory, outdoorsyCategory, sweatCategory };
 // window.scrollTo(($(document).width()-$(window).width())/2,0);
