@@ -24,11 +24,8 @@
 }
 
 .banner-cards {
-  // position: relative;
-  // margin: 8px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  // grid-gap: 4px;
   flex-grow: 1;
 }
 
