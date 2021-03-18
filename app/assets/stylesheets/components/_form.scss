@@ -235,10 +235,12 @@ background: #white;
 }
 
 .upload {
-  margin: 0 auto;
+  width: 300px;
+  display: right;
   text-align: left;
-  margin-bottom: 10px;
-  align: center;
+  // flex-direction: row;
+  justify-content: center;
+  // position: absolute;
 }
 
 .description {
@@ -251,4 +253,20 @@ background: #white;
 div {
   margin: 0 auto;
   align: center;
+}
+
+.btn-primary {
+  margin: 0 auto;
+  text-align: left;
+  margin-bottom: 10px;
+  justify-content: center;
+  display: flex;
+}
+
+.response-date {
+  width: 500px;
+  margin: 0 auto;
+  text-align: left;
+  margin-bottom: 10px;
+  // height: 40px
 }
