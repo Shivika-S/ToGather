@@ -37,9 +37,8 @@ document.addEventListener("turbolinks:load", () => {
   initShowpage();
   initChatroomCable();
   initUpdateNavbarOnScroll();
+  chosenCategory();
+  shomePageInit();
 });
-
-chosenCategory();
-homePageInit();
 
 var rellax = new Rellax(".rellax");

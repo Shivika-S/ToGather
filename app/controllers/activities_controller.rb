@@ -20,7 +20,7 @@ class ActivitiesController < ApplicationController
       lat: @activity.latitude,
       lng: @activity.longitude,
       infoWindow: render_to_string(partial: "info_window", locals: { activity: @activity }),
-      # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
+      image_url: helpers.asset_url('placeholder.png')
     }]
     # @chatroom will be set to nil if no chat room with same name as activity exist
     @chatroom = Chatroom.find_by(name: @activity.name)
