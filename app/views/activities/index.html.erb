@@ -1,10 +1,17 @@
-<div class="index-container">
-  <h1>Moods can change...</h1>
+<div class="container index-search-container d-flex">
 
   <%= simple_form_for @activity, method: :get do |f| %>
-    <%= f.association :category, label_method: :name %>
-    <%= f.date_field :start_time %>
-    <%= f.submit "Search", class: "index-button" %>
+    <div class="index-search-components">
+      <div class="mr-3">
+        <%= f.association :category, label_method: :name, label: false, prompt: "Moods can change..." %>
+      </div>
+      <div>
+        <%= f.date_field :start_time %>
+      </div>
+      <div>
+        <%= f.submit "Search", class: "index-button" %>
+      </div>
+    </div>
   <% end %>
 </div>
 
