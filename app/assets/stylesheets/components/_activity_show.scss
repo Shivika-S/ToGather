@@ -27,16 +27,19 @@ body.activities {
   width: 492px;
   h1 {
     color: $gray;
+    text-shadow: 2px 3px 5px rgba(206, 203, 203, 0.5);
   }
   .activity-description {
     letter-spacing: 0.5px;
     color: gray;
+    text-shadow: 2px 3px 5px rgba(206, 203, 203, 0.5);
   }
   .address-date {
     font-size: 0.8rem;
     font-style: italic;
     color:$gray;
     margin-top: 24px;
+    text-shadow: 2px 3px 5px rgba(206, 203, 203, 0.5);
   }
 }
 
