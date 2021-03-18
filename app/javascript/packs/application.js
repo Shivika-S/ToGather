@@ -25,7 +25,6 @@ require("channels");
 import "bootstrap";
 import Rellax from "rellax";
 import { initMapbox } from "../plugins/init_mapbox";
-import { initShowpage } from "../plugins/init_showpage";
 import { initChatroomCable } from "../channels/chatroom_channel";
 import { initUpdateNavbarOnScroll } from "../components/navbar";
 import { chosenCategory, homePageInit, outdoorsyCategory, sweatCategory } from "../components/homepage_form";
@@ -33,8 +32,10 @@ import { chosenCategory, homePageInit, outdoorsyCategory, sweatCategory } from "
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener("turbolinks:load", () => {
+  if (document.querySelector(".rellax")) {
+  var rellax = new Rellax(".rellax");
+  }
   initMapbox();
-  initShowpage();
   initChatroomCable();
   initUpdateNavbarOnScroll();
   chosenCategory();
@@ -44,5 +45,4 @@ document.addEventListener("turbolinks:load", () => {
 
   var rellax = new Rellax(".rellax");
 });
-
 

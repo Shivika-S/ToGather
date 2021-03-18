@@ -25,7 +25,7 @@
     <!-- Chat Box-->
     <div class="col-7 px-0" id="chat-wrapper">
       <div class="px-4 py-5 chat-box">
-        
+
         <!-- Messages-->
         <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
             <% @chatroom.messages.each do |message| %>
@@ -34,9 +34,9 @@
         </div>
 
       <!-- Typing area -->
-      
+
         <div class="input-group">
-          <%= simple_form_for [ @chatroom, @message ] do |f| %>
+          <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
             <%= f.input :content, label: false, class: "form-control rounded-0 border-0 py-4 bg-light", id: "chat-input", placeholder: "Type a message" %>
           <% end %>
         </div>
