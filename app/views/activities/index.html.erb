@@ -3,7 +3,7 @@
   <%= simple_form_for @activity, method: :get do |f| %>
     <div class="index-search-components">
       <div class="mr-3">
-        <%= f.association :category, label_method: :name, label: false, prompt: "Moods can change..." %>
+        <%= f.association :category, label_method: :name, label: false, prompt: "Select category" %>
       </div>
       <div>
         <%= f.date_field :start_time %>

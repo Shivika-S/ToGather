@@ -4,7 +4,7 @@ class ActivitiesController < ApplicationController
 
   def index
     if params[:activity] && activity_params[:category_id] && activity_params[:start_time]
-      @start_time = format_datetime(params[:activity][:start_time])
+      @start_time = format_datetime
       @category = Category.find(params[:activity][:category_id]) if params[:activity][:category_id].present?
       @activities = Activity.where(category: @category)
       @activities = @activities.where("start_time > ?", @start_time)
@@ -66,8 +66,13 @@ class ActivitiesController < ApplicationController
     @activity = Activity.find(params[:id])
   end
 
-  def format_datetime(date)
-    utc_datetime = Date.parse(date).to_datetime
+  def format_datetime
+    if params[:activity]['start_time(1i)'] && params[:activity]['start_time(2i)'] && params[:activity]['start_time(3i)']
+      date_str = "#{params[:activity]['start_time(1i)']}-#{params[:activity]['start_time(2i)']}-#{params[:activity]['start_time(3i)']}"
+    elsif params[:activity][:start_time]
+      date_str = params[:activity][:start_time]
+    end
+    utc_datetime = Date.parse(date_str).to_datetime
     utc_datetime.in_time_zone('Australia/Melbourne') # could add timezone to user and access current_user.timezone here
     # user_date = utc_date.in_time_zone(time_zone)
   end
