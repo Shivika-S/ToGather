@@ -29,6 +29,10 @@
   margin-left: 17px;
 }
 
+.bookmark-buttons {
+  background-color: rgba(255,255,255,0);
+}
+
 .no-bs-validation {
   .is-valid, .is-invalid {
     border-color: $gray-400;
