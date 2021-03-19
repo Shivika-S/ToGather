@@ -24,6 +24,8 @@ Category.create(name: "Broke-Ass")
 # Create default users
 User.create(email: "one@user.com", nickname: "Userone", password: "password")
 User.create(email: "two@user.com", nickname: "usertwo", password: "password")
+User.create(email: "sam@user.com", nickname: "userthree", password: "password")
+User.create(email: "fili@user.com", nickname: "userfour", password: "password")
 
 
 # User.create(email: "sam@user.com", nickname: 'SammyMacDaddy', password: "password")
@@ -37,21 +39,21 @@ Chatroom.create(name: "general")
 
 # Sweat Category
 sweat_activities = [
-Category.find_by(name: "Sweat").activities.create(name: "Yoga at Inspire 9", address: "1/41-43 Stewart St, Richmond VIC 3121", description: "Do yoga with friends!", start_time: "2021-03-19", url:"https://www.inspire9.com/"),
-Category.find_by(name: "Sweat").activities.create(name: "Workout with The Rock", address: "367 Flinders St, Melbourne VIC 3000", description: "Work on your Gainz or just stare at The Rock all day and be aroused.", start_time: "2021-03-19", url:"https://therockgear.com/workout/"),
-Category.find_by(name: "Sweat").activities.create(name: "Pole Dancing", address: "6/277 Flinders Ln, Melbourne Victoria 3000", description: "Twerk them calories away!", start_time: "2021-03-19", url:"https://www.thepoleroom.com.au/intropack/?gclid=Cj0KCQiAnKeCBhDPARIsAFDTLTLDOtcPqk_KcXPNl43e2YVKqYIb1jmct5SRYqZXBvl7swQaZ8D9x5AaAp6ZEALw_wcB"),
-Category.find_by(name: "Sweat").activities.create(name: "Muay Thai", address: "191 Racecourse Rd, Kensington VIC 3031", description: "Come and learn how to roundhouse kick like the undefeated intergalactic champion, Chuck Norris!", start_time: "2021-03-19", url:"https://g.co/kgs/Y7nUJV"),
-Category.find_by(name: "Sweat").activities.create(name: "Salsa dancing", address: "1/281 Swan St, Richmond VIC 3121", description: "Learn how to move your body like an elegant, majestic swan from the legendary, Damian Lonel.", start_time: "2021-03-19", url:"https://youtu.be/k9qVeZU4msw"),
-Category.find_by(name: "Sweat").activities.create(name: "Cocktails and Zumba", address: "130 Gladstone St, South Melbourne VIC 3205", description: "Cocktails and Zumba? Yes.", start_time: "2021-03-19", url:"https://youtu.be/gCROJglfRxo"),
-Category.find_by(name: "Sweat").activities.create(name: "Bodhi & Ride", address: "416-418 Bay Street, Port Melbourne, VIC 3207", description: " This spin class is anything but typical, blending endurance, interval and weight training into a 40-minute clubbing experience where stilettos are replaced by trainers. Sweat it out with rock star instructors under strobe lights with a 3 million dollar sound system blasting the latest club tracks..", start_time: "2021-03-19", url:"https://www.bodhiandride.com.au/"),
-Category.find_by(name: "Sweat").activities.create(name: "Bey Dance", address: "4-10 Yorkshire Street, Richmond, Victoria 3121", description: "Unleash your inner diva at a dance class dedicated to Beyonce. Bey Dance takes your secret passion for dancing around your room and brings it to the main stage where your Bey Captains are ready to teach you the chorography to hits like Love on Top, Single Ladies and Run the World.", start_time: "2021-03-19", url:"http://www.dancefactory.com.au/"),
-Category.find_by(name: "Sweat").activities.create(name: "Snowga", address: "16 Schuss St, Falls Creek Victoria 3699", description: "If you’re bored with Bikram and Disco Yoga and don’t mind frost bite then it’s time to visit the slopes and try Snowga. Greet the day in the downward dog position at dawn and become one with the profound silence of the mountains. Stretch out your hamstrings, quadriceps and shoulders before you carve up the mountain with a day of skiing, followed by a restorative yoga session at the end of the day. !", start_time: "2021-03-19", url:"https://www.theyogavine.com.au/"),
-Category.find_by(name: "Sweat").activities.create(name: "Sky High Yoga", address: "The District Docklands, 101 Waterfront Way, Docklands VIC 3008", description: "Connect again with your inner guiding star with a Slow Flow Yoga practice on the Melbourne Star. Meditate in peace above the world in the quiet of fully enclosed glass cabins, temperature-controlled to create the perfect environment.Stretch and relax with popular and traditional yoga postures, then return to earth for a drink of your choice from Boost Juice.", start_time: "2021-03-19", url:"https://melbournestar.com/experiences/yoga-sky/"),
-Category.find_by(name: "Sweat").activities.create(name: "F* It", address: "544 Mt Alexander Rd, Ascot Vale, Victoria 3032", description: "Thumping beats first thing in the morning. The kind that makes your drink bottle reverb like Jurassic Park. It means lasers and coloured lighting that changes based on your instructor’s mood. It means LED-lined mirrors and ‘murder black’ treadmills with built-in touchscreen Android systems. It’s kind of like that underground rave scene in the Matrix, only everyone’s incredibly buff.", start_time: "2021-03-19", url:"https://fk-it.com.au/"),
-Category.find_by(name: "Sweat").activities.create(name: "Virtual K-Pop", address: "Melbourne, Victoria 3000", description: "Clear away those couches and dance up a storm in your living room. Join Passion Studio for a street jazz, hip hop, urban, K Pop or krump class. Newbies are especially welcome – there are heaps of beginners classes.", start_time: "2021-03-19", url:"https://www.passionstudio.com.au/online-classes"),
-Category.find_by(name: "Sweat").activities.create(name: "Rise Nation", address: "299 Toorak Rd, Melbourne VIC 3141", description: "The Rise Nation style of working out originated in LA and has made its way down under and into our lives. And thanks to Rise Nation, it’s officially possible to easily mistake a workout room for a nightclub. Each 30-Minute Vertical Climbing HIIT Session utilises a piece of equipment called the Versaclimber, meaning you’re engaging in cardio vertical climbing. Paired with the venue’s state-of-the-art lighting and theatre system, you’re in for a workout like never before.", start_time: "2021-03-19", url:"https://www.risenation.com.au/"),
-Category.find_by(name: "Sweat").activities.create(name: "Sunlighten", address: "2359 Clarendon Street, South Melbourne Victoria 3205", description: "Sunlighten is a favourite with those that enjoy the heat, but not humidity. There’s no steam or any of the moisture that comes with a regular sauna at Sunlighten, meaning that you’re safe to take your iPad or Kindle and settle in for an hour or two. Instead of the sweats, you’ll be treated to a  gentle, soothing warmth in one of their pristine timber cabins, with fresh towels galore.", start_time: "2021-03-19", url:"https://www.wellnesshub.sunlighten.com.au/"),
-Category.find_by(name: "Sweat").activities.create(name: "Hip-Hop Yoga", address: "1/97 Swan Street, Richmond Victoria 3121", description: "For those who want to keep their feet firmly on the ground, but want a more energetic twist to the standard yoga session, Yoga 213 delivers higher intensity yoga practice to classic hip-hop tracks. Hit a Hip Hop 2 class for one of the best ab workouts this side of 100 situps.", start_time: "2021-03-19", url:"http://www.yoga213.com.au/")
+Category.find_by(name: "Sweat").activities.create(name: "Yoga at Inspire 9", address: "1/41-43 Stewart St, Richmond VIC 3121", description: "Do yoga with friends!", start_time: "2021-03-20", url:"https://www.inspire9.com/"),
+Category.find_by(name: "Sweat").activities.create(name: "Workout with The Rock", address: "367 Flinders St, Melbourne VIC 3000", description: "Work on your Gainz or just stare at The Rock all day and be aroused.", start_time: "2021-03-20", url:"https://therockgear.com/workout/"),
+Category.find_by(name: "Sweat").activities.create(name: "Pole Dancing", address: "6/277 Flinders Ln, Melbourne Victoria 3000", description: "Twerk them calories away!", start_time: "2021-03-20", url:"https://www.thepoleroom.com.au/intropack/?gclid=Cj0KCQiAnKeCBhDPARIsAFDTLTLDOtcPqk_KcXPNl43e2YVKqYIb1jmct5SRYqZXBvl7swQaZ8D9x5AaAp6ZEALw_wcB"),
+Category.find_by(name: "Sweat").activities.create(name: "Muay Thai", address: "191 Racecourse Rd, Kensington VIC 3031", description: "Come and learn how to roundhouse kick like the undefeated intergalactic champion, Chuck Norris!", start_time: "2021-03-20", url:"https://g.co/kgs/Y7nUJV"),
+Category.find_by(name: "Sweat").activities.create(name: "Salsa dancing", address: "1/281 Swan St, Richmond VIC 3121", description: "Learn how to move your body like an elegant, majestic swan from the legendary, Damian Lonel.", start_time: "2021-03-20", url:"https://youtu.be/k9qVeZU4msw"),
+Category.find_by(name: "Sweat").activities.create(name: "Cocktails and Zumba", address: "130 Gladstone St, South Melbourne VIC 3205", description: "Cocktails and Zumba? Yes.", start_time: "2021-03-20", url:"https://youtu.be/gCROJglfRxo"),
+Category.find_by(name: "Sweat").activities.create(name: "Bodhi & Ride", address: "416-418 Bay Street, Port Melbourne, VIC 3207", description: " This spin class is anything but typical, blending endurance, interval and weight training into a 40-minute clubbing experience where stilettos are replaced by trainers. Sweat it out with rock star instructors under strobe lights with a 3 million dollar sound system blasting the latest club tracks..", start_time: "2021-03-20", url:"https://www.bodhiandride.com.au/"),
+Category.find_by(name: "Sweat").activities.create(name: "Bey Dance", address: "4-10 Yorkshire Street, Richmond, Victoria 3121", description: "Unleash your inner diva at a dance class dedicated to Beyonce. Bey Dance takes your secret passion for dancing around your room and brings it to the main stage where your Bey Captains are ready to teach you the chorography to hits like Love on Top, Single Ladies and Run the World.", start_time: "2021-03-20", url:"http://www.dancefactory.com.au/"),
+Category.find_by(name: "Sweat").activities.create(name: "Snowga", address: "16 Schuss St, Falls Creek Victoria 3699", description: "If you’re bored with Bikram and Disco Yoga and don’t mind frost bite then it’s time to visit the slopes and try Snowga. Greet the day in the downward dog position at dawn and become one with the profound silence of the mountains. Stretch out your hamstrings, quadriceps and shoulders before you carve up the mountain with a day of skiing, followed by a restorative yoga session at the end of the day. !", start_time: "2021-03-20", url:"https://www.theyogavine.com.au/"),
+Category.find_by(name: "Sweat").activities.create(name: "Sky High Yoga", address: "The District Docklands, 101 Waterfront Way, Docklands VIC 3008", description: "Connect again with your inner guiding star with a Slow Flow Yoga practice on the Melbourne Star. Meditate in peace above the world in the quiet of fully enclosed glass cabins, temperature-controlled to create the perfect environment.Stretch and relax with popular and traditional yoga postures, then return to earth for a drink of your choice from Boost Juice.", start_time: "2021-03-20", url:"https://melbournestar.com/experiences/yoga-sky/"),
+Category.find_by(name: "Sweat").activities.create(name: "F* It", address: "544 Mt Alexander Rd, Ascot Vale, Victoria 3032", description: "Thumping beats first thing in the morning. The kind that makes your drink bottle reverb like Jurassic Park. It means lasers and coloured lighting that changes based on your instructor’s mood. It means LED-lined mirrors and ‘murder black’ treadmills with built-in touchscreen Android systems. It’s kind of like that underground rave scene in the Matrix, only everyone’s incredibly buff.", start_time: "2021-03-20", url:"https://fk-it.com.au/"),
+Category.find_by(name: "Sweat").activities.create(name: "Virtual K-Pop", address: "Melbourne, Victoria 3000", description: "Clear away those couches and dance up a storm in your living room. Join Passion Studio for a street jazz, hip hop, urban, K Pop or krump class. Newbies are especially welcome – there are heaps of beginners classes.", start_time: "2021-03-20", url:"https://www.passionstudio.com.au/online-classes"),
+Category.find_by(name: "Sweat").activities.create(name: "Rise Nation", address: "299 Toorak Rd, Melbourne VIC 3141", description: "The Rise Nation style of working out originated in LA and has made its way down under and into our lives. And thanks to Rise Nation, it’s officially possible to easily mistake a workout room for a nightclub. Each 30-Minute Vertical Climbing HIIT Session utilises a piece of equipment called the Versaclimber, meaning you’re engaging in cardio vertical climbing. Paired with the venue’s state-of-the-art lighting and theatre system, you’re in for a workout like never before.", start_time: "2021-03-20", url:"https://www.risenation.com.au/"),
+Category.find_by(name: "Sweat").activities.create(name: "Sunlighten", address: "2359 Clarendon Street, South Melbourne Victoria 3205", description: "Sunlighten is a favourite with those that enjoy the heat, but not humidity. There’s no steam or any of the moisture that comes with a regular sauna at Sunlighten, meaning that you’re safe to take your iPad or Kindle and settle in for an hour or two. Instead of the sweats, you’ll be treated to a  gentle, soothing warmth in one of their pristine timber cabins, with fresh towels galore.", start_time: "2021-03-20", url:"https://www.wellnesshub.sunlighten.com.au/"),
+Category.find_by(name: "Sweat").activities.create(name: "Hip-Hop Yoga", address: "1/97 Swan Street, Richmond Victoria 3121", description: "For those who want to keep their feet firmly on the ground, but want a more energetic twist to the standard yoga session, Yoga 213 delivers higher intensity yoga practice to classic hip-hop tracks. Hit a Hip Hop 2 class for one of the best ab workouts this side of 100 situps.", start_time: "2021-03-20", url:"http://www.yoga213.com.au/")
 ]
 
 # Romance Category
@@ -324,6 +326,48 @@ Category.find_by(name: "Romance").activities.find_by(name: "Cute dinner with The
 
 file = URI.open("https://images.unsplash.com/photo-1598639753591-053c3e1477dd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1908&q=80")
 Category.find_by(name: "Romance").activities.find_by(name: "Cute dinner with Thembi").photos.attach(io: file, filename: "tajmahal4.jpg", content_type: 'image/jpg')
+
+
+
+file = URI.open("https://images.unsplash.com/photo-1568805647390-a149179a06f6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1778&q=80")
+Category.find_by(name: "Sweat").activities.find_by(name: "Salsa dancing").photos.attach(io: file, filename: "salsa1.jpg", content_type: 'image/jpg')
+
+file = URI.open("https://images.unsplash.com/photo-1545959570-a94084071b5d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1374&q=80")
+Category.find_by(name: "Sweat").activities.find_by(name: "Salsa dancing").photos.attach(io: file, filename: "salsa2.jpg", content_type: 'image/jpg')
+
+file = URI.open("https://images.unsplash.com/photo-1508642054-5e6cade8ff13?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1584&q=80")
+Category.find_by(name: "Sweat").activities.find_by(name: "Salsa dancing").photos.attach(io: file, filename: "salsa3.jpg", content_type: 'image/jpg')
+
+
+
+file = URI.open("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80")
+Category.find_by(name: "Sweat").activities.find_by(name: "F* It").photos.attach(io: file, filename: "fit1.jpg", content_type: 'image/jpg')
+
+file = URI.open("https://images.unsplash.com/photo-1540496905036-5937c10647cc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80")
+Category.find_by(name: "Sweat").activities.find_by(name: "F* It").photos.attach(io: file, filename: "fit2.jpg", content_type: 'image/jpg')
+
+file = URI.open("https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1336&q=80")
+Category.find_by(name: "Sweat").activities.find_by(name: "F* It").photos.attach(io: file, filename: "fit3.jpg", content_type: 'image/jpg')
+
+
+
+file = URI.open("https://images.unsplash.com/photo-1537365587684-f490102e1225?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80")
+Category.find_by(name: "Sweat").activities.find_by(name: "Bey Dance").photos.attach(io: file, filename: "beydance1.jpg", content_type: 'image/jpg')
+
+file = URI.open("https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F13%2F2016%2F07%2F21%2FGettyImages-532741334-2000.jpg&q=85")
+Category.find_by(name: "Sweat").activities.find_by(name: "Bey Dance").photos.attach(io: file, filename: "beydance2.jpg", content_type: 'image/jpg')
+
+
+
+file = URI.open("https://images.unsplash.com/photo-1599744331120-3226c87a6e25?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1338&q=80")
+Category.find_by(name: "Sweat").activities.find_by(name: "Workout with The Rock").photos.attach(io: file, filename: "therock1.jpg", content_type: 'image/jpg')
+
+file = URI.open("https://images.unsplash.com/photo-1514512364185-4c2b0985be01?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1502&q=80")
+Category.find_by(name: "Sweat").activities.find_by(name: "Workout with The Rock").photos.attach(io: file, filename: "therock2.jpg", content_type: 'image/jpg')
+
+file = URI.open("https://images.unsplash.com/photo-1614928228125-8e64395ea2d4?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fHNpdCUyMHVwc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60")
+Category.find_by(name: "Sweat").activities.find_by(name: "Workout with The Rock").photos.attach(io: file, filename: "therock3.jpg", content_type: 'image/jpg')
+
 
 # TURNT
 count = 0
