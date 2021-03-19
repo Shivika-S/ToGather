@@ -35,6 +35,7 @@
 }
 
 .card {
+  cursor: pointer;
   margin-top: 40px;
   width: 100%;
   margin-bottom: 30px;
@@ -158,8 +159,6 @@
   }
 }
 
-
-
 #card_details {
   position: relative;
   margin: auto;
@@ -186,4 +185,19 @@
       color: #1EDD88;
     }
   }
+}
+
+
+.image-buttons {
+  position: center;
+  h5 {
+    color: $gray;
+    text-align: center;
+  }
+}
+
+.dashboard-cards-container .dashboard-cards .activity-card a {
+ color: white;
+
+
 }

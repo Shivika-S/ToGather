@@ -7,59 +7,71 @@
   <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item">
       <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Bookmarks</a>
-  </li>
-    <li class="nav-item">
-      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Activities</a>
-  </li>
+    </li>
+      <li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Activities</a>
+    </li>
   </ul>
 
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-
-  <ul>
-    <% @bookmarks.each do |bookmark| %>
-      <% if bookmark.user == current_user %>
-        <h5><strong><%= bookmark.activity.name %></strong></h5>
-          <div>
-            <%= link_to 'Remove', bookmark_path(bookmark.id), method: :delete, data: { confirm: "Are you sure you want to remove your bookmark?"} %>
-          </div>
+      <% @bookmarks.each do |bookmark| %>
       <% end %>
-    <% end %>
-  </ul>
-  </div>
-
-  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-    <% if @activities.exists? %>
-    <% end %>
-
-  <div class="dashboard-cards-container">
-    <div class ="dashboard-cards">
-      <% @activities.each do |activity| %>
-        <div class="activity-card">
-          <%= link_to category_activity_path(:category_id, activity) do %>
-            <% if activity.cover_photo.attached? %>
-              <div class="image-container">
-                <%= cl_image_tag(activity.cover_photo.key,
-                  class: "dashboard-card-images", height: 300, fit: :clip) %>
-              </div>
-      <% end %>
-        <% if activity.user == current_user %>
-        <div class="image-buttons" id="image-name">
-          <h5><strong><%= activity.name %></strong></h5>
-        </div>
-            <div class="image-buttons" id="dashboard-buttons">
-              <%= link_to 'Edit', edit_activity_path(activity), class: "btn btn-warning" %>
-              </div>
-              <div class="image-buttons" id="second-button">
-              <%= link_to 'Delete', activity_path(activity.id), method: :delete, data: { confirm: "Are you sure you want to delete your activity?"}, class: "btn btn-danger" %>
+      <div class="dashboard-cards-container">
+        <div class ="dashboard-cards">
+          <% @bookmarks.each do |bookmark| %>
+            <% activity = bookmark.activity %>
+            <div class="activity-card">
+              <%= link_to category_activity_path(:category_id, activity) do %>
+                <% if activity.cover_photo.attached? %>
+                  <div class="image-container">
+                    <%= cl_image_tag(activity.cover_photo.key,
+                      class: "dashboard-card-images", height: 300, fit: :clip) %>
+                  </div>
+                <% end %>
+                <div class="image-buttons" id="image-name">
+                  <h5><strong><%= activity.name %></strong></h5>
+                  <%= link_to "delete", bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure you want to delete your activity?"}, class: "btn btn-danger" %>
+                </div>
+              <% end %>
             </div>
           <% end %>
-        <% end %>
         </div>
-      <% end %>
+      </div>
     </div>
-  </div>
-  </div>
+
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+      <% if @activities.exists? %>
+      <% end %>
+
+      <div class="dashboard-cards-container">
+        <div class ="dashboard-cards">
+          <% @activities.each do |activity| %>
+            <div class="activity-card">
+              <%= link_to category_activity_path(:category_id, activity) do %>
+                <% if activity.cover_photo.attached? %>
+                  <div class="image-container">
+                    <%= cl_image_tag(activity.cover_photo.key,
+                      class: "dashboard-card-images", height: 300, fit: :clip) %>
+                  </div>
+                <% end %>
+                <% if activity.user == current_user %>
+                  <div class="image-buttons" id="image-name">
+                    <h5><strong><%= activity.name %></strong></h5>
+                  </div>
+                  <div class="image-buttons" id="dashboard-buttons">
+                    <%= link_to 'Edit', edit_activity_path(activity), class: "btn btn-warning" %>
+                    </div>
+                    <div class="image-buttons" id="second-button">
+                    <%= link_to 'Delete', activity_path(activity.id), method: :delete, data: { confirm: "Are you sure you want to delete your activity?"}, class: "btn btn-danger" %>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 

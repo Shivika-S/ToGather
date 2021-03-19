@@ -9,6 +9,7 @@
   padding: 0 20px;
   border: 1px solid #ced4da;
   color: #495057;
+  margin-right: 17px;
 }
 
 .index-search-container {
@@ -27,3 +28,23 @@
   height: 38px;
   margin-left: 17px;
 }
+
+.bookmark-buttons {
+  background-color: rgba(255,255,255,0);
+}
+
+.index-save-btn {
+  transition: 0.6s;
+}
+
+.no-bs-validation {
+  .is-valid, .is-invalid {
+    border-color: $gray-400;
+    background-image: inherit;
+    &:focus {
+      border-color: inherit;
+      box-shadow: 0 0 0 .2rem $gray-400;
+    }
+  }
+}
+

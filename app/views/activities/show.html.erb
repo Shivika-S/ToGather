@@ -10,10 +10,10 @@
           </div>
         <% end %>
         <% if @activity.photos[0] %>
-          <div class="carousel-item">
+          < class="carousel-item">
             <img class="index-carousel-pic" src=<%= cl_image_path(@activity.photos[0].key,
               height: 200) %> alt="#">
-          </div>
+          </>
         <% end %>
         <% if @activity.photos[1] %>
           <div class="carousel-item">
@@ -48,35 +48,36 @@
     <div class="activities-show d-flex justify-content-between align-items-center container mt-0 py-3" >
       <div class="activity-details">
         <h1><%= @activity.name %></h1>
+        <%= social_share_button_tag(@activity.name) %>
         <br>
         <p class="activity-description"><%= @activity.description %></p>
         <p class="address-date"><span><%= @activity.address %></span></p>
         <p class="address-date"><span><%= DateTime.parse(@activity.start_time.to_s).strftime(("%d of %B, %Y")) %></span></p>
         <%= link_to "Join the chat!", chatroom_path(@chatroom.id), class: "btn btn-info", id: "join-chat-btn" %>
-        <div class="bookmark-show-buttons">
-          <%= link_to 'Save', bookmark_path(activity_id: @activity), method: :post, class: "btn btn-outline-secondary" %>
-        </div>
+
+        <%= link_to 'Save', bookmark_path(activity_id: @activity), method: :post, class: "btn btn-outline-secondary", id: "bookmark-show-buttons" %>
       </div>
 
-      <div class="map-wrapper">
+      <div class="map-weather-wrapper">
 
-        <a class="weatherwidget-io" href="https://forecast7.com/en/n37d81144d96/melbourne/" data-label_1="MELBOURNE" data-label_2="WEATHER" data-font="Jura" data-icons="Climacons Animated" data-mode="Current" data-days="3" data-textcolor="#ffffff" data-suncolor="#ff9500" >MELBOURNE WEATHER</a>
-
+        <a class="weatherwidget-io" href="https://forecast7.com/en/n37d81144d96/melbourne/" data-label_1="Melbourne" data-label_2="WEATHER" data-font="Jura" data-icons="Climacons" data-mode="Current" data-days="3" data-theme="original" data-basecolor="" data-accent="#574d4d" data-textcolor="#a9a8a8" data-mooncolor="#e2d99f" data-cloudcolor="#cdcaca" >MELBOURNE WEATHER</a>
         <script>
         !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
         </script>
 
-        <div id="map"
-        style="width: 300px; height: 300px; border-radius: 50%;"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-        </div>
+        <div id="map-wrapper">
+          <div id="map"
+          style="width: 400px; height: 400px; border-radius: 50%;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+          </div>
 
-        <div class="map-info">
-            <a href="https://maps.google.com/maps?ll=<%= @activity.latitude%>,<%= @activity.longitude%>&z=15&t=m&hl=en&gl=AU&mapclient=embed&daddr=<%= @activity.address%>@<%= @activity.latitude%>,<%= @activity.longitude%>">Directions</a>
+          <div class="map-info">
+              <a href="https://maps.google.com/maps?ll=<%= @activity.latitude%>,<%= @activity.longitude%>&z=15&t=m&hl=en&gl=AU&mapclient=embed&daddr=<%= @activity.address%>@<%= @activity.latitude%>,<%= @activity.longitude%>" target="_blank">Directions</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <%= social_share_button_tag(@activity.name) %>
+    
 </div>

@@ -9,18 +9,17 @@ body.activities {
 }
 
 #join-chat-btn {
-  background-color: $yellow;
-  padding: 4px 20px;
-  border-radius: 30px;
-  transition: ease-in 0.5s;
-  // box-shadow: 2px 3px 5px #217796;
-  // text-shadow: 2px 3px 5px #b58a41;
-  color: #485156;
+  color: white;
+  background-color: #2683A7;
+  border: none;
+  padding: 5px 20px;
+  border-radius: 8px;
+  width: 150px;
 }
 
 #join-chat-btn:hover {
   transform: scale(1.05);
-  transition: ease-in 0.5s;
+  transition: ease-in 0.2s;
 }
 
 .activity-details {
@@ -31,7 +30,7 @@ body.activities {
   }
   .activity-description {
     letter-spacing: 0.5px;
-    color: gray;
+    color: $gray;
     text-shadow: 2px 3px 5px rgba(206, 203, 203, 0.5);
   }
   .address-date {
@@ -43,41 +42,31 @@ body.activities {
   }
 }
 
-.bookmark-show-buttons {
-  border-radius: 4px;
+// .bookmark-show-buttons {
+//   border: none;
+//   color: white;
+//   padding: 15px 32px;
+//   text-align: center;
+//   text-decoration: none;
+//   display: inline-block;
+//   font-size: 16px;
+//   transition-duration: 0.4s;
+//   box-shadow: #217796;
+//   padding: 4px 20px;
+// }
+
+#bookmark-show-buttons {
+  color: #495057;
+  background-color: #FCCE3A;
   border: none;
-  color: black;
-  text-align: center;
-  font-size: 28px;
-  width: 100px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-  border-color: pink;
+  padding: 5px 20px;
+  border-radius: 8px;
+  width: 150px;
 }
 
-.bookmark-show-buttons:after {
-  content: '\00bb';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
+#bookmark-show-buttons:hover {
+  transform: scale(1.05);
+  transition: ease-in 0.2s;
 }
-
-.bookmark-show-buttons:hover {
-  padding-right: 10px;
-}
-
-.bookmark-show-buttons:hover:after {
-  opacity: 1;
-  right: 0;
-}
-
-
 
 

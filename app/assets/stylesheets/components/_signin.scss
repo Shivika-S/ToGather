@@ -1,5 +1,6 @@
   .sign_in_photo {
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), image-url('collage.png');
+  background-image: image-url('collage.png');
+  background-size: cover;
   height: 100vh;
   }
 
@@ -13,7 +14,11 @@
   .sign_in_form-container {
     margin-right: 60px;
     margin-left: 60px;
-    padding-top: 80px;
+    padding-top: 100px;
+
+    h2 {
+      text-align: center;
+    }
   }
 
 #login_button {
@@ -21,6 +26,7 @@
   border-radius: 20px;
   width: 100%;
   border-radius: 20px;
+  color: white
 
 }
 .signup_button {
@@ -51,5 +57,9 @@
 .sign_in_button_grid {
   display: flex;
   justify-content: space-between;
-
 }
+
+.btn {
+  border-radius: 20px;
+}
+
