@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   get 'errors/internal_error'
   devise_for :users
 
-  resources :activities, only: [:index, :new, :create, :destroy, :edit, :update]
+  resources :activities, only: [:index, :new, :create, :destroy, :edit, :update] do
+    resource :bookmark, only: [:show, :create]
+  end
+
   resources :categories, only: [:index] do
     resources :activities, only: [:show]
   end
@@ -12,10 +15,11 @@ Rails.application.routes.draw do
     resources :messages, only: :create
   end
   resource :dashboard, only: [:show]
-  resource :bookmark, only: [:create, :destroy]
+
+  resource :bookmark, only: [:destroy]
 
   get "dashboard", to: "dashboards#show"
-  get "bookmark", to: "dashboards#show"
+  # get "bookmark", to: "dashboards#show"
   get "/activities/:id" => "activities#destroy"
 
   devise_scope :user do
