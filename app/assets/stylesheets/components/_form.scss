@@ -340,6 +340,7 @@ background: #white;
   margin: 0 auto;
   text-align: left;
   margin-bottom: 10px;
+  background-color: #FCCE3A;
 }
 
 .upload {
@@ -355,7 +356,9 @@ background: #white;
   width: 650px;
   margin: 0 auto;
   text-align: left;
-  height: 200px
+  height: 200px;
+  background-color: #FCCE3A;
+
 }
 
 .the-activity-container {
@@ -387,9 +390,34 @@ background: #white;
 }
 
 .response-date {
-  width: 500px;
+  width: 450px;
   margin: 0 auto;
   text-align: left;
-  margin-bottom: 10px;
-  // height: 40px
+}
+
+#cover-upload {
+width: 650px;
+padding: 5px;
+margin: 0 auto;
+margin-bottom: 50px;
+display: flex;
+}
+
+
+#pictures-upload {
+width: 650px;
+padding: 5px;
+margin: 0 auto;
+// margin-top: 50px;
+display: flex;
+
+}
+
+#choose-new-date {
+  // width: 650px !important;
+  margin: 0 auto;
+  color: orange !important;
+  // text-align: left;
+  margin-bottom: 50px;
+  justify-content: center;
 }
