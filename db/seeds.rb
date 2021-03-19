@@ -351,14 +351,11 @@ Category.find_by(name: "Sweat").activities.find_by(name: "F* It").photos.attach(
 
 
 
-file = URI.open("https://images.unsplash.com/photo-1544622428-56b8d9eed7db?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1500&q=80")
+file = URI.open("https://images.unsplash.com/photo-1537365587684-f490102e1225?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80")
 Category.find_by(name: "Sweat").activities.find_by(name: "Bey Dance").photos.attach(io: file, filename: "beydance1.jpg", content_type: 'image/jpg')
 
-file = URI.open("https://images.unsplash.com/photo-1575489181784-a99aa58e4bb5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2791&q=80")
+file = URI.open("https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F13%2F2016%2F07%2F21%2FGettyImages-532741334-2000.jpg&q=85")
 Category.find_by(name: "Sweat").activities.find_by(name: "Bey Dance").photos.attach(io: file, filename: "beydance2.jpg", content_type: 'image/jpg')
-
-file = URI.open("https://images.unsplash.com/photo-1524491887412-14c265900364?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1780&q=80")
-Category.find_by(name: "Sweat").activities.find_by(name: "Bey Dance").photos.attach(io: file, filename: "beydance3.jpg", content_type: 'image/jpg')
 
 
 
