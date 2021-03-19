@@ -18,7 +18,7 @@
 <div class="container">
   <div class="card-columns">
     <% @activities.each do |activity| %>
-      <div class="card">
+      <div class="card"  data-toggle="modal" data-target=".js-activity-<%= activity.id %>">
         <div class="bookmark-buttons">
           <%= link_to 'Save', activity_bookmark_path(activity, activity:{ start_time: @search_start_time, category_id: @search_category}), class: "index-save-btn btn btn-outline-secondary", remote: true, method: :post %>
         </div>
@@ -26,7 +26,7 @@
             <%= cl_image_tag(activity.cover_photo.key,
               class: "card-images", height: 300, fit: :clip) %>
           <% end %>
-          <div id="card_details" data-toggle="modal" data-target=".js-activity-<%= activity.id %>">
+          <div id="card_details">
             <h5><%= activity.name %></h5>
             <p class="mb-3"><%= activity.description %></p>
             <% if @start_time == activity.start_time %>
