@@ -20,7 +20,12 @@
     <% @activities.each do |activity| %>
       <div class="card"  data-toggle="modal" data-target=".js-activity-<%= activity.id %>">
         <div class="bookmark-buttons">
-          <%= link_to 'Save', activity_bookmark_path(activity, activity:{ start_time: @search_start_time, category_id: @search_category}), class: "index-save-btn btn btn-outline-secondary", remote: true, method: :post %>
+          <% unless current_user.bookmarks.where(activity_id: activity.id).empty? %>
+            <%= link_to 'Saved', bookmark_path(current_user.bookmarks.first), method: :delete, class: "index-save-btn btn btn-secondary" %>
+          <% else %>
+            <%= link_to 'Save', activity_bookmark_path(activity_id: activity.id), method: :post, class: "index-save-btn btn btn-outline-secondary" %>
+          <% end %>
+
         </div>
           <% if activity.cover_photo.attached? %>
             <%= cl_image_tag(activity.cover_photo.key,
