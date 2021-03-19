@@ -4,21 +4,21 @@
   <br>
   <br>
   <div class="the-title-container">
-  <h1>Create your activity</h1>
+  <strong><h1>Create your activity</h1></strong>
 </div>
   <br>
 <%= simple_form_for [ @activity ] do |f| %>
     <%= f.input :category, as: :select, collection: Category.all, prompt: 'Select a category', label: false, :input_html => {class: 'response-project'} %>
     <%= f.input :name, :input_html => {class: 'response-project'} %>
-    <%= f.input :description, :input_html => {class: 'description'} %>
+    <%= f.input :description, as: "text", :input_html => {class: 'description'} %>
     <%= f.input :address, :input_html => {class: 'response-project'} %>
-    <%= f.input :start_time, as: :date, label: :Date, :input_html => {class: 'response-date'} %>
-    <%= f.input :cover_photo, as: :file, :input_html => {class: 'upload'} %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true, class: 'upload' } %>
+    <%= f.date_field :start_time, label: :Date, :input_html => {class: 'choose-date', id: 'choose-new-date'} %>
+    <%= f.input :cover_photo, as: :file, :input_html => {class: 'upload', id: 'cover-upload'} %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true, class: 'upload', id: 'pictures-upload' } %>
     <br>
     <br>
     <div class="submit-images">
-    <%= f.submit "Submit", class: "btn btn-primary" %>
+    <%= f.submit "Submit", class: "btn btn-primary", id: "photo-submit" %>
   <% end %>
 </div>
 </div>
