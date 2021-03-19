@@ -9,11 +9,12 @@ body.activities {
 }
 
 #join-chat-btn {
-  color: #495057;
-    background-color: #FCCE3A;
-    border: none;
-    padding: 5px 20px;
-    border-radius: 8px;
+  color: white;
+  background-color: #2683A7;
+  border: none;
+  padding: 5px 20px;
+  border-radius: 8px;
+  width: 150px;
 }
 
 #join-chat-btn:hover {
@@ -54,43 +55,18 @@ body.activities {
 //   padding: 4px 20px;
 // }
 
-.bookmark-show-buttons {
-  border-radius: 4px;
+#bookmark-show-buttons {
+  color: #495057;
+  background-color: #FCCE3A;
   border: none;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 28px;
-  // padding: 10px;
-  width: 100px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
+  padding: 5px 20px;
+  border-radius: 8px;
+  width: 150px;
 }
 
-.bookmark-show-buttons:after {
-  content: '\00bb';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
+#bookmark-show-buttons:hover {
+  transform: scale(1.05);
+  transition: ease-in 0.2s;
 }
-
-.bookmark-show-buttons:hover {
-  padding-right: 10px;
-}
-
-.bookmark-show-buttons:hover:after {
-  opacity: 1;
-  right: 0;
-}
-
-.social-share-button {
-  
-}   
 
 
