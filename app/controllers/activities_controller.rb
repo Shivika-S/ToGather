@@ -9,10 +9,12 @@ class ActivitiesController < ApplicationController
       @activities = Activity.where(category: @category)
       @activities = @activities.where("start_time > ?", @start_time)
       # @activities = Category.find_by(name: "Sweat").activities
+      @search_category = activity_params[:category_id]
+      @search_start_time = @start_time
     else
       @activities = Activity.all
     end
-    @activity = Activity.new(activity_params)
+    params[:activity].nil? ? @activity = Activity.new : @activity = Activity.new(activity_params)
   end
 
   def show
