@@ -55,9 +55,7 @@
         <p class="address-date"><span><%= DateTime.parse(@activity.start_time.to_s).strftime(("%d of %B, %Y")) %></span></p>
         <%= link_to "Join the chat!", chatroom_path(@chatroom.id), class: "btn btn-info", id: "join-chat-btn" %>
 
-        <div class="bookmark-show-buttons">
-          <%= link_to 'Save', bookmark_path(activity_id: @activity), method: :post, class: "btn btn-outline-secondary" %>
-        </div>
+        <%= link_to 'Save', bookmark_path(activity_id: @activity), method: :post, class: "btn btn-outline-secondary", id: "bookmark-show-buttons" %>
       </div>
 
       <div class="map-weather-wrapper">
@@ -75,7 +73,7 @@
           </div>
 
           <div class="map-info">
-              <a href="https://maps.google.com/maps?ll=<%= @activity.latitude%>,<%= @activity.longitude%>&z=15&t=m&hl=en&gl=AU&mapclient=embed&daddr=<%= @activity.address%>@<%= @activity.latitude%>,<%= @activity.longitude%>">Directions</a>
+              <a href="https://maps.google.com/maps?ll=<%= @activity.latitude%>,<%= @activity.longitude%>&z=15&t=m&hl=en&gl=AU&mapclient=embed&daddr=<%= @activity.address%>@<%= @activity.latitude%>,<%= @activity.longitude%>" target="_blank">Directions</a>
           </div>
         </div>
       </div>
