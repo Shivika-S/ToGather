@@ -12,7 +12,7 @@
   color: $yellow;
 }
 
-.map-wrapper {
+.map-weather-wrapper {
   position: relative;
   #map {
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
@@ -21,7 +21,7 @@
   .map-info a {
     position: absolute;
     bottom: 32px;
-    left: 85px;
+    left: 137px;
     background-color: rgba($color: white, $alpha: 0.5);
     padding: 0px 20px;
     border-radius: 20px;
