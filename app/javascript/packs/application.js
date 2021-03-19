@@ -44,7 +44,5 @@ document.addEventListener("turbolinks:load", () => {
   outdoorsyCategory();
   sweatCategory();
   highlightSaveButton();
-
-  var rellax = new Rellax(".rellax");
 });
 
