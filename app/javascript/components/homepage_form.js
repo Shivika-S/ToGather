@@ -74,12 +74,15 @@ const chosenCategory = () => {
     })
   }
 
+// All Categories besides 'Sweat'
+
 const outdoorsyCategory = () => {
-  const outdoorsyEl = document.querySelector('#activity_category_id_3');
+  const nonSweatEls = document.querySelectorAll('#activity_category_id_2, #activity_category_id_3, #activity_category_id_4, #activity_category_id_5, #activity_category_id_6');
   const treeImage = document.querySelector('.tree-image');
   const sunImage = document.querySelector('.sun-image');
-    if (outdoorsyEl) {
-      outdoorsyEl.addEventListener('change', (e) => {
+    if (nonSweatEls) {
+      nonSweatEls.forEach(nonSweatEl => {
+        nonSweatEl.addEventListener('change', (e) => {
           if (e.target.checked) {
             setTimeout(() => { treeImage.style.setProperty('bottom', '0px'); }, 1000);
             setInterval(function(){
@@ -92,6 +95,7 @@ const outdoorsyCategory = () => {
               sunImage.style.transform = 'rotate(180deg)';
             }, 1000)
           };
+        });
       });
     };
 }
