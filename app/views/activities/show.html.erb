@@ -54,11 +54,14 @@
         <p class="address-date"><span><%= @activity.address %></span></p>
         <p class="address-date"><span><%= DateTime.parse(@activity.start_time.to_s).strftime(("%d of %B, %Y")) %></span></p>
         <%= link_to "Join the chat!", chatroom_path(@chatroom.id), class: "btn btn-info", id: "join-chat-btn" %>
-
-        <% unless current_user.bookmarks.where(activity_id: @activity.id).empty? %>
-          <%= link_to 'Saved', bookmark_path(current_user.bookmarks.first), method: :delete, class: "btn btn-outline-secondary", id: "bookmark-show-buttons" %>
+        <% if current_user %>
+          <% unless current_user.bookmarks.where(activity_id: @activity.id).empty? %>
+            <%= link_to 'Saved', bookmark_path(current_user.bookmarks.first), method: :delete, class: "btn btn-outline-secondary", id: "bookmark-show-buttons" %>
+          <% else %>
+            <%= link_to 'Save', activity_bookmark_path(activity_id: @activity), method: :post, class: "btn btn-outline-secondary", id: "bookmark-show-buttons" %>
+          <% end %>
         <% else %>
-          <%= link_to 'Save', activity_bookmark_path(activity_id: @activity), method: :post, class: "btn btn-outline-secondary", id: "bookmark-show-buttons" %>
+          <button type="button" id="bookmark-show-buttons" class="index-save-btn btn btn-outline-secondary">Save</button>
         <% end %>
       </div>
 
