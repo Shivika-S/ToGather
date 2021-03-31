@@ -20,12 +20,20 @@
     <% @activities.each do |activity| %>
       <div class="card"  data-toggle="modal" data-target=".js-activity-<%= activity.id %>">
         <div class="bookmark-buttons">
-          <% unless current_user.bookmarks.where(activity_id: activity.id).empty? %>
-            <%= link_to 'Saved', bookmark_path(current_user.bookmarks.first), method: :delete, class: "index-save-btn btn btn-secondary" %>
-          <% else %>
-            <%= link_to 'Save', activity_bookmark_path(activity_id: activity.id), method: :post, class: "index-save-btn btn btn-outline-secondary" %>
-          <% end %>
+          <% if current_user %>
+            <%# unless current_user.bookmarks.where(activity_id: activity.id).empty? %>
+              <%# link_to 'Saved', bookmark_path(current_user.bookmarks.first), method: :delete, class: "index-save-btn btn btn-secondary" %>
+            <%# else %>
+              <%# link_to 'Save', activity_bookmark_path(activity_id: activity.id), method: :post, class: "index-save-btn btn btn-outline-secondary" %>
+            <%# end %>
 
+            <!-- Temp button since the above bookmark function doesn't link correctly -->
+
+            <button type="button" class="index-save-btn btn btn-outline-secondary">Save</button>
+
+          <% else %>
+            <button type="button" class="index-save-btn btn btn-outline-secondary">Save</button>
+          <% end %>
         </div>
           <% if activity.cover_photo.attached? %>
             <%= cl_image_tag(activity.cover_photo.key,
