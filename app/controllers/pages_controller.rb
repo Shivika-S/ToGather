@@ -5,7 +5,7 @@ class PagesController < ApplicationController
     @activity = Activity.new
     @categories = Category.all
     # Please don't delete code below.
-    @random_event = Activity.all.sample
+    # @random_event = Activity.all.sample
   end
 
   def new
