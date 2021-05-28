@@ -3,14 +3,11 @@ class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show, :edit, :update, :destroy]
 
   def index
-    if params[:activity] && activity_params[:category_id]
+    if activity_params[:category_id]
       @start_time = format_datetime
       @category = Category.find(params[:activity][:category_id]) if params[:activity][:category_id].present?
       @activities = Activity.where(category: @category)
       @activities = @activities.where("start_time > ?", @start_time)
-      # @activities = Category.find_by(name: "Sweat").activities
-      @search_category = activity_params[:category_id]
-      @search_start_time = @start_time
     else
       @activities = Activity.all
     end
@@ -28,7 +25,6 @@ class ActivitiesController < ApplicationController
     @chatroom = Chatroom.find_by(name: @activity.name)
     # ||= will only set to value if @chatroom is nil
     @chatroom ||= Chatroom.create!(name: @activity.name)
-    # lets create a link between the user and the chatroom.. AKA a ChatroomUser instance
   end
 
   def new
